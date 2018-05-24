@@ -8,8 +8,8 @@ webpackJsonp([3],{
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var extend = __webpack_require__(251);
-__webpack_require__(137);
+var extend = __webpack_require__(252);
+__webpack_require__(138);
 
 /**
  * Write loading image to a container for ajax request
@@ -256,7 +256,7 @@ module.exports = {
 "use strict";
 
 
-var CurrencyBase = __webpack_require__(53);
+var CurrencyBase = __webpack_require__(52);
 var localize = __webpack_require__(2).localize;
 
 var getCurrencyList = function getCurrencyList(currencies) {
@@ -277,14 +277,14 @@ module.exports = Object.assign({
 
 /***/ }),
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var moment = __webpack_require__(7);
-var urlForStatic = __webpack_require__(8).urlForStatic;
+var moment = __webpack_require__(8);
+var urlForStatic = __webpack_require__(9).urlForStatic;
 var getStaticHash = __webpack_require__(1).getStaticHash;
 
 // only reload if it's more than 10 minutes since the last reload
@@ -322,7 +322,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -334,7 +334,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -579,7 +579,7 @@ exports.default = Dropdown;
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -592,11 +592,11 @@ exports.BinaryLink = exports.BinaryRoutes = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(264);
+var _reactRouterDom = __webpack_require__(265);
 
 var _client_base = __webpack_require__(23);
 
@@ -606,11 +606,11 @@ var _login = __webpack_require__(38);
 
 var _localize = __webpack_require__(2);
 
-var _trade_app = __webpack_require__(401);
+var _trade_app = __webpack_require__(403);
 
 var _trade_app2 = _interopRequireDefault(_trade_app);
 
-var _statement = __webpack_require__(383);
+var _statement = __webpack_require__(385);
 
 var _statement2 = _interopRequireDefault(_statement);
 
@@ -670,7 +670,7 @@ exports.BinaryLink = BinaryLink;
 
 /***/ }),
 
-/***/ 136:
+/***/ 137:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -678,7 +678,7 @@ exports.BinaryLink = BinaryLink;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var BinarySocket = __webpack_require__(45);
+var BinarySocket = __webpack_require__(53);
 
 /*
  * Monitors the network status and initialises the WebSocket connection
@@ -810,7 +810,7 @@ module.exports = NetworkMonitorBase;
 
 /***/ }),
 
-/***/ 137:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -937,7 +937,7 @@ module.exports = Language;
 
 /***/ }),
 
-/***/ 151:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -949,7 +949,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -1018,7 +1018,7 @@ exports.default = InputField;
 "use strict";
 
 
-var moment = __webpack_require__(7);
+var moment = __webpack_require__(8);
 var checkInput = __webpack_require__(3).checkInput;
 
 var toTitleCase = function toTitleCase(str) {
@@ -1087,7 +1087,7 @@ module.exports = {
 "use strict";
 
 
-var moment = __webpack_require__(7);
+var moment = __webpack_require__(8);
 var template = __webpack_require__(1).template;
 
 var Localize = function () {
@@ -1135,7 +1135,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -1178,15 +1178,812 @@ Object.defineProperty(exports, "__esModule", {
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _moment = __webpack_require__(8);
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = __webpack_require__(90);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _arrowhead = __webpack_require__(373);
+
+var _arrowhead2 = _interopRequireDefault(_arrowhead);
+
+var _localize = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Calendar = function (_React$Component) {
+    _inherits(Calendar, _React$Component);
+
+    function Calendar(props) {
+        _classCallCheck(this, Calendar);
+
+        var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props));
+
+        _this.getDays = _this.getDays.bind(_this);
+        _this.getDates = _this.getDates.bind(_this);
+        _this.getMonths = _this.getMonths.bind(_this);
+        _this.getYears = _this.getYears.bind(_this);
+        _this.getDecades = _this.getDecades.bind(_this);
+
+        _this.setToday = _this.setToday.bind(_this);
+        _this.setActiveView = _this.setActiveView.bind(_this);
+
+        _this.nextMonth = _this.nextMonth.bind(_this);
+        _this.previousMonth = _this.previousMonth.bind(_this);
+
+        _this.nextYear = _this.nextYear.bind(_this);
+        _this.previousYear = _this.previousYear.bind(_this);
+
+        _this.nextDecade = _this.nextDecade.bind(_this);
+        _this.previousDecade = _this.previousDecade.bind(_this);
+
+        _this.nextCentury = _this.nextCentury.bind(_this);
+        _this.previousCentury = _this.previousCentury.bind(_this);
+
+        _this.handleDateSelected = _this.handleDateSelected.bind(_this);
+        _this.handleMonthSelected = _this.handleMonthSelected.bind(_this);
+        _this.handleYearSelected = _this.handleYearSelected.bind(_this);
+        _this.handleDecadeSelected = _this.handleDecadeSelected.bind(_this);
+
+        _this.onChangeInput = _this.onChangeInput.bind(_this);
+        _this.resetCalendar = _this.resetCalendar.bind(_this);
+
+        var startDate = props.startDate,
+            minDate = props.minDate,
+            initial_value = props.initial_value;
+
+
+        var current_date = (0, _moment2.default)(startDate || minDate).format(_this.props.dateFormat);
+
+        _this.state = {
+            date: current_date, // calendar dates reference
+            selected_date: initial_value !== undefined ? initial_value : current_date // selected date
+        };
+        return _this;
+    }
+
+    _createClass(Calendar, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.setState({ active_view: 'date' });
+        }
+    }, {
+        key: 'shouldComponentUpdate',
+        value: function shouldComponentUpdate(nextProps, nextState) {
+            return this.state.active_view !== nextState.active_view || this.state.date !== nextState.date || this.state.selected_date !== nextState.selected_date || this.props.minDate !== nextState.minDate || this.props.maxDate !== nextState.maxDate || this.props.startDate !== nextState.startDate;
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            var date = (0, _moment2.default)(this.state.date);
+
+            if (date.isBefore((0, _moment2.default)(nextProps.minDate))) {
+                this.setState({
+                    date: nextProps.minDate
+                });
+            } else if (date.isAfter((0, _moment2.default)(nextProps.maxDate))) {
+                this.setState({
+                    date: nextProps.maxDate
+                });
+            }
+        }
+    }, {
+        key: 'setToday',
+        value: function setToday() {
+            var now = (0, _moment2.default)().format(this.props.dateFormat);
+            this.setState({
+                date: now,
+                selected_date: now,
+                active_view: 'date'
+            });
+            this.props.handleDateChange(now, true);
+        }
+    }, {
+        key: 'updateDate',
+        value: function updateDate(value, unit, is_add) {
+            var new_date = (0, _moment2.default)(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat);
+
+            if (unit === 'months' && this.isPeriodDisabled(new_date, 'month')) return;
+
+            if (unit === 'years' && this.isPeriodDisabled(new_date, 'month')) {
+                new_date = is_add ? this.props.maxDate : this.props.minDate;
+            }
+
+            this.setState({ date: new_date });
+        }
+    }, {
+        key: 'isPeriodDisabled',
+        value: function isPeriodDisabled(date, unit) {
+            var start_of_period = (0, _moment2.default)(date).startOf(unit);
+            var end_of_period = (0, _moment2.default)(date).endOf(unit);
+            return end_of_period.isBefore((0, _moment2.default)(this.props.minDate)) || start_of_period.isAfter((0, _moment2.default)(this.props.maxDate));
+        }
+    }, {
+        key: 'nextMonth',
+        value: function nextMonth() {
+            this.updateDate(1, 'months', true);
+        }
+    }, {
+        key: 'previousMonth',
+        value: function previousMonth() {
+            this.updateDate(1, 'months', false);
+        }
+    }, {
+        key: 'nextYear',
+        value: function nextYear() {
+            this.updateDate(1, 'years', true);
+        }
+    }, {
+        key: 'previousYear',
+        value: function previousYear() {
+            this.updateDate(1, 'years', false);
+        }
+    }, {
+        key: 'nextDecade',
+        value: function nextDecade() {
+            this.updateDate(10, 'years', true);
+        }
+    }, {
+        key: 'previousDecade',
+        value: function previousDecade() {
+            this.updateDate(10, 'years', false);
+        }
+    }, {
+        key: 'nextCentury',
+        value: function nextCentury() {
+            this.updateDate(100, 'years', true);
+        }
+    }, {
+        key: 'previousCentury',
+        value: function previousCentury() {
+            this.updateDate(100, 'years', false);
+        }
+    }, {
+        key: 'setActiveView',
+        value: function setActiveView(active_view) {
+            this.setState({ active_view: active_view });
+        }
+    }, {
+        key: 'handleDateSelected',
+        value: function handleDateSelected(e) {
+            var date = (0, _moment2.default)(e.target.dataset.date);
+            var min_date = (0, _moment2.default)(this.props.minDate).format(this.props.dateFormat);
+            var max_date = (0, _moment2.default)(this.props.maxDate).format(this.props.dateFormat);
+            var is_before = date.isBefore(min_date);
+            var is_after = date.isAfter(max_date);
+
+            if (is_before || is_after) return;
+
+            var formatted_date = date.format(this.props.dateFormat);
+            this.setState({
+                date: formatted_date,
+                selected_date: formatted_date
+            });
+            this.props.handleDateChange(formatted_date);
+        }
+    }, {
+        key: 'updateSelected',
+        value: function updateSelected(e, type) {
+            var active_view = {
+                month: 'date',
+                year: 'month',
+                decade: 'year'
+            };
+            var date = (0, _moment2.default)(this.state.date)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
+
+            if (this.isPeriodDisabled(date, type)) return;
+
+            this.setState({
+                date: date,
+                active_view: active_view[type]
+            });
+        }
+    }, {
+        key: 'handleMonthSelected',
+        value: function handleMonthSelected(e) {
+            this.updateSelected(e, 'month');
+        }
+    }, {
+        key: 'handleYearSelected',
+        value: function handleYearSelected(e) {
+            this.updateSelected(e, 'year');
+        }
+    }, {
+        key: 'handleDecadeSelected',
+        value: function handleDecadeSelected(e) {
+            this.updateSelected(e, 'decade');
+        }
+    }, {
+        key: 'onChangeInput',
+        value: function onChangeInput(e) {
+            var value = e.target.value;
+
+            if (this.props.mode === 'duration' && value) {
+                value = (0, _moment2.default)().add(value || 1, 'days');
+            }
+
+            this.setState({ selected_date: value }); // update calendar input
+
+            if ((0, _moment2.default)(value, 'YYYY-MM-DD', true).isValid() || !value) {
+                this.props.handleDateChange(value, true);
+
+                if (!value) {
+                    var _props = _extends({}, this.props),
+                        startDate = _props.startDate,
+                        minDate = _props.minDate;
+
+                    var currentDate = (0, _moment2.default)(startDate || minDate).format(this.props.dateFormat);
+                    this.setState({ date: currentDate });
+                } else {
+                    this.setState({ date: (0, _moment2.default)(value).format(this.props.dateFormat) }); // update calendar dates
+                }
+            }
+        }
+    }, {
+        key: 'resetCalendar',
+        value: function resetCalendar() {
+            var _props2 = this.props,
+                startDate = _props2.startDate,
+                minDate = _props2.minDate;
+
+            var default_date = (0, _moment2.default)(startDate || minDate).format(this.props.dateFormat);
+
+            this.setState({
+                date: default_date,
+                selected_date: ''
+            });
+        }
+    }, {
+        key: 'getDays',
+        value: function getDays() {
+            var _this2 = this;
+
+            var dates = [];
+            var days = [];
+            var num_of_days = (0, _moment2.default)(this.state.date).daysInMonth() + 1;
+            var start_of_month = (0, _moment2.default)(this.state.date).startOf('month').format(this.props.dateFormat);
+            var end_of_month = (0, _moment2.default)(this.state.date).endOf('month').format(this.props.dateFormat);
+            var first_day = (0, _moment2.default)(start_of_month).day();
+            var last_day = (0, _moment2.default)(end_of_month).day();
+
+            var pad = function pad(value) {
+                return ('0' + value).substr(-2);
+            }; // pad zero
+
+            for (var i = first_day; i > 0; i--) {
+                dates.push((0, _moment2.default)(start_of_month).subtract(i, 'day').format(this.props.dateFormat));
+            }
+            for (var idx = 1; idx < num_of_days; idx += 1) {
+                dates.push((0, _moment2.default)(this.state.date).format(this.props.dateFormat.replace('DD', pad(idx))));
+            }
+            for (var _i = 1; _i <= 6 - last_day; _i++) {
+                dates.push((0, _moment2.default)(end_of_month).add(_i, 'day').format(this.props.dateFormat));
+            }
+
+            dates.forEach(function (date) {
+                var is_disabled = (0, _moment2.default)(date).isBefore((0, _moment2.default)(_this2.props.minDate)) || (0, _moment2.default)(date).isAfter((0, _moment2.default)(_this2.props.maxDate));
+                var is_other_month = (0, _moment2.default)(date).isBefore((0, _moment2.default)(start_of_month)) || (0, _moment2.default)(date).isAfter((0, _moment2.default)(end_of_month));
+                var is_active = _this2.state.selected_date && (0, _moment2.default)(date).isSame((0, _moment2.default)(_this2.state.selected_date));
+                var is_today = (0, _moment2.default)(date).isSame((0, _moment2.default)().utc(), 'day');
+
+                days.push(_react2.default.createElement(
+                    'span',
+                    {
+                        key: date,
+                        className: (0, _classnames2.default)('calendar-date', {
+                            active: is_active,
+                            today: is_today,
+                            disabled: is_disabled,
+                            hidden: is_other_month
+                        }),
+                        onClick: _this2.handleDateSelected,
+                        'data-date': date
+                    },
+                    (0, _moment2.default)(date).date()
+                ));
+            });
+
+            return days;
+        }
+    }, {
+        key: 'getDates',
+        value: function getDates() {
+            var days = this.getDays().map(function (day) {
+                return day;
+            });
+            var week_headers = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'calendar-date-panel' },
+                week_headers.map(function (item, idx) {
+                    return _react2.default.createElement(
+                        'span',
+                        { key: idx, className: 'calendar-date-header' },
+                        (0, _localize.localize)(item)
+                    );
+                }),
+                days
+            );
+        }
+    }, {
+        key: 'getMonths',
+        value: function getMonths() {
+            var _this3 = this;
+
+            var is_active = (0, _moment2.default)(this.state.selected_date).month();
+            var month_headers = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return _react2.default.createElement(
+                'div',
+                { className: 'calendar-month-panel' },
+                month_headers.map(function (item, idx) {
+                    var date = (0, _moment2.default)(_this3.state.date).month(item);
+                    var is_disabled = _this3.isPeriodDisabled(date, 'month');
+                    return _react2.default.createElement(
+                        'span',
+                        {
+                            key: idx,
+                            className: (0, _classnames2.default)('calendar-month', {
+                                active: idx === is_active,
+                                disabled: is_disabled
+                            }),
+                            onClick: _this3.handleMonthSelected,
+                            'data-month': idx
+                        },
+                        (0, _localize.localize)(item)
+                    );
+                })
+            );
+        }
+    }, {
+        key: 'getYears',
+        value: function getYears() {
+            var _this4 = this;
+
+            var is_active = (0, _moment2.default)(this.state.selected_date).year();
+            var current_year = (0, _moment2.default)(this.state.date).year();
+            var years = [];
+            for (var year = current_year - 1; year < current_year + 11; year++) {
+                years.push(year);
+            }
+            return _react2.default.createElement(
+                'div',
+                { className: 'calendar-year-panel' },
+                years.map(function (year, idx) {
+                    var date = (0, _moment2.default)(_this4.state.date).year(year);
+                    var is_disabled = _this4.isPeriodDisabled(date, 'year');
+                    return _react2.default.createElement(
+                        'span',
+                        {
+                            key: idx,
+                            className: (0, _classnames2.default)('calendar-year', {
+                                disabled: is_disabled,
+                                active: year === is_active
+                            }),
+                            onClick: _this4.handleYearSelected,
+                            'data-year': year
+                        },
+                        year
+                    );
+                })
+            );
+        }
+    }, {
+        key: 'getDecades',
+        value: function getDecades() {
+            var _this5 = this;
+
+            var is_active = (0, _moment2.default)(this.state.selected_date).year();
+            var current_year = (0, _moment2.default)(this.state.date).year();
+            var decades = [];
+            var min_year = current_year - 10;
+
+            for (var i = 0; i < 12; i++) {
+                var max_year = min_year + 9;
+                var range = min_year + '-' + max_year;
+                decades.push(range);
+                min_year = max_year + 1;
+            }
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'calendar-decade-panel' },
+                decades.map(function (range, idx) {
+                    var _range$split = range.split('-'),
+                        _range$split2 = _slicedToArray(_range$split, 2),
+                        start_year = _range$split2[0],
+                        end_year = _range$split2[1];
+
+                    var start_date = (0, _moment2.default)(_this5.state.date).year(start_year);
+                    var end_date = (0, _moment2.default)(_this5.state.date).year(end_year);
+                    var is_disabled = _this5.isPeriodDisabled(start_date, 'year') && _this5.isPeriodDisabled(end_date, 'year');
+                    return _react2.default.createElement(
+                        'span',
+                        {
+                            key: idx,
+                            className: (0, _classnames2.default)('calendar-decade', {
+                                disabled: is_disabled,
+                                active: start_year === is_active
+                            }),
+                            onClick: _this5.handleDecadeSelected,
+                            'data-decade': range
+                        },
+                        range
+                    );
+                })
+            );
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this6 = this;
+
+            var view = this.state.active_view;
+
+            var is_date_view = view === 'date';
+            var is_month_view = view === 'month';
+            var is_year_view = view === 'year';
+            var is_decade_view = view === 'decade';
+
+            var BtnPrevMonth = is_date_view && _react2.default.createElement('span', {
+                type: 'button',
+                className: (0, _classnames2.default)('calendar-prev-month-btn', {
+                    hidden: this.isPeriodDisabled((0, _moment2.default)(this.state.date).subtract(1, 'month'), 'month')
+                }),
+                onClick: this.previousMonth
+            });
+            var BtnNextMonth = is_date_view && _react2.default.createElement('span', {
+                type: 'button',
+                className: (0, _classnames2.default)('calendar-next-month-btn', {
+                    hidden: this.isPeriodDisabled((0, _moment2.default)(this.state.date).add(1, 'month'), 'month')
+                }),
+                onClick: this.nextMonth
+            });
+
+            var BtnPrevYear = _react2.default.createElement('span', {
+                type: 'button',
+                className: (0, _classnames2.default)('calendar-prev-year-btn', {
+                    hidden: this.isPeriodDisabled((0, _moment2.default)(this.state.date).subtract(1, 'month'), 'month')
+                }),
+                onClick: function onClick() {
+                    return (is_date_view || is_month_view) && _this6.previousYear() || is_year_view && _this6.previousDecade() || is_decade_view && _this6.previousCentury();
+                }
+            });
+
+            var BtnNextYear = _react2.default.createElement('span', {
+                type: 'button',
+                className: (0, _classnames2.default)('calendar-next-year-btn', {
+                    hidden: this.isPeriodDisabled((0, _moment2.default)(this.state.date).add(1, 'month'), 'month')
+                }),
+                onClick: function onClick() {
+                    return (is_date_view || is_month_view) && _this6.nextYear() || is_year_view && _this6.nextDecade() || is_decade_view && _this6.nextCentury();
+                }
+            });
+
+            var SelectMonth = is_date_view && _react2.default.createElement(
+                'span',
+                { type: 'button', className: 'calendar-select-month-btn', onClick: function onClick() {
+                        return _this6.setActiveView('month');
+                    } },
+                (0, _moment2.default)(this.state.date).format('MMM')
+            );
+
+            var SelectYear = _react2.default.createElement(
+                'span',
+                {
+                    type: 'button',
+                    className: 'calendar-select-year-btn',
+                    onClick: function onClick() {
+                        return is_date_view || is_month_view ? _this6.setActiveView('year') : _this6.setActiveView('decade');
+                    }
+                },
+                (0, _moment2.default)(this.state.date).year(),
+                is_year_view && '-' + (0, _moment2.default)(this.state.date).add(9, 'years').year(),
+                is_decade_view && '-' + (0, _moment2.default)(this.state.date).add(99, 'years').year()
+            );
+
+            var PanelCalendar = is_date_view && this.getDates() || is_month_view && this.getMonths() || is_year_view && this.getYears() || is_decade_view && this.getDecades();
+
+            var value = this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'calendar' },
+                _react2.default.createElement('input', {
+                    type: 'text',
+                    placeholder: this.props.placeholder || (this.props.mode === 'duration' ? (0, _localize.localize)('Select a duration') : (0, _localize.localize)('Select date')),
+                    value: value,
+                    onChange: this.onChangeInput,
+                    className: 'calendar-input'
+                }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'calendar-header' },
+                    BtnPrevYear,
+                    BtnPrevMonth,
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'calendar-select' },
+                        SelectMonth,
+                        SelectYear
+                    ),
+                    BtnNextMonth,
+                    BtnNextYear
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'calendar-panel' },
+                    PanelCalendar
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'calendar-footer' },
+                    this.props.footer && _react2.default.createElement(
+                        'span',
+                        { className: 'calendar-footer-extra' },
+                        this.props.footer
+                    ),
+                    this.props.showTodayBtn && _react2.default.createElement(
+                        'span',
+                        { className: 'calendar-footer-btn' },
+                        _react2.default.createElement(
+                            'a',
+                            { role: 'button', onClick: this.setToday },
+                            (0, _localize.localize)('Today')
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Calendar;
+}(_react2.default.Component);
+
+Calendar.defaultProps = {
+    dateFormat: 'YYYY-MM-DD',
+    minDate: (0, _moment2.default)(0).utc().format('YYYY-MM-DD'), // by default, minDate is set to Unix Epoch (January 1st 1970)
+    maxDate: (0, _moment2.default)().utc().add(120, 'y').format('YYYY-MM-DD') // by default, maxDate is set to 120 years after today
+};
+
+var getDayDifference = function getDayDifference(date) {
+    var diff = (0, _moment2.default)(date).diff((0, _moment2.default)().utc(), 'days');
+    return !date || diff < 0 ? '' : diff + 1;
+};
+
+var DatePicker = function (_React$PureComponent) {
+    _inherits(DatePicker, _React$PureComponent);
+
+    function DatePicker(props) {
+        _classCallCheck(this, DatePicker);
+
+        var _this7 = _possibleConstructorReturn(this, (DatePicker.__proto__ || Object.getPrototypeOf(DatePicker)).call(this, props));
+
+        _this7.changeCallback = function () {
+            _this7.props.onChange({ target: { name: _this7.props.name, value: _this7.getPickerValue() } });
+        };
+
+        _this7.clearDateInput = function () {
+            _this7.setState({ selected_date: '' }, _this7.changeCallback);
+            _this7.calendar.resetCalendar();
+        };
+
+        _this7.getPickerValue = function () {
+            return _this7.props.mode === 'duration' ? getDayDifference(_this7.state.selected_date) : _this7.state.selected_date;
+        };
+
+        _this7.handleClickOutside = _this7.handleClickOutside.bind(_this7);
+        _this7.handleVisibility = _this7.handleVisibility.bind(_this7);
+        _this7.handleDateChange = _this7.handleDateChange.bind(_this7);
+        _this7.handleMouseEnter = _this7.handleMouseEnter.bind(_this7);
+        _this7.handleMouseLeave = _this7.handleMouseLeave.bind(_this7);
+
+        var selected_date = props.initial_value !== undefined ? props.initial_value : (0, _moment2.default)(_this7.props.minDate).format(_this7.props.dateFormat);
+
+        _this7.state = {
+            selected_date: selected_date,
+            is_calendar_visible: false,
+            is_close_btn_visible: false
+        };
+        return _this7;
+    }
+
+    _createClass(DatePicker, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.props.onChange({ target: { name: this.props.name, value: this.getPickerValue() } });
+        }
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            document.addEventListener('click', this.handleClickOutside, true);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            document.removeEventListener('click', this.handleClickOutside, true);
+        }
+    }, {
+        key: 'handleClickOutside',
+        value: function handleClickOutside(e) {
+            if (!this.mainNode.contains(e.target) && this.state.is_calendar_visible) {
+                this.setState({ is_calendar_visible: false });
+            }
+        }
+    }, {
+        key: 'handleVisibility',
+        value: function handleVisibility() {
+            this.setState({
+                is_calendar_visible: !this.state.is_calendar_visible
+            });
+        }
+    }, {
+        key: 'handleMouseEnter',
+        value: function handleMouseEnter() {
+            if (this.getPickerValue()) {
+                this.setState({ is_close_btn_visible: true });
+            }
+        }
+    }, {
+        key: 'handleMouseLeave',
+        value: function handleMouseLeave() {
+            this.setState({ is_close_btn_visible: false });
+        }
+    }, {
+        key: 'handleDateChange',
+        value: function handleDateChange(selected_date, is_calendar_visible) {
+            var value = selected_date;
+            if (!(0, _moment2.default)(value).isValid) {
+                value = '';
+            }
+
+            this.setState({
+                selected_date: value,
+                is_calendar_visible: is_calendar_visible
+            }, this.changeCallback);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this8 = this;
+
+            var value = this.getPickerValue();
+            if (this.props.is_nativepicker) {
+                return _react2.default.createElement(
+                    'div',
+                    { ref: function ref(node) {
+                            _this8.mainNode = node;
+                        }, className: 'datepicker-container' },
+                    _react2.default.createElement('input', {
+                        id: this.props.name,
+                        name: this.props.name,
+                        className: 'datepicker-display',
+                        type: 'date',
+                        value: value,
+                        min: this.props.minDate,
+                        max: this.props.maxDate,
+                        onChange: function onChange(e) {
+                            // fix for ios issue: clear button doesn't work
+                            // https://github.com/facebook/react/issues/8938
+                            var target = e.nativeEvent.target;
+                            function iosClearDefault() {
+                                target.defaultValue = '';
+                            }
+                            window.setTimeout(iosClearDefault, 0);
+
+                            _this8.handleDateChange(e.target.value);
+                        }
+                    }),
+                    _react2.default.createElement(
+                        'label',
+                        { className: 'datepicker-native-overlay', htmlFor: this.props.name },
+                        value || this.props.placeholder,
+                        _react2.default.createElement(_arrowhead2.default, { className: 'datepicker-native-overlay__arrowhead' })
+                    )
+                );
+            }
+            return _react2.default.createElement(
+                'div',
+                { ref: function ref(node) {
+                        _this8.mainNode = node;
+                    }, className: 'datepicker-container' },
+                _react2.default.createElement(
+                    'div',
+                    {
+                        className: 'datepicker-display-wrapper',
+                        onMouseEnter: this.handleMouseEnter,
+                        onMouseLeave: this.handleMouseLeave
+                    },
+                    _react2.default.createElement('input', {
+                        id: this.props.id,
+                        name: this.props.name,
+                        className: 'datepicker-display',
+                        value: value,
+                        readOnly: true,
+                        placeholder: this.props.placeholder || (this.props.mode === 'duration' ? (0, _localize.localize)('Select a duration') : (0, _localize.localize)('Select date')),
+                        onClick: this.handleVisibility
+                    }),
+                    _react2.default.createElement('span', {
+                        className: (0, _classnames2.default)('picker-calendar-icon', {
+                            show: !this.state.is_close_btn_visible
+                        }),
+                        onClick: this.handleVisibility
+                    }),
+                    _react2.default.createElement('span', {
+                        className: (0, _classnames2.default)('close-circle-icon', {
+                            show: this.state.is_close_btn_visible
+                        }),
+                        onClick: this.clearDateInput
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    {
+                        className: (0, _classnames2.default)('datepicker-calendar', {
+                            show: this.state.is_calendar_visible
+                        })
+                    },
+                    _react2.default.createElement(Calendar, _extends({
+                        ref: function ref(node) {
+                            _this8.calendar = node;
+                        },
+                        handleDateChange: this.handleDateChange
+                    }, this.props))
+                )
+            );
+        }
+    }]);
+
+    return DatePicker;
+}(_react2.default.PureComponent);
+
+DatePicker.defaultProps = {
+    dateFormat: 'YYYY-MM-DD',
+    mode: 'date'
+};
+
+exports.default = DatePicker;
+
+/***/ }),
+
+/***/ 212:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _iscroll = __webpack_require__(633);
+var _iscroll = __webpack_require__(636);
 
 var _iscroll2 = _interopRequireDefault(_iscroll);
 
@@ -1633,7 +2430,7 @@ exports.default = TimePicker;
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1651,31 +2448,31 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _mobx = __webpack_require__(84);
 
-var _mobxUtils = __webpack_require__(636);
+var _mobxUtils = __webpack_require__(639);
 
 var _utility = __webpack_require__(1);
 
-var _contract_type = __webpack_require__(384);
+var _contract_type = __webpack_require__(386);
 
 var ContractType = _interopRequireWildcard(_contract_type);
 
-var _currency = __webpack_require__(385);
+var _currency = __webpack_require__(387);
 
 var Currency = _interopRequireWildcard(_currency);
 
-var _duration = __webpack_require__(386);
+var _duration = __webpack_require__(388);
 
 var Duration = _interopRequireWildcard(_duration);
 
-var _start_date = __webpack_require__(388);
+var _start_date = __webpack_require__(390);
 
 var StartDate = _interopRequireWildcard(_start_date);
 
-var _symbol = __webpack_require__(389);
+var _symbol = __webpack_require__(391);
 
 var _Symbol = _interopRequireWildcard(_symbol);
 
-var _test = __webpack_require__(213);
+var _test = __webpack_require__(214);
 
 var Test = _interopRequireWildcard(_test);
 
@@ -1757,7 +2554,7 @@ exports.default = defaultExports;
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1768,11 +2565,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.initTime = exports.onChangeAmount = exports.getTicks = exports.getCountryAsync = undefined;
 
-var _moment = __webpack_require__(7);
+var _moment = __webpack_require__(8);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _dao = __webpack_require__(97);
+var _dao = __webpack_require__(89);
 
 var _dao2 = _interopRequireDefault(_dao);
 
@@ -1836,7 +2633,7 @@ var initTime = exports.initTime = function initTime() {
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1848,11 +2645,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _url = __webpack_require__(8);
+var _url = __webpack_require__(9);
 
 var _url2 = _interopRequireDefault(_url);
 
@@ -1968,9 +2765,9 @@ exports.default = FullscreenDialog;
 "use strict";
 
 
-var moment = __webpack_require__(7);
-var isCryptocurrency = __webpack_require__(53).isCryptocurrency;
-var SocketCache = __webpack_require__(46);
+var moment = __webpack_require__(8);
+var isCryptocurrency = __webpack_require__(52).isCryptocurrency;
+var SocketCache = __webpack_require__(45);
 var LocalStore = __webpack_require__(5).LocalStore;
 var State = __webpack_require__(5).State;
 var getPropertyValue = __webpack_require__(1).getPropertyValue;
@@ -2308,7 +3105,7 @@ module.exports = ClientBase;
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2318,43 +3115,43 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(133);
+var _reactDom = __webpack_require__(134);
 
-var _reactRouterDom = __webpack_require__(264);
+var _reactRouterDom = __webpack_require__(265);
 
-var _network_monitor = __webpack_require__(369);
+var _network_monitor = __webpack_require__(370);
 
 var _network_monitor2 = _interopRequireDefault(_network_monitor);
 
-var _client_store = __webpack_require__(402);
+var _client_store = __webpack_require__(404);
 
 var _client_store2 = _interopRequireDefault(_client_store);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
-var _trade_store = __webpack_require__(403);
+var _trade_store = __webpack_require__(405);
 
 var _trade_store2 = _interopRequireDefault(_trade_store);
 
-var _ui_store = __webpack_require__(404);
+var _ui_store = __webpack_require__(406);
 
 var _ui_store2 = _interopRequireDefault(_ui_store);
 
-var _footer = __webpack_require__(379);
+var _footer = __webpack_require__(381);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _header = __webpack_require__(380);
+var _header = __webpack_require__(382);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _actions = __webpack_require__(212);
+var _actions = __webpack_require__(213);
 
-var _routes = __webpack_require__(114);
+var _routes = __webpack_require__(115);
 
 var _client_base = __webpack_require__(23);
 
@@ -2564,7 +3361,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 32:
+/***/ 31:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2579,9 +3376,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _mobx = __webpack_require__(84);
 
-var _mobxReact = __webpack_require__(635);
+var _mobxReact = __webpack_require__(638);
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -2806,7 +3603,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 368:
+/***/ 369:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2817,7 +3614,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.requestLogout = undefined;
 
-var _dao = __webpack_require__(97);
+var _dao = __webpack_require__(89);
 
 var _dao2 = _interopRequireDefault(_dao);
 
@@ -2825,7 +3622,7 @@ var _client_base = __webpack_require__(23);
 
 var _client_base2 = _interopRequireDefault(_client_base);
 
-var _socket_cache = __webpack_require__(46);
+var _socket_cache = __webpack_require__(45);
 
 var _socket_cache2 = _interopRequireDefault(_socket_cache);
 
@@ -2848,7 +3645,7 @@ var doLogout = function doLogout(response) {
 
 /***/ }),
 
-/***/ 369:
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2858,11 +3655,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _socket_general = __webpack_require__(370);
+var _socket_general = __webpack_require__(371);
 
 var _socket_general2 = _interopRequireDefault(_socket_general);
 
-var _network_monitor_base = __webpack_require__(136);
+var _network_monitor_base = __webpack_require__(137);
 
 var _network_monitor_base2 = _interopRequireDefault(_network_monitor_base);
 
@@ -2883,7 +3680,7 @@ exports.default = NetworkMonitor;
 
 /***/ }),
 
-/***/ 370:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2893,7 +3690,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _dao = __webpack_require__(97);
+var _dao = __webpack_require__(89);
 
 var _dao2 = _interopRequireDefault(_dao);
 
@@ -2901,13 +3698,13 @@ var _client_base = __webpack_require__(23);
 
 var _client_base2 = _interopRequireDefault(_client_base);
 
-var _currency_base = __webpack_require__(53);
+var _currency_base = __webpack_require__(52);
 
 var _login = __webpack_require__(38);
 
 var _login2 = _interopRequireDefault(_login);
 
-var _socket_base = __webpack_require__(45);
+var _socket_base = __webpack_require__(53);
 
 var _socket_base2 = _interopRequireDefault(_socket_base);
 
@@ -3089,7 +3886,7 @@ var ResponseHandlers = function () {
 
 /***/ }),
 
-/***/ 371:
+/***/ 372:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3101,15 +3898,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _classnames = __webpack_require__(152);
+var _classnames = __webpack_require__(90);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactPerfectScrollbar = __webpack_require__(261);
+var _reactPerfectScrollbar = __webpack_require__(262);
 
 var _reactPerfectScrollbar2 = _interopRequireDefault(_reactPerfectScrollbar);
 
@@ -3121,7 +3918,7 @@ var _gtm = __webpack_require__(59);
 
 var _gtm2 = _interopRequireDefault(_gtm);
 
-var _socket_cache = __webpack_require__(46);
+var _socket_cache = __webpack_require__(45);
 
 var _socket_cache2 = _interopRequireDefault(_socket_cache);
 
@@ -3279,7 +4076,70 @@ exports.default = AccountSwitcher;
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Arrowhead = function Arrowhead(_ref) {
+    var className = _ref.className;
+    return _react2.default.createElement(
+        'svg',
+        { className: className, width: '16', height: '16', xmlns: 'http://www.w3.org/2000/svg' },
+        _react2.default.createElement('path', { className: 'arrow-path', d: 'M13.164 5.13a.5.5 0 1 1 .672.74l-5.5 5a.5.5 0 0 1-.672 0l-5.5-5a.5.5 0 0 1 .672-.74L8 9.824l5.164-4.694z', fill: '#D2D3DA', fillRule: 'nonzero' })
+    );
+};
+
+exports.default = Arrowhead;
+
+/***/ }),
+
+/***/ 374:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CardList = function CardList(_ref) {
+    var data_source = _ref.data_source,
+        Card = _ref.Card;
+    return _react2.default.createElement(
+        'div',
+        { className: 'card-list' },
+        data_source.map(function (transaction, id) {
+            return _react2.default.createElement(Card, _extends({ className: 'card-list__card' }, transaction, { key: id }));
+        })
+    );
+};
+
+exports.default = CardList;
+
+/***/ }),
+
+/***/ 375:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3291,9 +4151,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _classnames = __webpack_require__(90);
+
+var _classnames2 = _interopRequireDefault(_classnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3303,195 +4167,24 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var Pagination = function Pagination(_ref) {
-    var page = _ref.page,
-        total = _ref.total,
-        page_size = _ref.page_size,
-        onChange = _ref.onChange;
-
-    var handleChange = function handleChange(new_page) {
-        if (new_page === page) return;
-        onChange(new_page, calcPagesCount());
-    };
-
-    var calcPagesCount = function calcPagesCount() {
-        return Math.ceil(total / page_size);
-    };
-
-    var handleNext = function handleNext() {
-        if (page < calcPagesCount()) {
-            handleChange(page + 1);
-        }
-    };
-
-    var handlePrev = function handlePrev() {
-        if (page > 1) {
-            handleChange(page - 1);
-        }
-    };
-
-    var renderEllipsis = function renderEllipsis(id) {
-        return _react2.default.createElement('li', { className: 'pagination-item pagination-ellipsis', key: 'ellipsis-' + id });
-    };
-
-    var renderItem = function renderItem(page_num) {
-        return _react2.default.createElement(
-            'li',
-            {
-                className: 'pagination-item ' + (page_num === page ? 'pagination-item-active' : ''),
-                key: page_num,
-                onClick: function onClick() {
-                    handleChange(page_num);
-                }
-            },
-            _react2.default.createElement(
-                'a',
-                null,
-                page_num
-            )
-        );
-    };
-
-    var renderItemRange = function renderItemRange(first, last) {
-        var items = [];
-
-        for (var page_num = first; page_num <= last; page_num++) {
-            items.push(renderItem(page_num));
-        }
-        return items;
-    };
-
-    var renderItems = function renderItems() {
-        var pages_count = calcPagesCount();
-
-        if (pages_count <= 6) {
-            return renderItemRange(1, pages_count);
-        } else if (page <= 4) {
-            return [].concat(_toConsumableArray(renderItemRange(1, 5)), [renderEllipsis(2)]);
-        } else if (pages_count - page < 3) {
-            return [renderItem(1), renderEllipsis(1)].concat(_toConsumableArray(renderItemRange(pages_count - 3, pages_count)));
-        }
-        // else
-        return [renderItem(1), renderEllipsis(1)].concat(_toConsumableArray(renderItemRange(page - 1, page + 1)), [renderEllipsis(2)]);
-    };
-
-    return _react2.default.createElement(
-        'ul',
-        { className: 'pagination' },
-        _react2.default.createElement(
-            'li',
-            {
-                className: 'pagination-prev ' + (page === 1 ? 'pagination-disabled' : ''),
-                onClick: handlePrev
-            },
-            _react2.default.createElement(
-                'a',
-                null,
-                '<'
-            )
-        ),
-        renderItems(),
-        _react2.default.createElement(
-            'li',
-            {
-                className: 'pagination-next ' + (page === calcPagesCount() ? 'pagination-disabled' : ''),
-                onClick: handleNext
-            },
-            _react2.default.createElement(
-                'a',
-                null,
-                '>'
-            )
-        )
-    );
-};
-
-Pagination.defaultProps = {
-    page: 1
-};
-
 /* TODO:
-      1. to implement sorting by column (ASC/DESC)
-      2. to implement filtering per column
-      3. to make pagination more customisable
+      1. implement sorting by column (ASC/DESC)
+      2. implement filtering per column
 */
 
 var DataTable = function (_React$Component) {
     _inherits(DataTable, _React$Component);
 
-    function DataTable(props) {
+    function DataTable() {
         _classCallCheck(this, DataTable);
 
-        var _this = _possibleConstructorReturn(this, (DataTable.__proto__ || Object.getPrototypeOf(DataTable)).call(this, props));
-
-        var data_source = props.data_source,
-            pagination = props.pagination,
-            page_size = props.page_size;
-
-
-        _this.handlePageChange = _this.handlePageChange.bind(_this);
-        _this.renderPagination = _this.renderPagination.bind(_this);
-        _this.handlePageChange = _this.handlePageChange.bind(_this);
-        _this.updateDisplayData = _this.updateDisplayData.bind(_this);
-
-        _this.state = {
-            display_data: pagination ? data_source.slice(0, page_size) : data_source,
-            page: 1
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (DataTable.__proto__ || Object.getPrototypeOf(DataTable)).apply(this, arguments));
     }
 
     _createClass(DataTable, [{
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(nextProps) {
-            this.updateDisplayData(nextProps.data_source, this.state.page, nextProps.page_size);
-        }
-    }, {
-        key: 'updateDisplayData',
-        value: function updateDisplayData(data_source, page, page_size) {
-            var start_id = (page - 1) * page_size;
-            var end_id = start_id + page_size;
-
-            this.setState({
-                page: page,
-                display_data: data_source.slice(start_id, end_id)
-            });
-        }
-    }, {
-        key: 'handlePageChange',
-        value: function handlePageChange(page, pages_count) {
-            this.updateDisplayData(this.props.data_source, page, this.props.page_size);
-
-            if (!pages_count) return;
-
-            var _props = this.props,
-                pages_close_to_end = _props.pages_close_to_end,
-                onCloseToEnd = _props.onCloseToEnd;
-
-            var pagesLeft = pages_count - page;
-            if (pagesLeft <= pages_close_to_end) {
-                onCloseToEnd();
-            }
-        }
-    }, {
-        key: 'renderPagination',
-        value: function renderPagination() {
-            return _react2.default.createElement(
-                'div',
-                { className: 'table-pagination' },
-                _react2.default.createElement(Pagination, {
-                    page: this.state.page,
-                    total: this.props.data_source.length,
-                    page_size: this.props.page_size,
-                    onChange: this.handlePageChange
-                })
-            );
-        }
-    }, {
         key: 'renderRow',
         value: function renderRow(transaction, id) {
+            if (!transaction) return null;
             var defaultRenderCell = function defaultRenderCell(data, data_index) {
                 return _react2.default.createElement(
                     'td',
@@ -3503,10 +4196,12 @@ var DataTable = function (_React$Component) {
             return _react2.default.createElement(
                 'tr',
                 { className: 'table-row', key: id },
-                this.props.columns.map(function (_ref2) {
-                    var data_index = _ref2.data_index,
-                        renderCell = _ref2.renderCell;
-                    return (renderCell || defaultRenderCell)(transaction[data_index], data_index, transaction);
+                this.props.columns.map(function (_ref) {
+                    var data_index = _ref.data_index,
+                        renderCell = _ref.renderCell;
+
+                    var data = transaction[data_index] || '';
+                    return (renderCell || defaultRenderCell)(data, data_index, transaction);
                 })
             );
         }
@@ -3515,7 +4210,7 @@ var DataTable = function (_React$Component) {
         value: function renderBodyRows() {
             var _this2 = this;
 
-            return this.state.display_data.map(function (transaction, id) {
+            return this.props.data_source.map(function (transaction, id) {
                 return _this2.renderRow(transaction, id);
             });
         }
@@ -3525,39 +4220,72 @@ var DataTable = function (_React$Component) {
             return this.props.columns.map(function (col) {
                 return _react2.default.createElement(
                     'th',
-                    { key: col.data_index },
+                    { className: col.data_index, key: col.data_index },
                     col.title
                 );
             });
         }
     }, {
+        key: 'renderTableClone',
+        value: function renderTableClone() {
+            /*
+                cloned table with one row for fixed header
+                inspired by
+                https://stackoverflow.com/questions/4709390
+            */
+            return _react2.default.createElement(
+                'table',
+                { className: (0, _classnames2.default)('table', 'table-clone', { 'table--full-width': this.props.is_full_width }) },
+                _react2.default.createElement(
+                    'thead',
+                    { className: 'table-head' },
+                    _react2.default.createElement(
+                        'tr',
+                        { className: 'table-row' },
+                        this.renderHeaders()
+                    )
+                ),
+                _react2.default.createElement(
+                    'tbody',
+                    { className: 'table-body' },
+                    this.renderRow(this.props.data_source[0], 0)
+                )
+            );
+        }
+    }, {
         key: 'render',
         value: function render() {
-            var pagination = this.props.pagination;
-
-
+            var table_class = (0, _classnames2.default)('table', {
+                'table--full-width': this.props.is_full_width,
+                'table--fixed-header': this.props.has_fixed_header
+            });
             return _react2.default.createElement(
                 'div',
                 { className: 'table-container' },
+                this.props.has_fixed_header && this.renderTableClone(),
                 _react2.default.createElement(
                     'table',
-                    { className: 'table' },
+                    { className: table_class },
                     _react2.default.createElement(
                         'thead',
-                        { className: 'table-thead' },
+                        { className: 'table-head' },
                         _react2.default.createElement(
                             'tr',
                             { className: 'table-row' },
                             this.renderHeaders()
                         )
                     ),
+                    this.props.footer && _react2.default.createElement(
+                        'tfoot',
+                        { className: 'table-foot' },
+                        this.renderRow(this.props.footer, 0)
+                    ),
                     _react2.default.createElement(
                         'tbody',
-                        { className: 'table-tbody' },
+                        { className: 'table-body' },
                         this.renderBodyRows()
                     )
-                ),
-                pagination && this.renderPagination()
+                )
             );
         }
     }]);
@@ -3565,17 +4293,11 @@ var DataTable = function (_React$Component) {
     return DataTable;
 }(_react2.default.Component);
 
-DataTable.defaultProps = {
-    pagination: true,
-    page_size: 10,
-    pages_close_to_end: 5
-};
-
 exports.default = DataTable;
 
 /***/ }),
 
-/***/ 373:
+/***/ 376:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3583,17 +4305,17 @@ exports.default = DataTable;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _classnames = __webpack_require__(152);
+var _classnames = __webpack_require__(90);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _routes = __webpack_require__(114);
+var _routes = __webpack_require__(115);
 
-var _url = __webpack_require__(8);
+var _url = __webpack_require__(9);
 
 var _url2 = _interopRequireDefault(_url);
 
@@ -3918,7 +4640,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 374:
+/***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3930,7 +4652,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -4051,7 +4773,7 @@ exports.default = LanguageSwitcher;
 
 /***/ }),
 
-/***/ 375:
+/***/ 378:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4063,7 +4785,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -4135,7 +4857,7 @@ exports.default = Popover;
 
 /***/ }),
 
-/***/ 376:
+/***/ 379:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4143,11 +4865,11 @@ exports.default = Popover;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _moment = __webpack_require__(7);
+var _moment = __webpack_require__(8);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -4297,7 +5019,52 @@ module.exports = PortfolioDrawer;
 
 /***/ }),
 
-/***/ 377:
+/***/ 38:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Client = __webpack_require__(23);
+var getLanguage = __webpack_require__(14).get;
+var isStorageSupported = __webpack_require__(5).isStorageSupported;
+var getAppId = __webpack_require__(33).getAppId;
+
+var Login = function () {
+    var redirectToLogin = function redirectToLogin() {
+        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
+            sessionStorage.setItem('redirect_url', window.location.href);
+            window.location.href = loginUrl();
+        }
+    };
+
+    var loginUrl = function loginUrl() {
+        var server_url = localStorage.getItem('config.server_url');
+        var language = getLanguage();
+        return server_url && /qa/.test(server_url) ? 'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language : 'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language;
+    };
+
+    var isLoginPages = function isLoginPages() {
+        return (/logged_inws|redirect/i.test(window.location.pathname)
+        );
+    };
+
+    var socialLoginUrl = function socialLoginUrl(brand) {
+        return loginUrl() + '&social_signup=' + brand;
+    };
+
+    return {
+        redirectToLogin: redirectToLogin,
+        isLoginPages: isLoginPages,
+        socialLoginUrl: socialLoginUrl
+    };
+}();
+
+module.exports = Login;
+
+/***/ }),
+
+/***/ 380:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4307,7 +5074,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -4329,701 +5096,7 @@ exports.default = Tooltip;
 
 /***/ }),
 
-/***/ 378:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _moment = __webpack_require__(7);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _react = __webpack_require__(9);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _localize = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Calendar = function (_React$Component) {
-    _inherits(Calendar, _React$Component);
-
-    function Calendar(props) {
-        _classCallCheck(this, Calendar);
-
-        var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props));
-
-        _this.getDays = _this.getDays.bind(_this);
-        _this.getDates = _this.getDates.bind(_this);
-        _this.getMonths = _this.getMonths.bind(_this);
-        _this.getYears = _this.getYears.bind(_this);
-        _this.getDecades = _this.getDecades.bind(_this);
-
-        _this.setToday = _this.setToday.bind(_this);
-        _this.setActiveView = _this.setActiveView.bind(_this);
-
-        _this.nextMonth = _this.nextMonth.bind(_this);
-        _this.previousMonth = _this.previousMonth.bind(_this);
-
-        _this.nextYear = _this.nextYear.bind(_this);
-        _this.previousYear = _this.previousYear.bind(_this);
-
-        _this.nextDecade = _this.nextDecade.bind(_this);
-        _this.previousDecade = _this.previousDecade.bind(_this);
-
-        _this.nextCentury = _this.nextCentury.bind(_this);
-        _this.previousCentury = _this.previousCentury.bind(_this);
-
-        _this.handleDateSelected = _this.handleDateSelected.bind(_this);
-        _this.handleMonthSelected = _this.handleMonthSelected.bind(_this);
-        _this.handleYearSelected = _this.handleYearSelected.bind(_this);
-        _this.handleDecadeSelected = _this.handleDecadeSelected.bind(_this);
-
-        _this.onChangeInput = _this.onChangeInput.bind(_this);
-        _this.resetCalendar = _this.resetCalendar.bind(_this);
-
-        var _props = _extends({}, props),
-            startDate = _props.startDate,
-            minDate = _props.minDate;
-
-        var current_date = (0, _moment2.default)(startDate || minDate).format(_this.props.dateFormat);
-
-        _this.state = {
-            date: current_date, // calendar dates reference
-            selected_date: current_date // selected date
-        };
-        return _this;
-    }
-
-    _createClass(Calendar, [{
-        key: 'componentWillMount',
-        value: function componentWillMount() {
-            this.setState({ active_view: 'date' });
-        }
-    }, {
-        key: 'shouldComponentUpdate',
-        value: function shouldComponentUpdate(nextProps, nextState) {
-            var should_update = this.state.active_view !== nextState.active_view || this.state.date !== nextState.date || this.state.selected_date !== nextState.selected_date;
-            return should_update || false;
-        }
-    }, {
-        key: 'setToday',
-        value: function setToday() {
-            var now = (0, _moment2.default)().format(this.props.dateFormat);
-            this.setState({
-                date: now,
-                selected_date: now,
-                active_view: 'date'
-            });
-            this.props.handleDateChange(now, true);
-        }
-    }, {
-        key: 'updateDate',
-        value: function updateDate(value, unit, is_add) {
-            this.setState({ date: (0, _moment2.default)(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat) });
-        }
-    }, {
-        key: 'nextMonth',
-        value: function nextMonth() {
-            this.updateDate(1, 'months', true);
-        }
-    }, {
-        key: 'previousMonth',
-        value: function previousMonth() {
-            this.updateDate(1, 'months', false);
-        }
-    }, {
-        key: 'nextYear',
-        value: function nextYear() {
-            this.updateDate(1, 'years', true);
-        }
-    }, {
-        key: 'previousYear',
-        value: function previousYear() {
-            this.updateDate(1, 'years', false);
-        }
-    }, {
-        key: 'nextDecade',
-        value: function nextDecade() {
-            this.updateDate(10, 'years', true);
-        }
-    }, {
-        key: 'previousDecade',
-        value: function previousDecade() {
-            this.updateDate(10, 'years', false);
-        }
-    }, {
-        key: 'nextCentury',
-        value: function nextCentury() {
-            this.updateDate(100, 'years', true);
-        }
-    }, {
-        key: 'previousCentury',
-        value: function previousCentury() {
-            this.updateDate(100, 'years', false);
-        }
-    }, {
-        key: 'setActiveView',
-        value: function setActiveView(active_view) {
-            this.setState({ active_view: active_view });
-        }
-    }, {
-        key: 'handleDateSelected',
-        value: function handleDateSelected(e) {
-            var current_date = (0, _moment2.default)(this.state.date);
-            var date = (0, _moment2.default)(e.target.dataset.date);
-            var min_date = (0, _moment2.default)(this.props.minDate).format(this.props.dateFormat);
-            var max_date = (0, _moment2.default)(this.props.maxDate).format(this.props.dateFormat);
-
-            var is_before = date.isBefore(min_date);
-            var is_today = date.isSame(min_date);
-            var is_after = date.isAfter(max_date);
-            var is_prev_month = date.month() < current_date.month();
-            var is_next_month = date.month() > current_date.month();
-
-            if (is_prev_month && !is_before) {
-                this.previousMonth();
-            }
-            if (is_next_month) {
-                this.nextMonth();
-            }
-
-            if (!is_before && !is_after || is_today) {
-                var formatted_date = date.format(this.props.dateFormat);
-                this.setState({
-                    date: formatted_date,
-                    selected_date: formatted_date
-                });
-                this.props.handleDateChange(formatted_date);
-            }
-        }
-    }, {
-        key: 'updateSelected',
-        value: function updateSelected(e, type) {
-            var active_view = {
-                month: 'date',
-                year: 'month',
-                decade: 'year'
-            };
-            var date = (0, _moment2.default)(this.state.date)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
-            this.setState({
-                date: date,
-                selected_date: date,
-                active_view: active_view[type]
-            });
-            this.props.handleDateChange(date, true);
-        }
-    }, {
-        key: 'handleMonthSelected',
-        value: function handleMonthSelected(e) {
-            this.updateSelected(e, 'month');
-        }
-    }, {
-        key: 'handleYearSelected',
-        value: function handleYearSelected(e) {
-            this.updateSelected(e, 'year');
-        }
-    }, {
-        key: 'handleDecadeSelected',
-        value: function handleDecadeSelected(e) {
-            this.updateSelected(e, 'decade');
-        }
-    }, {
-        key: 'onChangeInput',
-        value: function onChangeInput(e) {
-            var value = e.target.value;
-
-            if (this.props.mode === 'duration' && value) {
-                value = (0, _moment2.default)().add(value || 1, 'days');
-            }
-
-            this.setState({ selected_date: value }); // update calendar input
-
-            if ((0, _moment2.default)(value, 'YYYY-MM-DD', true).isValid() || !value) {
-                this.props.handleDateChange(value, true);
-
-                if (!value) {
-                    var _props2 = _extends({}, this.props),
-                        startDate = _props2.startDate,
-                        minDate = _props2.minDate;
-
-                    var currentDate = (0, _moment2.default)(startDate || minDate).format(this.props.dateFormat);
-                    this.setState({ date: currentDate });
-                } else {
-                    this.setState({ date: (0, _moment2.default)(value).format(this.props.dateFormat) }); // update calendar dates
-                }
-            }
-        }
-    }, {
-        key: 'resetCalendar',
-        value: function resetCalendar() {
-            var date = (0, _moment2.default)(this.props.minDate).format(this.props.dateFormat);
-            this.setState({
-                date: date,
-                selected_date: ''
-            });
-        }
-    }, {
-        key: 'getDays',
-        value: function getDays() {
-            var _this2 = this;
-
-            var dates = [];
-            var days = [];
-            var num_of_days = (0, _moment2.default)(this.state.date).daysInMonth() + 1;
-            var start_of_month = (0, _moment2.default)(this.state.date).startOf('month').format(this.props.dateFormat);
-            var end_of_month = (0, _moment2.default)(this.state.date).endOf('month').format(this.props.dateFormat);
-            var first_day = (0, _moment2.default)(start_of_month).day();
-            var last_day = (0, _moment2.default)(end_of_month).day();
-
-            var pad = function pad(value) {
-                return ('0' + value).substr(-2);
-            }; // pad zero
-
-            for (var i = first_day; i > 0; i--) {
-                dates.push((0, _moment2.default)(start_of_month).subtract(i, 'day').format(this.props.dateFormat));
-            }
-            for (var idx = 1; idx < num_of_days; idx += 1) {
-                dates.push((0, _moment2.default)(this.state.date).format(this.props.dateFormat.replace('DD', pad(idx))));
-            }
-            for (var _i = 1; _i <= 6 - last_day; _i++) {
-                dates.push((0, _moment2.default)(end_of_month).add(_i, 'day').format(this.props.dateFormat));
-            }
-
-            dates.forEach(function (date) {
-                var is_disabled = (0, _moment2.default)(date).isBefore((0, _moment2.default)(start_of_month)) || (0, _moment2.default)(date).isAfter((0, _moment2.default)(end_of_month)) || (0, _moment2.default)(date).isBefore((0, _moment2.default)(_this2.props.minDate).subtract(1, 'day')) || (0, _moment2.default)(date).isAfter((0, _moment2.default)(_this2.props.maxDate));
-                var is_active = (0, _moment2.default)(date).isSame((0, _moment2.default)(_this2.state.date)) && _this2.state.selected_date;
-                var is_today = (0, _moment2.default)(date).isSame((0, _moment2.default)().utc(), 'day');
-
-                days.push(_react2.default.createElement(
-                    'span',
-                    {
-                        key: date,
-                        className: 'calendar-date' + (is_active ? ' active' : '') + (is_today ? ' today' : '') + (is_disabled ? ' disabled' : ''),
-                        onClick: _this2.handleDateSelected,
-                        'data-date': date
-                    },
-                    (0, _moment2.default)(date).date()
-                ));
-            });
-
-            return days;
-        }
-    }, {
-        key: 'getDates',
-        value: function getDates() {
-            var days = this.getDays().map(function (day) {
-                return day;
-            });
-            var week_headers = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'calendar-date-panel' },
-                week_headers.map(function (item, idx) {
-                    return _react2.default.createElement(
-                        'span',
-                        { key: idx, className: 'calendar-date-header' },
-                        (0, _localize.localize)(item)
-                    );
-                }),
-                days
-            );
-        }
-    }, {
-        key: 'getMonths',
-        value: function getMonths() {
-            var _this3 = this;
-
-            var is_active = (0, _moment2.default)(this.state.selected_date).month();
-            var month_headers = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            return _react2.default.createElement(
-                'div',
-                { className: 'calendar-month-panel' },
-                month_headers.map(function (item, idx) {
-                    return _react2.default.createElement(
-                        'span',
-                        {
-                            key: idx,
-                            className: 'calendar-month' + (idx === is_active ? ' active' : ''),
-                            onClick: _this3.handleMonthSelected,
-                            'data-month': idx
-                        },
-                        (0, _localize.localize)(item)
-                    );
-                })
-            );
-        }
-    }, {
-        key: 'getYears',
-        value: function getYears() {
-            var _this4 = this;
-
-            var is_active = (0, _moment2.default)(this.state.selected_date).year();
-            var current_year = (0, _moment2.default)(this.state.date).year();
-            var years = [];
-            for (var year = current_year - 1; year < current_year + 11; year++) {
-                years.push(year);
-            }
-            return _react2.default.createElement(
-                'div',
-                { className: 'calendar-year-panel' },
-                years.map(function (year, idx) {
-                    return _react2.default.createElement(
-                        'span',
-                        {
-                            key: idx,
-                            className: 'calendar-year' + (idx === 0 || idx === 11 ? ' disabled' : '') + (year === is_active ? ' active' : ''),
-                            onClick: _this4.handleYearSelected,
-                            'data-year': year
-                        },
-                        year
-                    );
-                })
-            );
-        }
-    }, {
-        key: 'getDecades',
-        value: function getDecades() {
-            var _this5 = this;
-
-            var is_active = (0, _moment2.default)(this.state.selected_date).year();
-            var current_year = (0, _moment2.default)(this.state.date).year();
-            var decades = [];
-            var min_year = current_year - 10;
-
-            for (var i = 0; i < 12; i++) {
-                var max_year = min_year + 9;
-                var range = min_year + '-' + max_year;
-                decades.push(range);
-                min_year = max_year + 1;
-            }
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'calendar-decade-panel' },
-                decades.map(function (range, idx) {
-                    return _react2.default.createElement(
-                        'span',
-                        {
-                            key: idx,
-                            className: 'calendar-decade' + (idx === 0 || idx === 11 ? ' disabled' : '') + (range.split('-')[0] === is_active ? 'active' : ''),
-                            onClick: _this5.handleDecadeSelected,
-                            'data-decade': range
-                        },
-                        range
-                    );
-                })
-            );
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this6 = this;
-
-            var view = this.state.active_view;
-
-            var is_date_view = view === 'date';
-            var is_month_view = view === 'month';
-            var is_year_view = view === 'year';
-            var is_decade_view = view === 'decade';
-
-            var BtnPrevMonth = is_date_view && _react2.default.createElement('span', { type: 'button', className: 'calendar-next-month-btn', onClick: this.nextMonth });
-            var BtnNextMonth = is_date_view && _react2.default.createElement('span', { type: 'button', className: 'calendar-prev-month-btn', onClick: this.previousMonth });
-
-            var BtnPrevYear = _react2.default.createElement('span', {
-                type: 'button',
-                className: 'calendar-prev-year-btn',
-                onClick: function onClick() {
-                    return (is_date_view || is_month_view) && _this6.previousYear() || is_year_view && _this6.previousDecade() || is_decade_view && _this6.previousCentury();
-                }
-            });
-
-            var BtnNextYear = _react2.default.createElement('span', {
-                type: 'button',
-                className: 'calendar-next-year-btn',
-                onClick: function onClick() {
-                    return (is_date_view || is_month_view) && _this6.nextYear() || is_year_view && _this6.nextDecade() || is_decade_view && _this6.nextCentury();
-                }
-            });
-
-            var SelectMonth = is_date_view && _react2.default.createElement(
-                'span',
-                { type: 'button', className: 'calendar-select-month-btn', onClick: function onClick() {
-                        return _this6.setActiveView('month');
-                    } },
-                (0, _moment2.default)(this.state.date).format('MMM')
-            );
-
-            var SelectYear = _react2.default.createElement(
-                'span',
-                {
-                    type: 'button',
-                    className: 'calendar-select-year-btn',
-                    onClick: function onClick() {
-                        return is_date_view || is_month_view ? _this6.setActiveView('year') : _this6.setActiveView('decade');
-                    }
-                },
-                (0, _moment2.default)(this.state.date).year(),
-                is_year_view && '-' + (0, _moment2.default)(this.state.date).add(9, 'years').year(),
-                is_decade_view && '-' + (0, _moment2.default)(this.state.date).add(99, 'years').year()
-            );
-
-            var PanelCalendar = is_date_view && this.getDates() || is_month_view && this.getMonths() || is_year_view && this.getYears() || is_decade_view && this.getDecades();
-
-            var value = this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date;
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'calendar' },
-                _react2.default.createElement('input', {
-                    type: 'text',
-                    placeholder: this.props.mode === 'duration' ? (0, _localize.localize)('Select a duration') : (0, _localize.localize)('Select date'),
-                    value: value,
-                    onChange: this.onChangeInput,
-                    className: 'calendar-input'
-                }),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'calendar-header' },
-                    BtnPrevYear,
-                    BtnPrevMonth,
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'calendar-select' },
-                        SelectMonth,
-                        SelectYear
-                    ),
-                    BtnNextMonth,
-                    BtnNextYear
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'calendar-panel' },
-                    PanelCalendar
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'calendar-footer' },
-                    this.props.footer && _react2.default.createElement(
-                        'span',
-                        { className: 'calendar-footer-extra' },
-                        this.props.footer
-                    ),
-                    this.props.showTodayBtn && _react2.default.createElement(
-                        'span',
-                        { className: 'calendar-footer-btn' },
-                        _react2.default.createElement(
-                            'a',
-                            { role: 'button', onClick: this.setToday },
-                            (0, _localize.localize)('Today')
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Calendar;
-}(_react2.default.Component);
-
-Calendar.defaultProps = {
-    dateFormat: 'YYYY-MM-DD',
-    minDate: (0, _moment2.default)().utc().subtract(120, 'y').format('YYYY-MM-DD'), // by default, minDate is set to 120 years before today
-    maxDate: (0, _moment2.default)().utc().add(120, 'y').format('YYYY-MM-DD') // by default, maxDate is set to 120 years after today
-};
-
-var getDayDifference = function getDayDifference(date) {
-    var diff = (0, _moment2.default)(date).diff((0, _moment2.default)().utc(), 'days');
-    return !date || diff < 0 ? '' : diff + 1;
-};
-
-var DatePicker = function (_React$PureComponent) {
-    _inherits(DatePicker, _React$PureComponent);
-
-    function DatePicker(props) {
-        _classCallCheck(this, DatePicker);
-
-        var _this7 = _possibleConstructorReturn(this, (DatePicker.__proto__ || Object.getPrototypeOf(DatePicker)).call(this, props));
-
-        _this7.clearDateInput = function () {
-            _this7.setState({ selected_date: '' });
-            _this7.calendar.resetCalendar();
-        };
-
-        _this7.getPickerValue = function () {
-            return _this7.props.mode === 'duration' ? getDayDifference(_this7.state.selected_date) : _this7.state.selected_date;
-        };
-
-        _this7.handleClickOutside = _this7.handleClickOutside.bind(_this7);
-        _this7.handleVisibility = _this7.handleVisibility.bind(_this7);
-        _this7.handleDateChange = _this7.handleDateChange.bind(_this7);
-        _this7.handleMouseEnter = _this7.handleMouseEnter.bind(_this7);
-        _this7.handleMouseLeave = _this7.handleMouseLeave.bind(_this7);
-
-        _this7.state = {
-            selected_date: (0, _moment2.default)(_this7.props.minDate).format(_this7.props.dateFormat),
-            is_calendar_visible: false,
-            is_close_btn_visible: false
-        };
-        return _this7;
-    }
-
-    _createClass(DatePicker, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.props.onChange({ target: { name: this.props.name, value: this.getPickerValue() } });
-        }
-    }, {
-        key: 'componentDidUpdate',
-        value: function componentDidUpdate() {
-            this.props.onChange({ target: { name: this.props.name, value: this.getPickerValue() } });
-        }
-    }, {
-        key: 'componentWillMount',
-        value: function componentWillMount() {
-            document.addEventListener('click', this.handleClickOutside, true);
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            document.removeEventListener('click', this.handleClickOutside, true);
-        }
-    }, {
-        key: 'handleClickOutside',
-        value: function handleClickOutside(e) {
-            if (!this.mainNode.contains(e.target) && this.state.is_calendar_visible) {
-                this.setState({ is_calendar_visible: false });
-            }
-        }
-    }, {
-        key: 'handleVisibility',
-        value: function handleVisibility() {
-            this.setState({
-                is_calendar_visible: !this.state.is_calendar_visible
-            });
-        }
-    }, {
-        key: 'handleMouseEnter',
-        value: function handleMouseEnter() {
-            if (this.getPickerValue()) {
-                this.setState({ is_close_btn_visible: true });
-            }
-        }
-    }, {
-        key: 'handleMouseLeave',
-        value: function handleMouseLeave() {
-            this.setState({ is_close_btn_visible: false });
-        }
-    }, {
-        key: 'handleDateChange',
-        value: function handleDateChange(selected_date, is_calendar_visible) {
-            var value = selected_date;
-            if (!(0, _moment2.default)(value).isValid) {
-                value = '';
-            }
-
-            this.setState({
-                selected_date: value,
-                is_calendar_visible: is_calendar_visible
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this8 = this;
-
-            var value = this.getPickerValue();
-            if (this.props.is_nativepicker) {
-                return _react2.default.createElement(
-                    'div',
-                    { ref: function ref(node) {
-                            _this8.mainNode = node;
-                        }, className: 'datepicker-container' },
-                    _react2.default.createElement('input', {
-                        id: this.props.id,
-                        name: this.props.name,
-                        type: 'date',
-                        value: value,
-                        onChange: function onChange(e) {
-                            _this8.handleDateChange(e.target.value);
-                        }
-                    })
-                );
-            }
-            return _react2.default.createElement(
-                'div',
-                { ref: function ref(node) {
-                        _this8.mainNode = node;
-                    }, className: 'datepicker-container' },
-                _react2.default.createElement(
-                    'div',
-                    {
-                        className: 'datepicker-display-wrapper',
-                        onMouseEnter: this.handleMouseEnter,
-                        onMouseLeave: this.handleMouseLeave
-                    },
-                    _react2.default.createElement('input', {
-                        id: this.props.id,
-                        name: this.props.name,
-                        className: 'datepicker-display',
-                        value: value,
-                        readOnly: true,
-                        placeholder: this.props.mode === 'duration' ? (0, _localize.localize)('Select a duration') : (0, _localize.localize)('Select date'),
-                        onClick: this.handleVisibility
-                    }),
-                    _react2.default.createElement('span', {
-                        className: 'picker-calendar-icon ' + (this.state.is_close_btn_visible ? '' : 'show'),
-                        onClick: this.handleVisibility
-                    }),
-                    _react2.default.createElement('span', {
-                        className: 'close-circle-icon ' + (this.state.is_close_btn_visible ? 'show' : ''),
-                        onClick: this.clearDateInput
-                    })
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'datepicker-calendar ' + (this.state.is_calendar_visible ? 'show' : '') },
-                    _react2.default.createElement(Calendar, _extends({
-                        ref: function ref(node) {
-                            _this8.calendar = node;
-                        },
-                        handleDateChange: this.handleDateChange
-                    }, this.props))
-                )
-            );
-        }
-    }]);
-
-    return DatePicker;
-}(_react2.default.PureComponent);
-
-DatePicker.defaultProps = {
-    dateFormat: 'YYYY-MM-DD',
-    mode: 'date'
-};
-
-exports.default = DatePicker;
-
-/***/ }),
-
-/***/ 379:
+/***/ 381:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5035,17 +5108,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _popover = __webpack_require__(375);
+var _popover = __webpack_require__(378);
 
 var _popover2 = _interopRequireDefault(_popover);
 
-var _routes = __webpack_require__(114);
+var _routes = __webpack_require__(115);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5201,52 +5274,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 38:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var Client = __webpack_require__(23);
-var getLanguage = __webpack_require__(14).get;
-var isStorageSupported = __webpack_require__(5).isStorageSupported;
-var getAppId = __webpack_require__(33).getAppId;
-
-var Login = function () {
-    var redirectToLogin = function redirectToLogin() {
-        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
-            sessionStorage.setItem('redirect_url', window.location.href);
-            window.location.href = loginUrl();
-        }
-    };
-
-    var loginUrl = function loginUrl() {
-        var server_url = localStorage.getItem('config.server_url');
-        var language = getLanguage();
-        return server_url && /qa/.test(server_url) ? 'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language : 'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language;
-    };
-
-    var isLoginPages = function isLoginPages() {
-        return (/logged_inws|redirect/i.test(window.location.pathname)
-        );
-    };
-
-    var socialLoginUrl = function socialLoginUrl(brand) {
-        return loginUrl() + '&social_signup=' + brand;
-    };
-
-    return {
-        redirectToLogin: redirectToLogin,
-        isLoginPages: isLoginPages,
-        socialLoginUrl: socialLoginUrl
-    };
-}();
-
-module.exports = Login;
-
-/***/ }),
-
-/***/ 380:
+/***/ 382:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5258,21 +5286,21 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactPerfectScrollbar = __webpack_require__(261);
+var _reactPerfectScrollbar = __webpack_require__(262);
 
 var _reactPerfectScrollbar2 = _interopRequireDefault(_reactPerfectScrollbar);
 
-var _account_switcher = __webpack_require__(371);
+var _account_switcher = __webpack_require__(372);
 
 var _account_switcher2 = _interopRequireDefault(_account_switcher);
 
-var _drawer = __webpack_require__(373);
+var _drawer = __webpack_require__(376);
 
-var _language_switcher = __webpack_require__(374);
+var _language_switcher = __webpack_require__(377);
 
 var _language_switcher2 = _interopRequireDefault(_language_switcher);
 
@@ -5280,23 +5308,23 @@ var _button = __webpack_require__(210);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _common = __webpack_require__(368);
+var _common = __webpack_require__(369);
 
-var _routes = __webpack_require__(114);
+var _routes = __webpack_require__(115);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 var _client_base = __webpack_require__(23);
 
 var _client_base2 = _interopRequireDefault(_client_base);
 
-var _currency_base = __webpack_require__(53);
+var _currency_base = __webpack_require__(52);
 
 var _login = __webpack_require__(38);
 
 var _localize = __webpack_require__(2);
 
-var _url = __webpack_require__(8);
+var _url = __webpack_require__(9);
 
 var _url2 = _interopRequireDefault(_url);
 
@@ -5486,7 +5514,7 @@ exports.default = Header;
 
 /***/ }),
 
-/***/ 381:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5498,7 +5526,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _socket_base = __webpack_require__(45);
+var _socket_base = __webpack_require__(53);
 
 var _socket_base2 = _interopRequireDefault(_socket_base);
 
@@ -5689,21 +5717,21 @@ exports.default = SubscriptionManager;
 
 /***/ }),
 
-/***/ 382:
+/***/ 384:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(134);
-
 __webpack_require__(135);
 
-var _app = __webpack_require__(275);
+__webpack_require__(136);
+
+var _app = __webpack_require__(276);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _check_new_release = __webpack_require__(106);
+var _check_new_release = __webpack_require__(107);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5719,7 +5747,7 @@ window.addEventListener('pageshow', function (e) {
 
 /***/ }),
 
-/***/ 383:
+/***/ 385:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5733,35 +5761,55 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _moment = __webpack_require__(7);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _data_table = __webpack_require__(372);
+var _moment = __webpack_require__(8);
 
-var _data_table2 = _interopRequireDefault(_data_table);
+var _moment2 = _interopRequireDefault(_moment);
+
+var _classnames = __webpack_require__(90);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _dao = __webpack_require__(89);
+
+var _dao2 = _interopRequireDefault(_dao);
+
+var _connect = __webpack_require__(31);
 
 var _client_base = __webpack_require__(23);
 
 var _client_base2 = _interopRequireDefault(_client_base);
 
-var _currency_base = __webpack_require__(53);
-
-var _socket_base = __webpack_require__(45);
-
-var _socket_base2 = _interopRequireDefault(_socket_base);
+var _currency_base = __webpack_require__(52);
 
 var _localize = __webpack_require__(2);
 
 var _string_util = __webpack_require__(18);
 
+var _card_list = __webpack_require__(374);
+
+var _card_list2 = _interopRequireDefault(_card_list);
+
+var _data_table = __webpack_require__(375);
+
+var _data_table2 = _interopRequireDefault(_data_table);
+
+var _date_picker = __webpack_require__(211);
+
+var _date_picker2 = _interopRequireDefault(_date_picker);
+
+var _loading = __webpack_require__(418);
+
+var _loading2 = _interopRequireDefault(_loading);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -5771,9 +5819,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 /* TODO:
       1. to separate logic from UI
-      2. to move socket calls to DAO
       3. to handle errors
-      4. display loading, render table only after data is available
 */
 var getStatementData = function getStatementData(statement, currency) {
     var date_obj = new Date(statement.transaction_time * 1000);
@@ -5788,7 +5834,7 @@ var getStatementData = function getStatementData(statement, currency) {
     return {
         action: (0, _localize.localize)((0, _string_util.toTitleCase)(statement.action_type)),
         date: date_str + '\n' + time_str,
-        ref: statement.transaction_id,
+        refid: statement.transaction_id,
         payout: isNaN(payout) ? '-' : (0, _currency_base.formatMoney)(currency, payout, should_exclude_currency),
         amount: isNaN(amount) ? '-' : (0, _currency_base.formatMoney)(currency, amount, should_exclude_currency),
         balance: isNaN(balance) ? '-' : (0, _currency_base.formatMoney)(currency, balance, should_exclude_currency),
@@ -5796,6 +5842,81 @@ var getStatementData = function getStatementData(statement, currency) {
         id: statement.contract_id,
         app_id: statement.app_id
     };
+};
+
+var StatementCard = function StatementCard(_ref) {
+    var date = _ref.date,
+        refid = _ref.refid,
+        desc = _ref.desc,
+        action = _ref.action,
+        amount = _ref.amount,
+        payout = _ref.payout,
+        balance = _ref.balance,
+        className = _ref.className;
+    return _react2.default.createElement(
+        'div',
+        { className: (0, _classnames2.default)('statement-card', className) },
+        _react2.default.createElement(
+            'div',
+            { className: 'statement-card__header' },
+            _react2.default.createElement(
+                'span',
+                { className: 'statement-card__date' },
+                date
+            ),
+            _react2.default.createElement(
+                'span',
+                { className: 'statement-card__refid' },
+                refid
+            )
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'statement-card__body' },
+            _react2.default.createElement(
+                'div',
+                { className: 'statement-card__desc' },
+                desc
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'statement-card__row' },
+                _react2.default.createElement(
+                    'div',
+                    { className: (0, _classnames2.default)('statement-card__cell statement-card__amount', {
+                            'statement-card__amount--buy': action === 'Buy',
+                            'statement-card__amount--sell': action === 'Sell',
+                            'statement-card__amount--deposit': action === 'Deposit',
+                            'statement-card__amount--withdrawal': action === 'Withdrawal'
+                        })
+                    },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'statement-card__cell-text' },
+                        amount
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'statement-card__cell statement-card__payout' },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'statement-card__cell-text' },
+                        payout
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'statement-card__cell statement-card__balance' },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'statement-card__cell-text' },
+                        balance
+                    )
+                )
+            )
+        )
+    );
 };
 
 var Statement = function (_React$PureComponent) {
@@ -5806,23 +5927,37 @@ var Statement = function (_React$PureComponent) {
 
         var _this = _possibleConstructorReturn(this, (Statement.__proto__ || Object.getPrototypeOf(Statement)).call(this, props));
 
-        _this.getNextBatch = _this.getNextBatch.bind(_this);
+        _this.handleScroll = _this.handleScroll.bind(_this);
+        _this.handleDateChange = _this.handleDateChange.bind(_this);
+        _this.loadNextChunk = _this.loadNextChunk.bind(_this);
+        _this.fetchNextBatch = _this.fetchNextBatch.bind(_this);
+        _this.reloadTable = _this.reloadTable.bind(_this);
 
         var columns = [{
             title: (0, _localize.localize)('Date'),
             data_index: 'date'
         }, {
             title: (0, _localize.localize)('Ref.'),
-            data_index: 'ref'
+            data_index: 'refid'
+            // TODO: add data balloon later
+            // renderCell: (data, data_index, transaction) => {
+            //     return (
+            //         <td key={data_index} className={data_index}>
+            //             <span
+            //                 data-balloon={transaction.app_id}
+            //             >{data}</span>
+            //         </td>
+            //     );
+            // },
         }, {
-            title: (0, _localize.localize)('Potential Payout'),
-            data_index: 'payout'
+            title: (0, _localize.localize)('Description'),
+            data_index: 'desc'
         }, {
             title: (0, _localize.localize)('Action'),
             data_index: 'action'
         }, {
-            title: (0, _localize.localize)('Description'),
-            data_index: 'desc'
+            title: (0, _localize.localize)('Potential Payout'),
+            data_index: 'payout'
         }, {
             title: (0, _localize.localize)('Credit/Debit'),
             data_index: 'amount',
@@ -5832,7 +5967,10 @@ var Statement = function (_React$PureComponent) {
                 };
                 return _react2.default.createElement(
                     'td',
-                    { className: data_index + ' ' + (parseStrNum(data) >= 0 ? 'profit' : 'loss'), key: data_index },
+                    {
+                        key: data_index,
+                        className: data_index + ' ' + (parseStrNum(data) >= 0 ? 'profit' : 'loss')
+                    },
                     data
                 );
             }
@@ -5844,7 +5982,11 @@ var Statement = function (_React$PureComponent) {
         _this.state = {
             columns: columns,
             data_source: [],
-            is_loaded_all: false
+            pending_request: false,
+            has_loaded_all: false,
+            chunks: 1,
+            date_from: '',
+            date_to: ''
         };
         return _this;
     }
@@ -5853,57 +5995,223 @@ var Statement = function (_React$PureComponent) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             // BinarySocket.send({ oauth_apps: 1 }).then((response) => {
-            //     console.log('oauth response', response);
+            //     this.oauth_apps = buildOauthApps(response);
+            //     console.log(this.oauth_apps);
             // });
-            this.getNextBatch();
+
+            this.fetchNextBatch();
+
+            window.addEventListener('scroll', this.handleScroll, false);
         }
     }, {
-        key: 'getNextBatch',
-        value: function getNextBatch() {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            window.removeEventListener('scroll', this.handleScroll, false);
+        }
+    }, {
+        key: 'handleScroll',
+        value: function handleScroll() {
+            var _document$scrollingEl = document.scrollingElement,
+                scrollTop = _document$scrollingEl.scrollTop,
+                scrollHeight = _document$scrollingEl.scrollHeight,
+                clientHeight = _document$scrollingEl.clientHeight;
+
+            var left_to_scroll = scrollHeight - (scrollTop + clientHeight);
+
+            if (left_to_scroll < 1000) {
+                this.loadNextChunk();
+            }
+        }
+    }, {
+        key: 'handleDateChange',
+        value: function handleDateChange(e) {
+            if (e.target.value !== this.state[e.target.name]) {
+                this.reloadTable();
+            }
+            this.setState(_defineProperty({}, e.target.name, e.target.value));
+        }
+    }, {
+        key: 'loadNextChunk',
+        value: function loadNextChunk() {
+            var chunk_size = this.props.chunk_size;
+            var _state = this.state,
+                chunks = _state.chunks,
+                data_source = _state.data_source;
+
+
+            if (data_source.length <= chunks * chunk_size) {
+                // all content is shown
+                return;
+            }
+
+            this.setState({ chunks: chunks + 1 });
+
+            if (data_source.length <= (chunks + 1) * chunk_size) {
+                // last chunk has been loaded
+                this.fetchNextBatch();
+            }
+        }
+    }, {
+        key: 'fetchNextBatch',
+        value: function fetchNextBatch() {
             var _this2 = this;
 
-            if (this.state.is_loaded_all) return;
+            if (this.state.has_loaded_all || this.state.pending_request) return;
 
-            var BATCH_SIZE = 200;
-            var req = {
-                statement: 1,
-                description: 1,
-                limit: BATCH_SIZE,
-                offset: this.state.data_source.length
-            };
+            this.setState({ pending_request: true });
 
             var currency = _client_base2.default.get('currency');
 
-            _socket_base2.default.send(req).then(function (response) {
+            var _state2 = this.state,
+                date_from = _state2.date_from,
+                date_to = _state2.date_to;
+
+
+            _dao2.default.getStatement(this.props.batch_size, this.state.data_source.length, _extends({}, date_from && { date_from: (0, _moment2.default)(date_from).unix() }, date_to && { date_to: (0, _moment2.default)(date_to).add(1, 'd').subtract(1, 's').unix() })).then(function (response) {
+                if (!_this2.el) return;
+
                 var formatted_transactions = response.statement.transactions.map(function (transaction) {
                     return getStatementData(transaction, currency);
                 });
 
                 _this2.setState({
                     data_source: [].concat(_toConsumableArray(_this2.state.data_source), _toConsumableArray(formatted_transactions)),
-                    is_loaded_all: formatted_transactions.length < BATCH_SIZE
+                    has_loaded_all: formatted_transactions.length < _this2.props.batch_size,
+                    pending_request: false
                 });
             });
         }
     }, {
+        key: 'reloadTable',
+        value: function reloadTable() {
+            this.setState({
+                data_source: [],
+                has_loaded_all: false,
+                pending_request: false,
+                chunks: 1
+            }, this.fetchNextBatch);
+        }
+    }, {
+        key: 'renderNoActivityMessage',
+        value: function renderNoActivityMessage() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'container' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'statement__no-activity-msg' },
+                    !this.state.date_from && !this.state.date_to ? (0, _localize.localize)('Your account has no trading activity.') : (0, _localize.localize)('Your account has no trading activity for the selected period.')
+                )
+            );
+        }
+    }, {
+        key: 'renderFilter',
+        value: function renderFilter(is_mobile) {
+            var moment_now = (0, _moment2.default)(this.props.server_time);
+            var today = moment_now.format('YYYY-MM-DD');
+            var filter_class = (0, _classnames2.default)('statement-filter', {
+                'mobile-only': is_mobile,
+                'desktop-only': !is_mobile
+            });
+
+            return _react2.default.createElement(
+                'div',
+                { className: filter_class },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'statement-filter__content container' },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'statement-filter__label' },
+                        (0, _localize.localize)('Filter by date:')
+                    ),
+                    _react2.default.createElement(_date_picker2.default, {
+                        name: 'date_from',
+                        initial_value: '',
+                        placeholder: (0, _localize.localize)('Start date'),
+                        startDate: this.state.date_to || today,
+                        maxDate: this.state.date_to || today,
+                        onChange: this.handleDateChange,
+                        is_nativepicker: is_mobile
+                    }),
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'statement-filter__dash' },
+                        '\u2014'
+                    ),
+                    _react2.default.createElement(_date_picker2.default, {
+                        name: 'date_to',
+                        initial_value: '',
+                        placeholder: (0, _localize.localize)('End date'),
+                        startDate: today,
+                        minDate: this.state.date_from,
+                        maxDate: today,
+                        showTodayBtn: true,
+                        onChange: this.handleDateChange,
+                        is_nativepicker: is_mobile
+                    })
+                )
+            );
+        }
+    }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_data_table2.default, _extends({}, this.props, {
-                data_source: this.state.data_source,
-                columns: this.state.columns,
-                onCloseToEnd: this.getNextBatch
-            }));
+            var _this3 = this;
+
+            var is_loading = this.state.pending_request && this.state.data_source.length === 0;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'statement', ref: function ref(el) {
+                        return _this3.el = el;
+                    } },
+                this.renderFilter(false),
+                this.renderFilter(true),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'statement__content' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'desktop-only' },
+                        _react2.default.createElement(_data_table2.default, {
+                            data_source: this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size),
+                            columns: this.state.columns,
+                            has_fixed_header: true,
+                            is_full_width: true
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'mobile-only' },
+                        _react2.default.createElement(_card_list2.default, {
+                            data_source: this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size),
+                            Card: StatementCard
+                        })
+                    ),
+                    is_loading && _react2.default.createElement(_loading2.default, null) || this.state.data_source.length === 0 && this.renderNoActivityMessage()
+                )
+            );
         }
     }]);
 
     return Statement;
 }(_react2.default.PureComponent);
 
-exports.default = Statement;
+Statement.defaultProps = {
+    chunk_size: 50, // display with chunks
+    batch_size: 200 // request with batches
+};
+
+exports.default = (0, _connect.connect)(function (_ref2) {
+    var trade = _ref2.trade;
+    return {
+        server_time: trade.server_time
+    };
+})(Statement);
 
 /***/ }),
 
-/***/ 384:
+/***/ 386:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5914,7 +6222,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.onChangeContractType = exports.onChangeContractTypeList = undefined;
 
-var _contract_type = __webpack_require__(98);
+var _contract_type = __webpack_require__(99);
 
 var _contract_type2 = _interopRequireDefault(_contract_type);
 
@@ -5935,7 +6243,7 @@ var onChangeContractType = exports.onChangeContractType = function onChangeContr
 
 /***/ }),
 
-/***/ 385:
+/***/ 387:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5946,11 +6254,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getCurrenciesAsync = undefined;
 
-var _dao = __webpack_require__(97);
+var _dao = __webpack_require__(89);
 
 var _dao2 = _interopRequireDefault(_dao);
 
-var _currency_base = __webpack_require__(53);
+var _currency_base = __webpack_require__(52);
 
 var _localize = __webpack_require__(2);
 
@@ -6007,7 +6315,7 @@ var getCurrenciesAsync = /*#__PURE__*/exports.getCurrenciesAsync = regeneratorRu
 
 /***/ }),
 
-/***/ 386:
+/***/ 388:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6020,11 +6328,11 @@ exports.onChangeExpiry = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _moment = __webpack_require__(7);
+var _moment = __webpack_require__(8);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _contract_type = __webpack_require__(98);
+var _contract_type = __webpack_require__(99);
 
 var _contract_type2 = _interopRequireDefault(_contract_type);
 
@@ -6058,7 +6366,7 @@ var onChangeExpiry = exports.onChangeExpiry = function onChangeExpiry(_ref) {
 
 /***/ }),
 
-/***/ 387:
+/***/ 389:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6136,7 +6444,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 388:
+/***/ 390:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6149,7 +6457,7 @@ exports.onChangeStartDate = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _contract_type = __webpack_require__(98);
+var _contract_type = __webpack_require__(99);
 
 var _contract_type2 = _interopRequireDefault(_contract_type);
 
@@ -6169,7 +6477,7 @@ var onChangeStartDate = exports.onChangeStartDate = function onChangeStartDate(_
 
 /***/ }),
 
-/***/ 389:
+/***/ 391:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6182,9 +6490,9 @@ exports.onChangeSymbolAsync = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _test = __webpack_require__(213);
+var _test = __webpack_require__(214);
 
-var _contract_type = __webpack_require__(98);
+var _contract_type = __webpack_require__(99);
 
 var _contract_type2 = _interopRequireDefault(_contract_type);
 
@@ -6228,7 +6536,7 @@ var onChangeSymbolAsync = /*#__PURE__*/exports.onChangeSymbolAsync = regenerator
 
 /***/ }),
 
-/***/ 390:
+/***/ 392:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6238,23 +6546,23 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _dropdown = __webpack_require__(113);
+var _dropdown = __webpack_require__(114);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _fieldset = __webpack_require__(96);
+var _fieldset = __webpack_require__(98);
 
 var _fieldset2 = _interopRequireDefault(_fieldset);
 
-var _input_field = __webpack_require__(151);
+var _input_field = __webpack_require__(152);
 
 var _input_field2 = _interopRequireDefault(_input_field);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 var _client_base = __webpack_require__(23);
 
@@ -6348,7 +6656,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 391:
+/***/ 393:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6358,19 +6666,19 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _fieldset = __webpack_require__(96);
+var _fieldset = __webpack_require__(98);
 
 var _fieldset2 = _interopRequireDefault(_fieldset);
 
-var _input_field = __webpack_require__(151);
+var _input_field = __webpack_require__(152);
 
 var _input_field2 = _interopRequireDefault(_input_field);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 var _localize = __webpack_require__(2);
 
@@ -6442,7 +6750,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 392:
+/***/ 394:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6454,15 +6762,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _contracts_popup = __webpack_require__(394);
+var _contracts_popup = __webpack_require__(396);
 
 var _contracts_popup2 = _interopRequireDefault(_contracts_popup);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6493,7 +6801,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 393:
+/***/ 395:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6503,35 +6811,35 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _moment = __webpack_require__(7);
+var _moment = __webpack_require__(8);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _date_picker = __webpack_require__(378);
+var _date_picker = __webpack_require__(211);
 
 var _date_picker2 = _interopRequireDefault(_date_picker);
 
-var _dropdown = __webpack_require__(113);
+var _dropdown = __webpack_require__(114);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _fieldset = __webpack_require__(96);
+var _fieldset = __webpack_require__(98);
 
 var _fieldset2 = _interopRequireDefault(_fieldset);
 
-var _input_field = __webpack_require__(151);
+var _input_field = __webpack_require__(152);
 
 var _input_field2 = _interopRequireDefault(_input_field);
 
-var _time_picker = __webpack_require__(211);
+var _time_picker = __webpack_require__(212);
 
 var _time_picker2 = _interopRequireDefault(_time_picker);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 var _localize = __webpack_require__(2);
 
@@ -6653,7 +6961,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 394:
+/***/ 396:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6665,11 +6973,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _fullscreen_dialog = __webpack_require__(214);
+var _fullscreen_dialog = __webpack_require__(215);
 
 var _fullscreen_dialog2 = _interopRequireDefault(_fullscreen_dialog);
 
@@ -6862,7 +7170,7 @@ exports.default = ContractsPopUp;
 
 /***/ }),
 
-/***/ 395:
+/***/ 397:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6874,11 +7182,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _fullscreen_dialog = __webpack_require__(214);
+var _fullscreen_dialog = __webpack_require__(215);
 
 var _fullscreen_dialog2 = _interopRequireDefault(_fullscreen_dialog);
 
@@ -6963,7 +7271,7 @@ exports.default = MobileWidget;
 
 /***/ }),
 
-/***/ 396:
+/***/ 398:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6973,19 +7281,19 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _dropdown = __webpack_require__(113);
+var _dropdown = __webpack_require__(114);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _fieldset = __webpack_require__(96);
+var _fieldset = __webpack_require__(98);
 
 var _fieldset2 = _interopRequireDefault(_fieldset);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 var _localize = __webpack_require__(2);
 
@@ -7041,7 +7349,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 397:
+/***/ 399:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7051,7 +7359,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -7059,7 +7367,7 @@ var _button = __webpack_require__(210);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 var _localize = __webpack_require__(2);
 
@@ -7091,7 +7399,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 398:
+/***/ 400:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7101,23 +7409,23 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _dropdown = __webpack_require__(113);
+var _dropdown = __webpack_require__(114);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _fieldset = __webpack_require__(96);
+var _fieldset = __webpack_require__(98);
 
 var _fieldset2 = _interopRequireDefault(_fieldset);
 
-var _time_picker = __webpack_require__(211);
+var _time_picker = __webpack_require__(212);
 
 var _time_picker2 = _interopRequireDefault(_time_picker);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 var _localize = __webpack_require__(2);
 
@@ -7185,7 +7493,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 399:
+/***/ 401:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7195,11 +7503,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7236,7 +7544,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 400:
+/***/ 402:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7250,11 +7558,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7297,7 +7605,7 @@ exports.default = (0, _connect.connect)(function (_ref4) {
 
 /***/ }),
 
-/***/ 401:
+/***/ 403:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7309,55 +7617,55 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _amount = __webpack_require__(390);
+var _amount = __webpack_require__(392);
 
 var _amount2 = _interopRequireDefault(_amount);
 
-var _barrier = __webpack_require__(391);
+var _barrier = __webpack_require__(393);
 
 var _barrier2 = _interopRequireDefault(_barrier);
 
-var _contract_type = __webpack_require__(392);
+var _contract_type = __webpack_require__(394);
 
 var _contract_type2 = _interopRequireDefault(_contract_type);
 
-var _duration = __webpack_require__(393);
+var _duration = __webpack_require__(395);
 
 var _duration2 = _interopRequireDefault(_duration);
 
-var _last_digit = __webpack_require__(396);
+var _last_digit = __webpack_require__(398);
 
 var _last_digit2 = _interopRequireDefault(_last_digit);
 
-var _purchase = __webpack_require__(397);
+var _purchase = __webpack_require__(399);
 
 var _purchase2 = _interopRequireDefault(_purchase);
 
-var _start_date = __webpack_require__(398);
+var _start_date = __webpack_require__(400);
 
 var _start_date2 = _interopRequireDefault(_start_date);
 
-var _symbol = __webpack_require__(399);
+var _symbol = __webpack_require__(401);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
-var _test = __webpack_require__(400);
+var _test = __webpack_require__(402);
 
 var _test2 = _interopRequireDefault(_test);
 
-var _mobile_widget = __webpack_require__(395);
+var _mobile_widget = __webpack_require__(397);
 
 var _mobile_widget2 = _interopRequireDefault(_mobile_widget);
 
-var _portfolio_drawer = __webpack_require__(376);
+var _portfolio_drawer = __webpack_require__(379);
 
 var _portfolio_drawer2 = _interopRequireDefault(_portfolio_drawer);
 
-var _connect = __webpack_require__(32);
+var _connect = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7471,7 +7779,7 @@ exports.default = (0, _connect.connect)(function (_ref3) {
 
 /***/ }),
 
-/***/ 402:
+/***/ 404:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7544,7 +7852,7 @@ exports.default = ClientStore;
 
 /***/ }),
 
-/***/ 403:
+/***/ 405:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7561,15 +7869,15 @@ var _dec, _dec2, _dec3, _desc, _value, _class, _descriptor, _descriptor2, _descr
 
 var _mobx = __webpack_require__(84);
 
-var _moment = __webpack_require__(7);
+var _moment = __webpack_require__(8);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _contract_type = __webpack_require__(98);
+var _contract_type = __webpack_require__(99);
 
 var _contract_type2 = _interopRequireDefault(_contract_type);
 
-var _index = __webpack_require__(212);
+var _index = __webpack_require__(213);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -7925,7 +8233,7 @@ exports.default = TradeStore;
 
 /***/ }),
 
-/***/ 404:
+/***/ 406:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8014,357 +8322,44 @@ exports.default = UIStore;
 
 /***/ }),
 
+/***/ 418:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Loading = function Loading(_ref) {
+    var theme = _ref.theme;
+    return _react2.default.createElement(
+        'div',
+        { className: 'barspinner ' + (theme || 'dark') },
+        Array.from(new Array(5)).map(function (x, inx) {
+            return _react2.default.createElement('div', { key: inx, className: 'rect' + (inx + 1) });
+        })
+    );
+};
+
+exports.default = Loading;
+
+/***/ }),
+
 /***/ 45:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ClientBase = __webpack_require__(23);
-var SocketCache = __webpack_require__(46);
-var getLanguage = __webpack_require__(14).get;
-var State = __webpack_require__(5).State;
-var cloneObject = __webpack_require__(1).cloneObject;
-var getPropertyValue = __webpack_require__(1).getPropertyValue;
-var isEmptyObject = __webpack_require__(1).isEmptyObject;
-var getAppId = __webpack_require__(33).getAppId;
-var getSocketURL = __webpack_require__(33).getSocketURL;
-
-/*
- * An abstraction layer over native javascript WebSocket,
- * which provides additional functionality like
- * reopen the closed connection and process the buffered requests
- */
-var BinarySocketBase = function () {
-    var binary_socket = void 0;
-
-    var config = {};
-    var buffered_sends = [];
-    var req_id = 0;
-    var wrong_app_id = 0;
-    var is_available = true;
-    var is_disconnect_called = false;
-
-    var socket_url = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
-    var timeouts = {};
-    var promises = {};
-
-    var no_duplicate_requests = ['authorize', 'get_settings', 'residence_list', 'landing_company', 'payout_currencies', 'asset_index'];
-
-    var sent_requests = {
-        items: [],
-        clear: function clear() {
-            sent_requests.items = [];
-        },
-        has: function has(msg_type) {
-            return sent_requests.items.indexOf(msg_type) >= 0;
-        },
-        add: function add(msg_type) {
-            if (!sent_requests.has(msg_type)) sent_requests.items.push(msg_type);
-        },
-        remove: function remove(msg_type) {
-            if (sent_requests.has(msg_type)) sent_requests.items.splice(sent_requests.items.indexOf(msg_type, 1));
-        }
-    };
-
-    var waiting_list = {
-        items: {},
-        add: function add(msg_type, promise_obj) {
-            if (!waiting_list.items[msg_type]) {
-                waiting_list.items[msg_type] = [];
-            }
-            waiting_list.items[msg_type].push(promise_obj);
-        },
-        resolve: function resolve(response) {
-            var msg_type = response.msg_type;
-            var this_promises = waiting_list.items[msg_type];
-            if (this_promises && this_promises.length) {
-                this_promises.forEach(function (pr) {
-                    if (!waiting_list.another_exists(pr, msg_type)) {
-                        pr.resolve(response);
-                    }
-                });
-                waiting_list.items[msg_type] = [];
-            }
-        },
-        another_exists: function another_exists(pr, msg_type) {
-            return Object.keys(waiting_list.items).some(function (type) {
-                return type !== msg_type && waiting_list.items[type].indexOf(pr) !== -1;
-            });
-        }
-    };
-
-    var clearTimeouts = function clearTimeouts() {
-        Object.keys(timeouts).forEach(function (key) {
-            clearTimeout(timeouts[key]);
-            delete timeouts[key];
-        });
-    };
-
-    var isReady = function isReady() {
-        return hasReadyState(1);
-    };
-
-    var isClose = function isClose() {
-        return !binary_socket || hasReadyState(2, 3);
-    };
-
-    var hasReadyState = function hasReadyState() {
-        for (var _len = arguments.length, states = Array(_len), _key = 0; _key < _len; _key++) {
-            states[_key] = arguments[_key];
-        }
-
-        return binary_socket && states.some(function (s) {
-            return binary_socket.readyState === s;
-        });
-    };
-
-    var sendBufferedRequests = function sendBufferedRequests() {
-        while (buffered_sends.length > 0 && is_available) {
-            var req_obj = buffered_sends.shift();
-            send(req_obj.request, req_obj.options);
-        }
-    };
-
-    var wait = function wait() {
-        for (var _len2 = arguments.length, msg_types = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-            msg_types[_key2] = arguments[_key2];
-        }
-
-        var promise_obj = new PromiseClass();
-        var is_resolved = true;
-        msg_types.forEach(function (msg_type) {
-            var last_response = State.get(['response', msg_type]);
-            if (!last_response) {
-                if (msg_type !== 'authorize' || ClientBase.isLoggedIn()) {
-                    waiting_list.add(msg_type, promise_obj);
-                    is_resolved = false;
-                }
-            } else if (msg_types.length === 1) {
-                promise_obj.resolve(last_response);
-            }
-        });
-        if (is_resolved) {
-            promise_obj.resolve();
-        }
-        return promise_obj.promise;
-    };
-
-    /**
-     * @param {Object} data: request object
-     * @param {Object} options:
-     *      forced  : {boolean}  sends the request regardless the same msg_type has been sent before
-     *      msg_type: {string}   specify the type of request call
-     *      callback: {function} to call on response of streaming requests
-     */
-    var send = function send(data) {
-        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-        var promise_obj = options.promise || new PromiseClass();
-
-        if (!data || isEmptyObject(data)) return promise_obj.promise;
-
-        var msg_type = options.msg_type || no_duplicate_requests.find(function (c) {
-            return c in data;
-        });
-
-        // Fetch from cache
-        if (!options.forced) {
-            var response = SocketCache.get(data, msg_type);
-            if (response) {
-                State.set(['response', msg_type], cloneObject(response));
-                if (isReady() && is_available) {
-                    // make the request to keep the cache updated
-                    binary_socket.send(JSON.stringify(data));
-                }
-                promise_obj.resolve(response);
-                return promise_obj.promise;
-            }
-        }
-
-        // Fetch from state
-        if (!options.forced && msg_type && no_duplicate_requests.indexOf(msg_type) !== -1) {
-            var last_response = State.get(['response', msg_type]);
-            if (last_response) {
-                promise_obj.resolve(last_response);
-                return promise_obj.promise;
-            } else if (sent_requests.has(msg_type)) {
-                return wait(msg_type).then(function (response) {
-                    promise_obj.resolve(response);
-                    return promise_obj.promise;
-                });
-            }
-        }
-
-        if (!data.req_id) {
-            data.req_id = ++req_id;
-        }
-        promises[data.req_id] = {
-            callback: function callback(response) {
-                if (typeof options.callback === 'function') {
-                    options.callback(response);
-                } else {
-                    promise_obj.resolve(response);
-                }
-            },
-            subscribe: !!data.subscribe
-        };
-
-        if (isReady() && is_available && config.isOnline()) {
-            is_disconnect_called = false;
-            if (!getPropertyValue(data, 'passthrough') && !getPropertyValue(data, 'verify_email')) {
-                data.passthrough = {};
-            }
-
-            binary_socket.send(JSON.stringify(data));
-            config.wsEvent('send');
-            if (msg_type && !sent_requests.has(msg_type)) {
-                sent_requests.add(msg_type);
-            }
-        } else if (+data.time !== 1) {
-            // Do not buffer all time requests
-            buffered_sends.push({ request: data, options: Object.assign(options, { promise: promise_obj }) });
-        }
-
-        return promise_obj.promise;
-    };
-
-    var init = function init(options) {
-        if (wrong_app_id === getAppId()) {
-            return;
-        }
-        if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) === 'object' && config !== options) {
-            config = options;
-            buffered_sends = [];
-        }
-        clearTimeouts();
-        config.wsEvent('init');
-
-        if (isClose()) {
-            binary_socket = new WebSocket(socket_url);
-            State.set('response', {});
-        }
-
-        binary_socket.onopen = function () {
-            config.wsEvent('open');
-            if (ClientBase.isLoggedIn()) {
-                send({ authorize: ClientBase.get('token') }, { forced: true });
-            } else {
-                sendBufferedRequests();
-            }
-
-            if (typeof config.onOpen === 'function') {
-                config.onOpen(isReady());
-            }
-        };
-
-        binary_socket.onmessage = function (msg) {
-            config.wsEvent('message');
-            var response = msg.data ? JSON.parse(msg.data) : undefined;
-            if (response) {
-                SocketCache.set(response);
-                var msg_type = response.msg_type;
-
-                // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(msg_type)) {
-                    State.set(['response', msg_type], cloneObject(response));
-                }
-                // resolve the send promise
-                var this_req_id = response.req_id;
-                var pr = this_req_id ? promises[this_req_id] : null;
-                if (pr && typeof pr.callback === 'function') {
-                    pr.callback(response);
-                    if (!pr.subscribe) {
-                        delete promises[this_req_id];
-                    }
-                }
-                // resolve the wait promise
-                waiting_list.resolve(response);
-
-                if (getPropertyValue(response, ['error', 'code']) === 'InvalidAppID') {
-                    wrong_app_id = getAppId();
-                }
-
-                if (typeof config.onMessage === 'function') {
-                    config.onMessage(response);
-                }
-            }
-        };
-
-        binary_socket.onclose = function () {
-            sent_requests.clear();
-            clearTimeouts();
-            config.wsEvent('close');
-
-            if (wrong_app_id !== getAppId() && typeof config.onDisconnect === 'function' && !is_disconnect_called) {
-                config.onDisconnect();
-                is_disconnect_called = true;
-            }
-        };
-    };
-
-    var clear = function clear(msg_type) {
-        buffered_sends = [];
-        if (msg_type) {
-            State.set(['response', msg_type], undefined);
-            sent_requests.remove(msg_type);
-        }
-    };
-
-    var availability = function availability(status) {
-        if (typeof status !== 'undefined') {
-            is_available = !!status;
-        }
-        return is_available;
-    };
-
-    return {
-        init: init,
-        wait: wait,
-        send: send,
-        clear: clear,
-        clearTimeouts: clearTimeouts,
-        availability: availability,
-        hasReadyState: hasReadyState,
-        sendBuffered: sendBufferedRequests,
-        get: function get() {
-            return binary_socket;
-        },
-        setOnDisconnect: function setOnDisconnect(onDisconnect) {
-            config.onDisconnect = onDisconnect;
-        },
-        removeOnDisconnect: function removeOnDisconnect() {
-            delete config.onDisconnect;
-        }
-    };
-}();
-
-var PromiseClass = function PromiseClass() {
-    var _this = this;
-
-    _classCallCheck(this, PromiseClass);
-
-    this.promise = new Promise(function (resolve, reject) {
-        _this.reject = reject;
-        _this.resolve = resolve;
-    });
-};
-
-module.exports = BinarySocketBase;
-
-/***/ }),
-
-/***/ 46:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var moment = __webpack_require__(7);
+var moment = __webpack_require__(8);
 var LocalStore = __webpack_require__(5).LocalStore;
 var getPropertyValue = __webpack_require__(1).getPropertyValue;
 var getStaticHash = __webpack_require__(1).getStaticHash;
@@ -8745,7 +8740,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 53:
+/***/ 52:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8869,6 +8864,350 @@ module.exports = {
 
 /***/ }),
 
+/***/ 53:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ClientBase = __webpack_require__(23);
+var SocketCache = __webpack_require__(45);
+var getLanguage = __webpack_require__(14).get;
+var State = __webpack_require__(5).State;
+var cloneObject = __webpack_require__(1).cloneObject;
+var getPropertyValue = __webpack_require__(1).getPropertyValue;
+var isEmptyObject = __webpack_require__(1).isEmptyObject;
+var getAppId = __webpack_require__(33).getAppId;
+var getSocketURL = __webpack_require__(33).getSocketURL;
+
+/*
+ * An abstraction layer over native javascript WebSocket,
+ * which provides additional functionality like
+ * reopen the closed connection and process the buffered requests
+ */
+var BinarySocketBase = function () {
+    var binary_socket = void 0;
+
+    var config = {};
+    var buffered_sends = [];
+    var req_id = 0;
+    var wrong_app_id = 0;
+    var is_available = true;
+    var is_disconnect_called = false;
+
+    var socket_url = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    var timeouts = {};
+    var promises = {};
+
+    var no_duplicate_requests = ['authorize', 'get_settings', 'residence_list', 'landing_company', 'payout_currencies', 'asset_index'];
+
+    var sent_requests = {
+        items: [],
+        clear: function clear() {
+            sent_requests.items = [];
+        },
+        has: function has(msg_type) {
+            return sent_requests.items.indexOf(msg_type) >= 0;
+        },
+        add: function add(msg_type) {
+            if (!sent_requests.has(msg_type)) sent_requests.items.push(msg_type);
+        },
+        remove: function remove(msg_type) {
+            if (sent_requests.has(msg_type)) sent_requests.items.splice(sent_requests.items.indexOf(msg_type, 1));
+        }
+    };
+
+    var waiting_list = {
+        items: {},
+        add: function add(msg_type, promise_obj) {
+            if (!waiting_list.items[msg_type]) {
+                waiting_list.items[msg_type] = [];
+            }
+            waiting_list.items[msg_type].push(promise_obj);
+        },
+        resolve: function resolve(response) {
+            var msg_type = response.msg_type;
+            var this_promises = waiting_list.items[msg_type];
+            if (this_promises && this_promises.length) {
+                this_promises.forEach(function (pr) {
+                    if (!waiting_list.another_exists(pr, msg_type)) {
+                        pr.resolve(response);
+                    }
+                });
+                waiting_list.items[msg_type] = [];
+            }
+        },
+        another_exists: function another_exists(pr, msg_type) {
+            return Object.keys(waiting_list.items).some(function (type) {
+                return type !== msg_type && waiting_list.items[type].indexOf(pr) !== -1;
+            });
+        }
+    };
+
+    var clearTimeouts = function clearTimeouts() {
+        Object.keys(timeouts).forEach(function (key) {
+            clearTimeout(timeouts[key]);
+            delete timeouts[key];
+        });
+    };
+
+    var isReady = function isReady() {
+        return hasReadyState(1);
+    };
+
+    var isClose = function isClose() {
+        return !binary_socket || hasReadyState(2, 3);
+    };
+
+    var hasReadyState = function hasReadyState() {
+        for (var _len = arguments.length, states = Array(_len), _key = 0; _key < _len; _key++) {
+            states[_key] = arguments[_key];
+        }
+
+        return binary_socket && states.some(function (s) {
+            return binary_socket.readyState === s;
+        });
+    };
+
+    var sendBufferedRequests = function sendBufferedRequests() {
+        while (buffered_sends.length > 0 && is_available) {
+            var req_obj = buffered_sends.shift();
+            send(req_obj.request, req_obj.options);
+        }
+    };
+
+    var wait = function wait() {
+        for (var _len2 = arguments.length, msg_types = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            msg_types[_key2] = arguments[_key2];
+        }
+
+        var promise_obj = new PromiseClass();
+        var is_resolved = true;
+        msg_types.forEach(function (msg_type) {
+            var last_response = State.get(['response', msg_type]);
+            if (!last_response) {
+                if (msg_type !== 'authorize' || ClientBase.isLoggedIn()) {
+                    waiting_list.add(msg_type, promise_obj);
+                    is_resolved = false;
+                }
+            } else if (msg_types.length === 1) {
+                promise_obj.resolve(last_response);
+            }
+        });
+        if (is_resolved) {
+            promise_obj.resolve();
+        }
+        return promise_obj.promise;
+    };
+
+    /**
+     * @param {Object} data: request object
+     * @param {Object} options:
+     *      forced  : {boolean}  sends the request regardless the same msg_type has been sent before
+     *      msg_type: {string}   specify the type of request call
+     *      callback: {function} to call on response of streaming requests
+     */
+    var send = function send(data) {
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+        var promise_obj = options.promise || new PromiseClass();
+
+        if (!data || isEmptyObject(data)) return promise_obj.promise;
+
+        var msg_type = options.msg_type || no_duplicate_requests.find(function (c) {
+            return c in data;
+        });
+
+        // Fetch from cache
+        if (!options.forced) {
+            var response = SocketCache.get(data, msg_type);
+            if (response) {
+                State.set(['response', msg_type], cloneObject(response));
+                if (isReady() && is_available) {
+                    // make the request to keep the cache updated
+                    binary_socket.send(JSON.stringify(data));
+                }
+                promise_obj.resolve(response);
+                return promise_obj.promise;
+            }
+        }
+
+        // Fetch from state
+        if (!options.forced && msg_type && no_duplicate_requests.indexOf(msg_type) !== -1) {
+            var last_response = State.get(['response', msg_type]);
+            if (last_response) {
+                promise_obj.resolve(last_response);
+                return promise_obj.promise;
+            } else if (sent_requests.has(msg_type)) {
+                return wait(msg_type).then(function (response) {
+                    promise_obj.resolve(response);
+                    return promise_obj.promise;
+                });
+            }
+        }
+
+        if (!data.req_id) {
+            data.req_id = ++req_id;
+        }
+        promises[data.req_id] = {
+            callback: function callback(response) {
+                if (typeof options.callback === 'function') {
+                    options.callback(response);
+                } else {
+                    promise_obj.resolve(response);
+                }
+            },
+            subscribe: !!data.subscribe
+        };
+
+        if (isReady() && is_available && config.isOnline()) {
+            is_disconnect_called = false;
+            if (!getPropertyValue(data, 'passthrough') && !getPropertyValue(data, 'verify_email')) {
+                data.passthrough = {};
+            }
+
+            binary_socket.send(JSON.stringify(data));
+            config.wsEvent('send');
+            if (msg_type && !sent_requests.has(msg_type)) {
+                sent_requests.add(msg_type);
+            }
+        } else if (+data.time !== 1) {
+            // Do not buffer all time requests
+            buffered_sends.push({ request: data, options: Object.assign(options, { promise: promise_obj }) });
+        }
+
+        return promise_obj.promise;
+    };
+
+    var init = function init(options) {
+        if (wrong_app_id === getAppId()) {
+            return;
+        }
+        if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) === 'object' && config !== options) {
+            config = options;
+            buffered_sends = [];
+        }
+        clearTimeouts();
+        config.wsEvent('init');
+
+        if (isClose()) {
+            binary_socket = new WebSocket(socket_url);
+            State.set('response', {});
+        }
+
+        binary_socket.onopen = function () {
+            config.wsEvent('open');
+            if (ClientBase.isLoggedIn()) {
+                send({ authorize: ClientBase.get('token') }, { forced: true });
+            } else {
+                sendBufferedRequests();
+            }
+
+            if (typeof config.onOpen === 'function') {
+                config.onOpen(isReady());
+            }
+        };
+
+        binary_socket.onmessage = function (msg) {
+            config.wsEvent('message');
+            var response = msg.data ? JSON.parse(msg.data) : undefined;
+            if (response) {
+                SocketCache.set(response);
+                var msg_type = response.msg_type;
+
+                // store in State
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(msg_type)) {
+                    State.set(['response', msg_type], cloneObject(response));
+                }
+                // resolve the send promise
+                var this_req_id = response.req_id;
+                var pr = this_req_id ? promises[this_req_id] : null;
+                if (pr && typeof pr.callback === 'function') {
+                    pr.callback(response);
+                    if (!pr.subscribe) {
+                        delete promises[this_req_id];
+                    }
+                }
+                // resolve the wait promise
+                waiting_list.resolve(response);
+
+                if (getPropertyValue(response, ['error', 'code']) === 'InvalidAppID') {
+                    wrong_app_id = getAppId();
+                }
+
+                if (typeof config.onMessage === 'function') {
+                    config.onMessage(response);
+                }
+            }
+        };
+
+        binary_socket.onclose = function () {
+            sent_requests.clear();
+            clearTimeouts();
+            config.wsEvent('close');
+
+            if (wrong_app_id !== getAppId() && typeof config.onDisconnect === 'function' && !is_disconnect_called) {
+                config.onDisconnect();
+                is_disconnect_called = true;
+            }
+        };
+    };
+
+    var clear = function clear(msg_type) {
+        buffered_sends = [];
+        if (msg_type) {
+            State.set(['response', msg_type], undefined);
+            sent_requests.remove(msg_type);
+        }
+    };
+
+    var availability = function availability(status) {
+        if (typeof status !== 'undefined') {
+            is_available = !!status;
+        }
+        return is_available;
+    };
+
+    return {
+        init: init,
+        wait: wait,
+        send: send,
+        clear: clear,
+        clearTimeouts: clearTimeouts,
+        availability: availability,
+        hasReadyState: hasReadyState,
+        sendBuffered: sendBufferedRequests,
+        get: function get() {
+            return binary_socket;
+        },
+        setOnDisconnect: function setOnDisconnect(onDisconnect) {
+            config.onDisconnect = onDisconnect;
+        },
+        removeOnDisconnect: function removeOnDisconnect() {
+            delete config.onDisconnect;
+        }
+    };
+}();
+
+var PromiseClass = function PromiseClass() {
+    var _this = this;
+
+    _classCallCheck(this, PromiseClass);
+
+    this.promise = new Promise(function (resolve, reject) {
+        _this.reject = reject;
+        _this.resolve = resolve;
+    });
+};
+
+module.exports = BinarySocketBase;
+
+/***/ }),
+
 /***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8878,10 +9217,10 @@ module.exports = {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var Cookies = __webpack_require__(44);
-var moment = __webpack_require__(7);
+var moment = __webpack_require__(8);
 var ClientBase = __webpack_require__(23);
 var Login = __webpack_require__(38);
-var BinarySocket = __webpack_require__(45);
+var BinarySocket = __webpack_require__(53);
 var getElementById = __webpack_require__(3).getElementById;
 var isVisible = __webpack_require__(3).isVisible;
 var getLanguage = __webpack_require__(14).get;
@@ -9056,7 +9395,126 @@ module.exports = GTM;
 
 /***/ }),
 
-/***/ 8:
+/***/ 89:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _socket_base = __webpack_require__(53);
+
+var _socket_base2 = _interopRequireDefault(_socket_base);
+
+var _subscription_manager = __webpack_require__(383);
+
+var _subscription_manager2 = _interopRequireDefault(_subscription_manager);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DAO = function () {
+    var getAccountStatus = function getAccountStatus() {
+        return _socket_base2.default.send({ get_account_status: 1 });
+    };
+
+    var getActiveSymbols = function getActiveSymbols() {
+        return _socket_base2.default.send({ active_symbols: 'brief' });
+    };
+
+    var getContractsFor = function getContractsFor(symbol) {
+        return _socket_base2.default.send({ contracts_for: symbol });
+    };
+
+    var getLandingCompany = function getLandingCompany(residence) {
+        return _socket_base2.default.send({ landing_company: residence });
+    };
+
+    var getMt5LoginList = function getMt5LoginList() {
+        return _socket_base2.default.send({ mt5_login_list: 1 });
+    };
+
+    var getPayoutCurrencies = function getPayoutCurrencies() {
+        return _socket_base2.default.send({ payout_currencies: 1 });
+    };
+
+    var getSelfExclusion = function getSelfExclusion() {
+        return _socket_base2.default.send({ get_self_exclusion: 1 });
+    };
+
+    var getSettings = function getSettings() {
+        return _socket_base2.default.send({ get_settings: 1 });
+    };
+
+    var getWebsiteStatus = function getWebsiteStatus() {
+        return _socket_base2.default.send({ website_status: 1 });
+    };
+
+    var sendLogout = function sendLogout() {
+        return _socket_base2.default.send({ logout: 1 });
+    };
+
+    var getStatement = function getStatement(limit, offset, date_boundaries) {
+        return _socket_base2.default.send(_extends({
+            statement: 1,
+            description: 1,
+            limit: limit,
+            offset: offset
+        }, date_boundaries));
+    };
+
+    // ----- Streaming calls -----
+    var subscribeBalance = function subscribeBalance(cb) {
+        return _subscription_manager2.default.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
+    };
+
+    var subscribeTicks = function subscribeTicks(symbol, cb, should_forget_first) {
+        return _subscription_manager2.default.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
+    };
+
+    var subscribeWebsiteStatus = function subscribeWebsiteStatus(cb) {
+        return _subscription_manager2.default.subscribe('website_status', { website_status: 1, subscribe: 1 }, cb);
+    };
+
+    var forget = function forget(msg_type, cb) {
+        return _subscription_manager2.default.forget(msg_type, cb);
+    };
+
+    var forgetAll = function forgetAll() {
+        return _subscription_manager2.default.forgetAll.apply(_subscription_manager2.default, arguments);
+    };
+
+    return {
+        getAccountStatus: getAccountStatus,
+        getActiveSymbols: getActiveSymbols,
+        getContractsFor: getContractsFor,
+        getLandingCompany: getLandingCompany,
+        getMt5LoginList: getMt5LoginList,
+        getPayoutCurrencies: getPayoutCurrencies,
+        getSelfExclusion: getSelfExclusion,
+        getSettings: getSettings,
+        getWebsiteStatus: getWebsiteStatus,
+        getStatement: getStatement,
+        sendLogout: sendLogout,
+
+        // streams
+        subscribeBalance: subscribeBalance,
+        subscribeTicks: subscribeTicks,
+        subscribeWebsiteStatus: subscribeWebsiteStatus,
+        forget: forget,
+        forgetAll: forgetAll
+    };
+}();
+
+exports.default = DAO;
+
+/***/ }),
+
+/***/ 9:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9066,7 +9524,7 @@ var urlForLanguage = __webpack_require__(14).urlFor;
 var urlLang = __webpack_require__(14).urlLang;
 var createElement = __webpack_require__(1).createElement;
 var isEmptyObject = __webpack_require__(1).isEmptyObject;
-__webpack_require__(268);
+__webpack_require__(269);
 
 var Url = function () {
     var location_url = void 0,
@@ -9198,7 +9656,7 @@ module.exports = Url;
 
 /***/ }),
 
-/***/ 96:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9210,19 +9668,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _classnames = __webpack_require__(152);
+var _classnames = __webpack_require__(90);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _moment = __webpack_require__(7);
+var _moment = __webpack_require__(8);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _tooltip = __webpack_require__(377);
+var _tooltip = __webpack_require__(380);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
@@ -9285,114 +9743,7 @@ exports.default = Fieldset;
 
 /***/ }),
 
-/***/ 97:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _socket_base = __webpack_require__(45);
-
-var _socket_base2 = _interopRequireDefault(_socket_base);
-
-var _subscription_manager = __webpack_require__(381);
-
-var _subscription_manager2 = _interopRequireDefault(_subscription_manager);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DAO = function () {
-    var getAccountStatus = function getAccountStatus() {
-        return _socket_base2.default.send({ get_account_status: 1 });
-    };
-
-    var getActiveSymbols = function getActiveSymbols() {
-        return _socket_base2.default.send({ active_symbols: 'brief' });
-    };
-
-    var getContractsFor = function getContractsFor(symbol) {
-        return _socket_base2.default.send({ contracts_for: symbol });
-    };
-
-    var getLandingCompany = function getLandingCompany(residence) {
-        return _socket_base2.default.send({ landing_company: residence });
-    };
-
-    var getMt5LoginList = function getMt5LoginList() {
-        return _socket_base2.default.send({ mt5_login_list: 1 });
-    };
-
-    var getPayoutCurrencies = function getPayoutCurrencies() {
-        return _socket_base2.default.send({ payout_currencies: 1 });
-    };
-
-    var getSelfExclusion = function getSelfExclusion() {
-        return _socket_base2.default.send({ get_self_exclusion: 1 });
-    };
-
-    var getSettings = function getSettings() {
-        return _socket_base2.default.send({ get_settings: 1 });
-    };
-
-    var getWebsiteStatus = function getWebsiteStatus() {
-        return _socket_base2.default.send({ website_status: 1 });
-    };
-
-    var sendLogout = function sendLogout() {
-        return _socket_base2.default.send({ logout: 1 });
-    };
-
-    // ----- Streaming calls -----
-    var subscribeBalance = function subscribeBalance(cb) {
-        return _subscription_manager2.default.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
-    };
-
-    var subscribeTicks = function subscribeTicks(symbol, cb, should_forget_first) {
-        return _subscription_manager2.default.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
-    };
-
-    var subscribeWebsiteStatus = function subscribeWebsiteStatus(cb) {
-        return _subscription_manager2.default.subscribe('website_status', { website_status: 1, subscribe: 1 }, cb);
-    };
-
-    var forget = function forget(msg_type, cb) {
-        return _subscription_manager2.default.forget(msg_type, cb);
-    };
-
-    var forgetAll = function forgetAll() {
-        return _subscription_manager2.default.forgetAll.apply(_subscription_manager2.default, arguments);
-    };
-
-    return {
-        getAccountStatus: getAccountStatus,
-        getActiveSymbols: getActiveSymbols,
-        getContractsFor: getContractsFor,
-        getLandingCompany: getLandingCompany,
-        getMt5LoginList: getMt5LoginList,
-        getPayoutCurrencies: getPayoutCurrencies,
-        getSelfExclusion: getSelfExclusion,
-        getSettings: getSettings,
-        getWebsiteStatus: getWebsiteStatus,
-        sendLogout: sendLogout,
-
-        // streams
-        subscribeBalance: subscribeBalance,
-        subscribeTicks: subscribeTicks,
-        subscribeWebsiteStatus: subscribeWebsiteStatus,
-        forget: forget,
-        forgetAll: forgetAll
-    };
-}();
-
-exports.default = DAO;
-
-/***/ }),
-
-/***/ 98:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9406,13 +9757,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _moment = __webpack_require__(7);
+var _moment = __webpack_require__(8);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _duration = __webpack_require__(387);
+var _duration = __webpack_require__(389);
 
-var _dao = __webpack_require__(97);
+var _dao = __webpack_require__(89);
 
 var _dao2 = _interopRequireDefault(_dao);
 
@@ -9737,5 +10088,5 @@ exports.default = ContractType;
 
 /***/ })
 
-},[382]);
+},[384]);
 //# sourceMappingURL=binary_app.js.map

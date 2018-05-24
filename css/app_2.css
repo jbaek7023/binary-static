@@ -20,24 +20,6 @@ body, input {
     .btn span {
       font-size: 16px; } }
 
-.datepicker-container .datepicker-display, .datepicker-container [class^='calendar-'] {
-  font-size: 14px; }
-  @media screen and (min-width: 320px) {
-    .datepicker-container .datepicker-display, .datepicker-container [class^='calendar-'] {
-      font-size: calc(0.1785714286vw + 13.4285714286px); } }
-  @media screen and (min-width: 1440px) {
-    .datepicker-container .datepicker-display, .datepicker-container [class^='calendar-'] {
-      font-size: 16px; } }
-
-.datepicker-container .calendar-decade {
-  font-size: 12px; }
-  @media screen and (min-width: 320px) {
-    .datepicker-container .calendar-decade {
-      font-size: calc(0.1785714286vw + 11.4285714286px); } }
-  @media screen and (min-width: 1440px) {
-    .datepicker-container .calendar-decade {
-      font-size: 14px; } }
-
 /* Multiple properties with same values */
 h1, h2, h3, h4, h5 {
   padding-top: 0rem;
@@ -66,8 +48,8 @@ select, input, textarea {
   font-weight: inherit;
   font-style: inherit;
   padding: 2px 3px;
-  border: 1px solid #f2f2f2;
-  border-radius: 3px; }
+  border: 1px solid #e9e9ed;
+  border-radius: 4px; }
 
 fieldset {
   border: 1px solid #f2f2f2;
@@ -90,6 +72,18 @@ fieldset {
 :-moz-placeholder {
   /* Firefox 18- */
   color: #ccc; }
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.hidden {
+  visibility: hidden !important;
+  -webkit-transition: none !important;
+  transition: none !important; }
 
 @font-face {
   font-family: 'BinarySymbols';
@@ -402,11 +396,13 @@ span.tooltip {
 
 @supports (display: grid) {
   #app_contents {
-    margin: 70px 0 40px; }
+    margin: 56px 0 40px;
+    overflow: auto; }
   /* trade-app layout */
   #trade_container {
     position: relative;
     margin: 0 15px;
+    padding-top: 14px;
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
     grid-template-rows: repeat(2, [row] auto);
@@ -497,11 +493,11 @@ span.tooltip {
 
 @media (max-width: 768px) {
   .desktop-only {
-    display: none; } }
+    display: none !important; } }
 
 @media (min-width: 769px) {
   .mobile-only {
-    display: none; } }
+    display: none !important; } }
 
 #trading_header {
   position: fixed;
@@ -1271,7 +1267,7 @@ hr {
     color: #000;
     background-color: #fff;
     background-image: none;
-    border: 1px solid #f2f2f2;
+    border: 1px solid #e9e9ed;
     border-radius: 4px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
@@ -1579,7 +1575,7 @@ div.dropdown-container {
   -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
           box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
   z-index: 999;
-  font-size: 1rem;
+  font-size: 14px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 280px; }
@@ -1593,13 +1589,13 @@ div.dropdown-container {
     outline: none;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 300;
     height: 34px;
     padding: 6px 10px;
     color: rgba(0, 0, 0, 0.65); }
   .calendar .calendar-footer {
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 300;
     border-top: 1px solid #e8e8e8;
     /* stylelint-disable-line color-no-hex */
@@ -1626,8 +1622,8 @@ div.dropdown-container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: 40px;
-    line-height: 40px;
+    height: 32px;
+    line-height: 32px;
     border-top: 1px solid #e8e8e8;
     /* stylelint-disable-line color-no-hex */
     border-bottom: 1px solid #e8e8e8;
@@ -1645,7 +1641,7 @@ div.dropdown-container {
       color: rgba(0, 0, 0, 0.45);
       padding: 0 5px;
       display: inline-block;
-      line-height: 40px;
+      line-height: 32px;
       cursor: pointer; }
       .calendar .calendar-header .calendar-prev-year-btn:hover, .calendar .calendar-header .calendar-next-year-btn:hover, .calendar .calendar-header .calendar-prev-month-btn:hover, .calendar .calendar-header .calendar-next-month-btn:hover {
         color: #4c5794;
@@ -1684,14 +1680,14 @@ div.dropdown-container {
       cursor: pointer;
       margin: 0 auto;
       border: 1px solid transparent;
-      border-radius: 3px;
+      border-radius: 4px;
       padding: 0;
       color: rgba(0, 0, 0, 0.65);
       text-align: center;
       background: transparent;
-      -webkit-transition: background 0.3s;
-      transition: background 0.3s;
-      font-size: 1rem;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      font-size: 14px;
       line-height: 24px; }
       .calendar .calendar-date-panel .calendar-date.calendar-date, .calendar .calendar-date-panel .calendar-month.calendar-date, .calendar .calendar-date-panel .calendar-year.calendar-date, .calendar .calendar-date-panel .calendar-decade.calendar-date, .calendar .calendar-month-panel .calendar-date.calendar-date, .calendar .calendar-month-panel .calendar-month.calendar-date, .calendar .calendar-month-panel .calendar-year.calendar-date, .calendar .calendar-month-panel .calendar-decade.calendar-date, .calendar .calendar-year-panel .calendar-date.calendar-date, .calendar .calendar-year-panel .calendar-month.calendar-date, .calendar .calendar-year-panel .calendar-year.calendar-date, .calendar .calendar-year-panel .calendar-decade.calendar-date, .calendar .calendar-decade-panel .calendar-date.calendar-date, .calendar .calendar-decade-panel .calendar-month.calendar-date, .calendar .calendar-decade-panel .calendar-year.calendar-date, .calendar .calendar-decade-panel .calendar-decade.calendar-date, .calendar .calendar-century-panel .calendar-date.calendar-date, .calendar .calendar-century-panel .calendar-month.calendar-date, .calendar .calendar-century-panel .calendar-year.calendar-date, .calendar .calendar-century-panel .calendar-decade.calendar-date {
         width: 24px; }
@@ -1700,10 +1696,6 @@ div.dropdown-container {
       .calendar .calendar-date-panel .calendar-date.calendar-decade, .calendar .calendar-date-panel .calendar-month.calendar-decade, .calendar .calendar-date-panel .calendar-year.calendar-decade, .calendar .calendar-date-panel .calendar-decade.calendar-decade, .calendar .calendar-month-panel .calendar-date.calendar-decade, .calendar .calendar-month-panel .calendar-month.calendar-decade, .calendar .calendar-month-panel .calendar-year.calendar-decade, .calendar .calendar-month-panel .calendar-decade.calendar-decade, .calendar .calendar-year-panel .calendar-date.calendar-decade, .calendar .calendar-year-panel .calendar-month.calendar-decade, .calendar .calendar-year-panel .calendar-year.calendar-decade, .calendar .calendar-year-panel .calendar-decade.calendar-decade, .calendar .calendar-decade-panel .calendar-date.calendar-decade, .calendar .calendar-decade-panel .calendar-month.calendar-decade, .calendar .calendar-decade-panel .calendar-year.calendar-decade, .calendar .calendar-decade-panel .calendar-decade.calendar-decade, .calendar .calendar-century-panel .calendar-date.calendar-decade, .calendar .calendar-century-panel .calendar-month.calendar-decade, .calendar .calendar-century-panel .calendar-year.calendar-decade, .calendar .calendar-century-panel .calendar-decade.calendar-decade {
         padding: 6px 4px;
         font-size: 14px; }
-      .calendar .calendar-date-panel .calendar-date:hover, .calendar .calendar-date-panel .calendar-month:hover, .calendar .calendar-date-panel .calendar-year:hover, .calendar .calendar-date-panel .calendar-decade:hover, .calendar .calendar-month-panel .calendar-date:hover, .calendar .calendar-month-panel .calendar-month:hover, .calendar .calendar-month-panel .calendar-year:hover, .calendar .calendar-month-panel .calendar-decade:hover, .calendar .calendar-year-panel .calendar-date:hover, .calendar .calendar-year-panel .calendar-month:hover, .calendar .calendar-year-panel .calendar-year:hover, .calendar .calendar-year-panel .calendar-decade:hover, .calendar .calendar-decade-panel .calendar-date:hover, .calendar .calendar-decade-panel .calendar-month:hover, .calendar .calendar-decade-panel .calendar-year:hover, .calendar .calendar-decade-panel .calendar-decade:hover, .calendar .calendar-century-panel .calendar-date:hover, .calendar .calendar-century-panel .calendar-month:hover, .calendar .calendar-century-panel .calendar-year:hover, .calendar .calendar-century-panel .calendar-decade:hover {
-        cursor: pointer;
-        background: #e9e9ed;
-        /* stylelint-disable-line color-no-hex */ }
       .calendar .calendar-date-panel .calendar-date-header, .calendar .calendar-date-panel .calendar-month-header, .calendar .calendar-date-panel .calendar-year-header, .calendar .calendar-date-panel .calendar-decade-header, .calendar .calendar-month-panel .calendar-date-header, .calendar .calendar-month-panel .calendar-month-header, .calendar .calendar-month-panel .calendar-year-header, .calendar .calendar-month-panel .calendar-decade-header, .calendar .calendar-year-panel .calendar-date-header, .calendar .calendar-year-panel .calendar-month-header, .calendar .calendar-year-panel .calendar-year-header, .calendar .calendar-year-panel .calendar-decade-header, .calendar .calendar-decade-panel .calendar-date-header, .calendar .calendar-decade-panel .calendar-month-header, .calendar .calendar-decade-panel .calendar-year-header, .calendar .calendar-decade-panel .calendar-decade-header, .calendar .calendar-century-panel .calendar-date-header, .calendar .calendar-century-panel .calendar-month-header, .calendar .calendar-century-panel .calendar-year-header, .calendar .calendar-century-panel .calendar-decade-header {
         line-height: 18px;
         width: 33px;
@@ -1716,27 +1708,32 @@ div.dropdown-container {
         background: #fff;
         border: 1px solid #2a3052; }
       .calendar .calendar-date-panel .calendar-date.active, .calendar .calendar-date-panel .calendar-month.active, .calendar .calendar-date-panel .calendar-year.active, .calendar .calendar-date-panel .calendar-decade.active, .calendar .calendar-month-panel .calendar-date.active, .calendar .calendar-month-panel .calendar-month.active, .calendar .calendar-month-panel .calendar-year.active, .calendar .calendar-month-panel .calendar-decade.active, .calendar .calendar-year-panel .calendar-date.active, .calendar .calendar-year-panel .calendar-month.active, .calendar .calendar-year-panel .calendar-year.active, .calendar .calendar-year-panel .calendar-decade.active, .calendar .calendar-decade-panel .calendar-date.active, .calendar .calendar-decade-panel .calendar-month.active, .calendar .calendar-decade-panel .calendar-year.active, .calendar .calendar-decade-panel .calendar-decade.active, .calendar .calendar-century-panel .calendar-date.active, .calendar .calendar-century-panel .calendar-month.active, .calendar .calendar-century-panel .calendar-year.active, .calendar .calendar-century-panel .calendar-decade.active {
-        background: #4c5794;
+        background: #4c5794 !important;
         /* stylelint-disable-line color-no-hex */
         color: #fff; }
       .calendar .calendar-date-panel .calendar-date.disabled, .calendar .calendar-date-panel .calendar-month.disabled, .calendar .calendar-date-panel .calendar-year.disabled, .calendar .calendar-date-panel .calendar-decade.disabled, .calendar .calendar-month-panel .calendar-date.disabled, .calendar .calendar-month-panel .calendar-month.disabled, .calendar .calendar-month-panel .calendar-year.disabled, .calendar .calendar-month-panel .calendar-decade.disabled, .calendar .calendar-year-panel .calendar-date.disabled, .calendar .calendar-year-panel .calendar-month.disabled, .calendar .calendar-year-panel .calendar-year.disabled, .calendar .calendar-year-panel .calendar-decade.disabled, .calendar .calendar-decade-panel .calendar-date.disabled, .calendar .calendar-decade-panel .calendar-month.disabled, .calendar .calendar-decade-panel .calendar-year.disabled, .calendar .calendar-decade-panel .calendar-decade.disabled, .calendar .calendar-century-panel .calendar-date.disabled, .calendar .calendar-century-panel .calendar-month.disabled, .calendar .calendar-century-panel .calendar-year.disabled, .calendar .calendar-century-panel .calendar-decade.disabled {
         background: #fff !important;
         color: #e9e9ed !important;
-        /* stylelint-disable-line color-no-hex */ }
+        cursor: default; }
+      .calendar .calendar-date-panel .calendar-date:hover, .calendar .calendar-date-panel .calendar-month:hover, .calendar .calendar-date-panel .calendar-year:hover, .calendar .calendar-date-panel .calendar-decade:hover, .calendar .calendar-month-panel .calendar-date:hover, .calendar .calendar-month-panel .calendar-month:hover, .calendar .calendar-month-panel .calendar-year:hover, .calendar .calendar-month-panel .calendar-decade:hover, .calendar .calendar-year-panel .calendar-date:hover, .calendar .calendar-year-panel .calendar-month:hover, .calendar .calendar-year-panel .calendar-year:hover, .calendar .calendar-year-panel .calendar-decade:hover, .calendar .calendar-decade-panel .calendar-date:hover, .calendar .calendar-decade-panel .calendar-month:hover, .calendar .calendar-decade-panel .calendar-year:hover, .calendar .calendar-decade-panel .calendar-decade:hover, .calendar .calendar-century-panel .calendar-date:hover, .calendar .calendar-century-panel .calendar-month:hover, .calendar .calendar-century-panel .calendar-year:hover, .calendar .calendar-century-panel .calendar-decade:hover {
+        background: #e9e9ed; }
+        .calendar .calendar-date-panel .calendar-date:hover:not(.disabled), .calendar .calendar-date-panel .calendar-month:hover:not(.disabled), .calendar .calendar-date-panel .calendar-year:hover:not(.disabled), .calendar .calendar-date-panel .calendar-decade:hover:not(.disabled), .calendar .calendar-month-panel .calendar-date:hover:not(.disabled), .calendar .calendar-month-panel .calendar-month:hover:not(.disabled), .calendar .calendar-month-panel .calendar-year:hover:not(.disabled), .calendar .calendar-month-panel .calendar-decade:hover:not(.disabled), .calendar .calendar-year-panel .calendar-date:hover:not(.disabled), .calendar .calendar-year-panel .calendar-month:hover:not(.disabled), .calendar .calendar-year-panel .calendar-year:hover:not(.disabled), .calendar .calendar-year-panel .calendar-decade:hover:not(.disabled), .calendar .calendar-decade-panel .calendar-date:hover:not(.disabled), .calendar .calendar-decade-panel .calendar-month:hover:not(.disabled), .calendar .calendar-decade-panel .calendar-year:hover:not(.disabled), .calendar .calendar-decade-panel .calendar-decade:hover:not(.disabled), .calendar .calendar-century-panel .calendar-date:hover:not(.disabled), .calendar .calendar-century-panel .calendar-month:hover:not(.disabled), .calendar .calendar-century-panel .calendar-year:hover:not(.disabled), .calendar .calendar-century-panel .calendar-decade:hover:not(.disabled) {
+          cursor: pointer; }
 
 div.datepicker-container {
   position: relative;
   margin: 8px 0; }
-  div.datepicker-container .datepicker-display-wrapper:hover .datepicker-display {
+  div.datepicker-container:hover .datepicker-display, div.datepicker-container .datepicker-display:focus {
     border-color: #2a3052; }
-  div.datepicker-container .datepicker-display {
+  div.datepicker-container .datepicker-display:focus + .datepicker-native-overlay .datepicker-native-overlay__arrowhead .arrow-path {
+    fill: #2a3052; }
+  div.datepicker-container .datepicker-display, div.datepicker-container .datepicker-native-overlay {
     background: #fff;
     height: 32px;
     cursor: pointer;
-    border: solid 1px #e9e9ed;
-    /* stylelint-disable-line color-no-hex */
+    border: 1px solid #e9e9ed;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 32px;
     vertical-align: middle;
     padding: 4px 11px;
@@ -1745,14 +1742,37 @@ div.datepicker-container {
     font-weight: 300;
     -webkit-transition: border 0.25s;
     transition: border 0.25s; }
+  div.datepicker-container .datepicker-native-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent;
+    background-clip: padding-box;
+    text-align: left; }
+    div.datepicker-container .datepicker-native-overlay__arrowhead {
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 8px; }
+      div.datepicker-container .datepicker-native-overlay__arrowhead .arrow-path {
+        fill: #e9e9ed; }
+  div.datepicker-container input[type=date] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+    div.datepicker-container input[type=date]:hover:not(:focus) {
+      border-color: #e9e9ed; }
+    div.datepicker-container input[type=date]::-webkit-date-and-time-value {
+      margin: 0; }
   div.datepicker-container .picker-calendar-icon, div.datepicker-container .close-circle-icon {
     position: absolute;
-    width: 14px;
-    height: 14px;
     right: 12px;
     top: 50%;
-    margin-top: -7px;
-    line-height: 14px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     -webkit-user-select: none;
@@ -1760,13 +1780,21 @@ div.datepicker-container {
         -ms-user-select: none;
             user-select: none;
     opacity: 0;
+    pointer-events: none;
     cursor: pointer; }
+    div.datepicker-container .picker-calendar-icon:before, div.datepicker-container .close-circle-icon:before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-size: 14px 14px; }
     div.datepicker-container .picker-calendar-icon.show, div.datepicker-container .close-circle-icon.show {
-      opacity: 1; }
+      opacity: 1;
+      pointer-events: auto; }
     div.datepicker-container .picker-calendar-icon.picker-calendar-icon:before, div.datepicker-container .close-circle-icon.picker-calendar-icon:before {
-      content: url("../images/trading_app/common/calendar.svg"); }
+      background-image: url("../images/trading_app/common/calendar.svg"); }
     div.datepicker-container .picker-calendar-icon.close-circle-icon:before, div.datepicker-container .close-circle-icon.close-circle-icon:before {
-      content: url("../images/trading_app/common/close_circle.svg"); }
+      background-image: url("../images/trading_app/common/close_circle.svg"); }
   div.datepicker-container .datepicker-calendar .calendar {
     opacity: 0;
     -webkit-transform: scale(1, 0);
@@ -1775,6 +1803,11 @@ div.datepicker-container {
             transform-origin: top;
     -webkit-transition: all 0.25s;
     transition: all 0.25s; }
+    div.datepicker-container .datepicker-calendar .calendar span {
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
   div.datepicker-container .datepicker-calendar.show > div.calendar {
     opacity: 1;
     -webkit-transform: scale(1, 1);
@@ -1901,6 +1934,18 @@ div.datepicker-container {
             background: #4c5794;
             /* stylelint-disable-line color-no-hex */
             color: #fff; }
+
+.card-list {
+  background-color: #fafafa;
+  /* stylelint-disable-line color-no-hex */
+  padding: 0 0.5rem;
+  overflow: auto; }
+  .card-list__card {
+    max-width: 450px;
+    margin: 0.6rem auto;
+    background-color: #fff;
+    border: 1px solid #e9e9ed;
+    border-radius: 4px; }
 
 div.contracts-popup-container {
   position: absolute;
@@ -2112,49 +2157,84 @@ div.contracts-popup-container {
 .contract-icon.ic-lb_high_low--invert:before {
   content: url("../images/trading_app/contracts/invert/lb_high_low.svg"); }
 
-/* Ant style */
 .table {
   color: #333333;
   /* stylelint-disable-line color-no-hex */
-  font-size: 16px;
-  border-collapse: collapse; }
+  font-size: 14px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%; }
   .table-row {
-    background-color: #fff;
-    border-bottom: 1px solid #d2d3da;
+    border-bottom: 1px solid #e9e9ed;
     /* stylelint-disable-line color-no-hex */ }
-  .table-thead {
-    min-height: 40px; }
-    .table-thead th {
-      padding: 12px;
-      font-weight: 600;
-      text-align: left;
-      border: none;
-      background-color: #f4f4f6;
-      /* stylelint-disable-line color-no-hex */ }
-    .table-thead th:first-child {
-      padding-left: 16px;
-      border-top-left-radius: 4px; }
-    .table-thead th:last-child {
-      padding-right: 16px;
-      border-top-right-radius: 4px; }
-  .table-tbody .table-row:hover {
-    background-color: #fdf4ec;
-    /* stylelint-disable-line color-no-hex */ }
-  .table-tbody td {
-    padding: 12px;
+  .table-foot .table-row {
     border: none; }
-  .table-tbody td:first-child {
+  .table-head, .table-foot {
+    font-weight: 600;
+    text-align: left;
+    background-color: #fafafb;
+    /* stylelint-disable-line color-no-hex */ }
+  .table th, .table td {
+    padding: 0.75rem;
+    border: none; }
+    .table th:first-child, .table td:first-child {
+      padding-left: 2rem; }
+    .table th:last-child, .table td:last-child {
+      padding-right: 2rem; }
+  .table--fixed-header:not(.table-clone) .table-head {
+    visibility: hidden; }
+  .table--full-width th, .table--full-width td {
+    padding-left: 8px; }
+    @media screen and (min-width: 981px) {
+      .table--full-width th, .table--full-width td {
+        padding-left: calc(2.614379085vw - 17.6470588235px); } }
+    @media screen and (min-width: 1440px) {
+      .table--full-width th, .table--full-width td {
+        padding-left: 20px; } }
+  .table--full-width th, .table--full-width td {
+    padding-right: 8px; }
+    @media screen and (min-width: 981px) {
+      .table--full-width th, .table--full-width td {
+        padding-right: calc(2.614379085vw - 17.6470588235px); } }
+    @media screen and (min-width: 1440px) {
+      .table--full-width th, .table--full-width td {
+        padding-right: 20px; } }
+  .table--full-width th:first-child, .table--full-width td:first-child {
     padding-left: 16px; }
-  .table-tbody td:last-child {
+    @media screen and (min-width: 981px) {
+      .table--full-width th:first-child, .table--full-width td:first-child {
+        padding-left: calc(3.48583878vw - 18.1960784314px); } }
+    @media screen and (min-width: 1440px) {
+      .table--full-width th:first-child, .table--full-width td:first-child {
+        padding-left: 32px; } }
+  .table--full-width th:last-child, .table--full-width td:last-child {
     padding-right: 16px; }
-  .table-tbody .profit {
-    color: #2e8836;
+    @media screen and (min-width: 981px) {
+      .table--full-width th:last-child, .table--full-width td:last-child {
+        padding-right: calc(3.48583878vw - 18.1960784314px); } }
+    @media screen and (min-width: 1440px) {
+      .table--full-width th:last-child, .table--full-width td:last-child {
+        padding-right: 32px; } }
+  @media only screen and (min-width: 1440px) {
+    .table--full-width .table {
+      color: #f00 !important;
+      /* stylelint-disable-line color-no-hex */ }
+    .table--full-width th:first-child, .table--full-width td:first-child {
+      padding-left: calc((100vw - 1440px) / 2 + 2rem); }
+    .table--full-width th:last-child, .table--full-width td:last-child {
+      padding-right: calc((100vw - 1440px) / 2 + 2rem); } }
+  .table-body .table-row:hover {
+    background-color: #e4e6f1;
     /* stylelint-disable-line color-no-hex */ }
-  .table-tbody .loss {
-    color: #c03;
-    /* stylelint-disable-line color-no-hex */ }
-  .table-pagination {
-    margin-top: 16px; }
+  .table.table-clone {
+    position: fixed;
+    z-index: 80;
+    pointer-events: none; }
+    .table.table-clone .table-head {
+      pointer-events: auto;
+      visibility: visible; }
+    .table.table-clone .table-body {
+      visibility: hidden; }
 
 /* Ant style */
 .pagination {
@@ -2519,33 +2599,173 @@ a {
       font-weight: bold;
       color: #2a3052; }
 
-#binary_app {
+.statement-filter {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 60px;
+  position: fixed;
+  z-index: 90;
+  background-color: #fff;
+  width: 100%;
+  font-size: 14px;
+  border-bottom: 1px solid #e9e9ed; }
+  .statement-filter {
+    padding-left: 16px; }
+    @media screen and (min-width: 981px) {
+      .statement-filter {
+        padding-left: calc(3.48583878vw - 18.1960784314px); } }
+    @media screen and (min-width: 1440px) {
+      .statement-filter {
+        padding-left: 32px; } }
+  .statement-filter__content {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .statement-filter__label {
+    margin-right: 0.6rem; }
+  .statement-filter__dash {
+    margin: 0 0.5rem; }
+  .statement-filter.mobile-only {
+    padding: 0 0.5rem; }
+    .statement-filter.mobile-only .statement-filter__content {
+      padding: 0;
+      max-width: 450px;
+      display: grid;
+      grid-template-columns: 1fr 30px 1fr;
+      text-align: center; }
+      .statement-filter.mobile-only .statement-filter__content .datepicker-display {
+        width: 100%; }
+    .statement-filter.mobile-only .statement-filter__label {
+      display: none; }
+
+.statement {
+  /* TABLE STYLES START */
+  /* TABLE STYLES END */ }
+  .statement__content {
+    padding-top: 60px; }
+  .statement__no-activity-msg {
+    padding: 1rem;
+    font-size: 1rem; }
+    .statement__no-activity-msg {
+      padding-left: 16px; }
+      @media screen and (min-width: 981px) {
+        .statement__no-activity-msg {
+          padding-left: calc(3.48583878vw - 18.1960784314px); } }
+      @media screen and (min-width: 1440px) {
+        .statement__no-activity-msg {
+          padding-left: 32px; } }
+  .statement .table-head {
+    white-space: nowrap; }
+  .statement .table-body .table-row {
+    cursor: pointer; }
+  .statement .date, .statement .refid {
+    width: 6.5em; }
+  .statement .desc {
+    padding-right: 2rem !important; }
+  .statement .action {
+    width: 6.5em; }
+  .statement .payout, .statement .amount, .statement .balance {
+    width: 6em;
+    text-align: right; }
+  .statement th.payout {
+    direction: rtl; }
+  .statement .amount {
+    font-weight: bold; }
+    .statement .amount.profit {
+      color: #4caf50;
+      /* stylelint-disable-line color-no-hex */ }
+    .statement .amount.loss {
+      color: #f44336;
+      /* stylelint-disable-line color-no-hex */ }
+  .statement-card__header {
+    font-size: 10px;
+    padding: 0.5rem;
+    border-bottom: 1px solid #e9e9ed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .statement-card__refid {
+    color: #1565c0; }
+  .statement-card__body {
+    padding: 0.5rem;
+    font-size: 12px; }
+  .statement-card__desc {
+    margin-bottom: 0.7rem; }
+  .statement-card__row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-weight: bold; }
+  .statement-card__cell-text {
+    vertical-align: middle; }
+  .statement-card__cell:before {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-size: 16px 16px;
+    vertical-align: middle;
+    margin-right: 5px; }
+  .statement-card__amount--sell, .statement-card__amount--deposit {
+    color: #4caf50; }
+  .statement-card__amount--buy, .statement-card__amount--withdrawal {
+    color: #f44336; }
+  .statement-card__amount--sell:before {
+    background-image: url("../images/trading_app/statement/ic_sell.svg"); }
+  .statement-card__amount--buy:before {
+    background-image: url("../images/trading_app/statement/ic_buy.svg"); }
+  .statement-card__amount--deposit:before {
+    background-image: url("../images/trading_app/statement/ic_deposit.svg"); }
+  .statement-card__amount--withdrawal:before {
+    background-image: url("../images/trading_app/statement/ic_withdrawal.svg"); }
+  .statement-card__payout:before {
+    background-image: url("../images/trading_app/statement/ic_payout.svg"); }
+  .statement-card__balance:before {
+    background-image: url("../images/trading_app/statement/ic_wallet.svg"); }
+
+.binary-app {
   overflow: hidden; }
-  #binary_app .notice-msg {
+  .binary-app .notice-msg {
     background: unset;
     border: 1px solid #f2f2f2; }
-  #binary_app .icon:before {
+  .binary-app .icon:before {
     content: '';
     display: block;
     background-size: 16px 16px;
     height: 16px;
     width: 16px; }
-  #binary_app .icon.start-time:before {
+  .binary-app .icon.start-time:before {
     background-image: url("../images/trading_app/sidebar/light/ic_watch_later_light.svg"); }
-  #binary_app .icon.trade-duration:before {
+  .binary-app .icon.trade-duration:before {
     background-image: url("../images/trading_app/sidebar/light/ic_timelapse_light.svg"); }
-  #binary_app .icon.invest-amount:before {
+  .binary-app .icon.invest-amount:before {
     background-image: url("../images/trading_app/sidebar/light/ic_monetization_light.svg"); }
-  #binary_app .icon.barriers:before {
+  .binary-app .icon.barriers:before {
     background-image: url("../images/trading_app/sidebar/light/ic_barrier_light.svg"); }
-  #binary_app .icon.digits:before {
+  .binary-app .icon.digits:before {
     background-image: url("../images/trading_app/sidebar/light/ic_digit_light.svg"); }
-  #binary_app .desktop-only fieldset .duration-container > * {
+  .binary-app .desktop-only fieldset .duration-container > * {
     margin-top: 0; }
-  #binary_app fieldset input, #binary_app fieldset select {
+  .binary-app input:hover {
+    border-color: #2a3052; }
+  .binary-app input:active, .binary-app input:focus {
+    outline: 0;
+    border-color: #2a3052;
+    -webkit-box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2); }
+  .binary-app fieldset input, .binary-app fieldset select {
     width: 100%;
     height: 32px;
-    font-size: 1rem;
     font-weight: 300;
     -ms-flex-item-align: center;
         align-self: center;
@@ -2554,18 +2774,10 @@ a {
             appearance: none;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 3px 5px 2px;
     background: #fff; }
-  #binary_app fieldset input:hover {
-    border-color: #2a3052; }
-  #binary_app fieldset input:active, #binary_app fieldset input:focus {
-    outline: 0;
-    border-color: #2a3052;
-    -webkit-box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
-            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2); }
-  #binary_app fieldset .select-wrapper {
+  .binary-app fieldset .select-wrapper {
     position: relative; }
-    #binary_app fieldset .select-wrapper:after {
+    .binary-app fieldset .select-wrapper:after {
       content: '\25bc';
       display: block;
       position: absolute;
@@ -2574,33 +2786,33 @@ a {
       font-size: 12px;
       -webkit-transform: translateY(-50%);
               transform: translateY(-50%); }
-  #binary_app fieldset select {
+  .binary-app fieldset select {
     margin: 8px 0;
     display: block; }
-    #binary_app fieldset select:hover {
+    .binary-app fieldset select:hover {
       border-color: #2a3052; }
-    #binary_app fieldset select:active, #binary_app fieldset select:focus {
+    .binary-app fieldset select:active, .binary-app fieldset select:focus {
       outline: 0;
       border-color: #2a3052;
       -webkit-box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
               box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2); }
-  #binary_app fieldset .symbols {
+  .binary-app fieldset .symbols {
     font-size: 1rem;
     position: absolute;
     display: block;
     text-align: center;
     z-index: 1;
     color: #2a3052; }
-  #binary_app fieldset .clock-header, #binary_app fieldset .fieldset-header {
+  .binary-app fieldset .clock-header, .binary-app fieldset .fieldset-header {
     height: 1.5rem;
     position: relative; }
-    #binary_app fieldset .clock-header span.field-info, #binary_app fieldset .fieldset-header span.field-info {
+    .binary-app fieldset .clock-header span.field-info, .binary-app fieldset .fieldset-header span.field-info {
       position: absolute;
       color: #2a3052;
       font-size: 0.7rem;
       font-weight: 400;
       margin: 5px 0 12px; }
-      #binary_app fieldset .clock-header span.field-info.icon, #binary_app fieldset .fieldset-header span.field-info.icon {
+      .binary-app fieldset .clock-header span.field-info.icon, .binary-app fieldset .fieldset-header span.field-info.icon {
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
         display: inline-flex;
@@ -2608,11 +2820,11 @@ a {
             -ms-flex-align: center;
                 align-items: center;
         top: -3px; }
-        #binary_app fieldset .clock-header span.field-info.icon:before, #binary_app fieldset .fieldset-header span.field-info.icon:before {
+        .binary-app fieldset .clock-header span.field-info.icon:before, .binary-app fieldset .fieldset-header span.field-info.icon:before {
           margin-right: 5px; }
-      #binary_app fieldset .clock-header span.field-info.left, #binary_app fieldset .fieldset-header span.field-info.left {
+      .binary-app fieldset .clock-header span.field-info.left, .binary-app fieldset .fieldset-header span.field-info.left {
         left: 5px; }
-      #binary_app fieldset .clock-header span.field-info.right, #binary_app fieldset .fieldset-header span.field-info.right {
+      .binary-app fieldset .clock-header span.field-info.right, .binary-app fieldset .fieldset-header span.field-info.right {
         top: -3px;
         right: 5px;
         font-size: 0.5625rem;
