@@ -1024,7 +1024,7 @@ var NativeSelect = function NativeSelect(_ref2) {
 
 Dropdown.propTypes = {
     is_nativepicker: _propTypes2.default.bool,
-    list: _propTypes2.default.array,
+    list: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
     value: _propTypes2.default.string
