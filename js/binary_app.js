@@ -365,10 +365,10 @@ var Fieldset = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 Fieldset.propTypes = {
-    time: _propTypes2.default.object,
+    children: _propTypes2.default.array,
     header: _propTypes2.default.string,
-    tooltip: _propTypes2.default.string,
-    children: _propTypes2.default.array
+    time: _propTypes2.default.object,
+    tooltip: _propTypes2.default.string
 };
 
 exports.default = Fieldset;
@@ -1468,13 +1468,13 @@ var InputField = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 InputField.propTypes = {
-    type: _propTypes2.default.string,
-    number: _propTypes2.default.string,
-    value: _propTypes2.default.number,
-    onChange: _propTypes2.default.func,
     is_currency: _propTypes2.default.bool,
     is_nativepicker: _propTypes2.default.bool,
-    prefix: _propTypes2.default.string
+    number: _propTypes2.default.string,
+    onChange: _propTypes2.default.func,
+    prefix: _propTypes2.default.string,
+    type: _propTypes2.default.string,
+    value: _propTypes2.default.number
 };
 
 exports.default = InputField;
@@ -2433,16 +2433,16 @@ DatePicker.defaultProps = {
 };
 
 DatePicker.propTypes = {
-    name: _propTypes2.default.string,
+    dateFormat: _propTypes2.default.string,
     initial_value: _propTypes2.default.string,
-    placeholder: _propTypes2.default.string,
-    startDate: _propTypes2.default.string,
     maxDate: _propTypes2.default.string,
     minDate: _propTypes2.default.string,
-    dateFormat: _propTypes2.default.string,
     mode: _propTypes2.default.string,
+    name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
-    showTodayBtn: _propTypes2.default.bool
+    placeholder: _propTypes2.default.string,
+    showTodayBtn: _propTypes2.default.bool,
+    startDate: _propTypes2.default.string
 };
 
 exports.default = DatePicker;
@@ -2918,11 +2918,11 @@ var TimePicker = function (_PureComponent2) {
 
 TimePicker.propTypes = {
     className: _propTypes2.default.string,
-    value: _propTypes2.default.string,
-    onChange: _propTypes2.default.func,
     name: _propTypes2.default.string,
+    onChange: _propTypes2.default.func,
     padding: _propTypes2.default.string,
-    toggle: _propTypes2.default.func
+    toggle: _propTypes2.default.func,
+    value: _propTypes2.default.string
 };
 
 exports.default = TimePicker;
@@ -4799,9 +4799,9 @@ var DataTable = function (_React$Component) {
 DataTable.propTypes = {
     columns: _propTypes2.default.array,
     data_source: _propTypes2.default.array,
-    is_full_width: _propTypes2.default.bool,
+    footer: _propTypes2.default.string,
     has_fixed_header: _propTypes2.default.bool,
-    footer: _propTypes2.default.string
+    is_full_width: _propTypes2.default.bool
 };
 
 exports.default = DataTable;
@@ -5388,10 +5388,10 @@ var Popover = function (_React$Component) {
 }(_react2.default.Component);
 
 Popover.propTypes = {
-    title: _propTypes2.default.string,
     alignment: _propTypes2.default.string,
+    children: _propTypes2.default.object,
     subtitle: _propTypes2.default.string,
-    children: _propTypes2.default.object
+    title: _propTypes2.default.string
 };
 
 exports.default = Popover;
@@ -5561,9 +5561,9 @@ var PortfolioDrawer = function (_React$Component) {
 }(_react2.default.Component);
 
 PortfolioDrawer.propTypes = {
-    subtitle: _propTypes2.default.number,
+    alignment: _propTypes2.default.string,
     children: _propTypes2.default.object,
-    alignment: _propTypes2.default.string
+    subtitle: _propTypes2.default.number
 };
 
 module.exports = PortfolioDrawer;
@@ -5820,8 +5820,8 @@ var Footer = function (_React$Component2) {
 }(_react2.default.Component);
 
 Footer.propTypes = {
-    items: _propTypes2.default.array,
     is_portfolio_drawer_on: _propTypes2.default.bool,
+    items: _propTypes2.default.array,
     togglePortfolioDrawer: _propTypes2.default.func
 };
 
