@@ -301,7 +301,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -367,6 +367,7 @@ var Fieldset = function (_React$PureComponent) {
 Fieldset.propTypes = {
     children: _propTypes2.default.array,
     header: _propTypes2.default.string,
+    icon: _propTypes2.default.string,
     time: _propTypes2.default.object,
     tooltip: _propTypes2.default.string
 };
@@ -399,7 +400,7 @@ var _dao = __webpack_require__(91);
 
 var _dao2 = _interopRequireDefault(_dao);
 
-var _language = __webpack_require__(14);
+var _language = __webpack_require__(15);
 
 var _localize = __webpack_require__(2);
 
@@ -781,7 +782,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1023,8 +1024,18 @@ var NativeSelect = function NativeSelect(_ref2) {
 };
 
 Dropdown.propTypes = {
+    className: _propTypes2.default.string,
     is_nativepicker: _propTypes2.default.bool,
     list: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
+    name: _propTypes2.default.string,
+    onChange: _propTypes2.default.func,
+    type: _propTypes2.default.string,
+    value: _propTypes2.default.string
+
+};
+
+NativeSelect.propTypes = {
+    list: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.array]),
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
     value: _propTypes2.default.string
@@ -1052,6 +1063,10 @@ var _react = __webpack_require__(8);
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(265);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _client_base = __webpack_require__(24);
 
@@ -1121,7 +1136,12 @@ var BinaryLink = function BinaryLink(_ref) {
     // else
     throw new Error('Route not found: ' + to);
 };
+
 exports.BinaryLink = BinaryLink;
+BinaryLink.propTypes = {
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
+    to: _propTypes2.default.string
+};
 
 /***/ }),
 
@@ -1282,7 +1302,7 @@ if (!Element.prototype.matches) {
 
 /***/ }),
 
-/***/ 14:
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1408,7 +1428,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1468,11 +1488,18 @@ var InputField = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 InputField.propTypes = {
+    className: _propTypes2.default.string,
+    helper: _propTypes2.default.bool,
     is_currency: _propTypes2.default.bool,
+    is_disabled: _propTypes2.default.string,
     is_nativepicker: _propTypes2.default.bool,
+    label: _propTypes2.default.string,
+    name: _propTypes2.default.string,
     number: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
+    placeholder: _propTypes2.default.string,
     prefix: _propTypes2.default.string,
+    required: _propTypes2.default.bool,
     type: _propTypes2.default.string,
     value: _propTypes2.default.number
 };
@@ -1608,6 +1635,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Button = function Button(_ref) {
@@ -1629,6 +1660,15 @@ var Button = function Button(_ref) {
             text
         )
     );
+};
+
+Button.propTypes = {
+    className: _propTypes2.default.string,
+    handleClick: _propTypes2.default.func,
+    has_effect: _propTypes2.default.bool,
+    id: _propTypes2.default.string,
+    is_disabled: _propTypes2.default.bool,
+    text: _propTypes2.default.string
 };
 
 exports.default = Button;
@@ -1663,7 +1703,7 @@ var _classnames = __webpack_require__(92);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2432,17 +2472,33 @@ DatePicker.defaultProps = {
     mode: 'date'
 };
 
+Calendar.propTypes = {
+    dateFormat: _propTypes2.default.string,
+    footer: _propTypes2.default.string,
+    handleDateChange: _propTypes2.default.func,
+    id: _propTypes2.default.number,
+    initial_value: _propTypes2.default.string,
+    is_nativepicker: _propTypes2.default.bool,
+    maxDate: _propTypes2.default.string,
+    minDate: _propTypes2.default.string,
+    mode: _propTypes2.default.string,
+    placeholder: _propTypes2.default.string,
+    showTodayBtn: _propTypes2.default.bool,
+    startDate: _propTypes2.default.string
+};
+
 DatePicker.propTypes = {
     dateFormat: _propTypes2.default.string,
+    id: _propTypes2.default.number,
     initial_value: _propTypes2.default.string,
+    is_nativepicker: _propTypes2.default.bool,
     maxDate: _propTypes2.default.string,
     minDate: _propTypes2.default.string,
     mode: _propTypes2.default.string,
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
     placeholder: _propTypes2.default.string,
-    showTodayBtn: _propTypes2.default.bool,
-    startDate: _propTypes2.default.string
+    showTodayBtn: _propTypes2.default.bool
 };
 
 exports.default = DatePicker;
@@ -2473,7 +2529,7 @@ var _iscroll = __webpack_require__(636);
 
 var _iscroll2 = _interopRequireDefault(_iscroll);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2917,12 +2973,21 @@ var TimePicker = function (_PureComponent2) {
 }(_react.PureComponent);
 
 TimePicker.propTypes = {
-    className: _propTypes2.default.string,
+    is_nativepicker: _propTypes2.default.bool,
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
     padding: _propTypes2.default.string,
+    placeholder: _propTypes2.default.string,
+    value: _propTypes2.default.object
+};
+
+TimePickerDropdown.propTypes = {
+    className: _propTypes2.default.string,
+    onChange: _propTypes2.default.func,
+    preClass: _propTypes2.default.string,
     toggle: _propTypes2.default.func,
-    value: _propTypes2.default.string
+    value: _propTypes2.default.object,
+    value_split: _propTypes2.default.bool
 };
 
 exports.default = TimePicker;
@@ -3148,6 +3213,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _url = __webpack_require__(9);
 
 var _url2 = _interopRequireDefault(_url);
@@ -3253,6 +3322,13 @@ var FullscreenDialog = function (_React$PureComponent) {
 
     return FullscreenDialog;
 }(_react2.default.PureComponent);
+
+FullscreenDialog.propTypes = {
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
+    onClose: _propTypes2.default.func,
+    title: _propTypes2.default.string,
+    visible: _propTypes2.default.bool
+};
 
 exports.default = FullscreenDialog;
 
@@ -4589,6 +4665,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Arrowhead = function Arrowhead(_ref) {
@@ -4598,6 +4678,10 @@ var Arrowhead = function Arrowhead(_ref) {
         { className: className, width: '16', height: '16', xmlns: 'http://www.w3.org/2000/svg' },
         _react2.default.createElement('path', { className: 'arrow-path', d: 'M13.164 5.13a.5.5 0 1 1 .672.74l-5.5 5a.5.5 0 0 1-.672 0l-5.5-5a.5.5 0 0 1 .672-.74L8 9.824l5.164-4.694z', fill: '#D2D3DA', fillRule: 'nonzero' })
     );
+};
+
+Arrowhead.propTypes = {
+    className: _propTypes2.default.string
 };
 
 exports.default = Arrowhead;
@@ -4620,6 +4704,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CardList = function CardList(_ref) {
@@ -4632,6 +4720,11 @@ var CardList = function CardList(_ref) {
             return _react2.default.createElement(Card, _extends({ className: 'card-list__card' }, transaction, { key: id }));
         })
     );
+};
+
+CardList.propTypes = {
+    Card: _propTypes2.default.func,
+    data_source: _propTypes2.default.array
 };
 
 exports.default = CardList;
@@ -4658,7 +4751,7 @@ var _classnames = __webpack_require__(92);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -4824,7 +4917,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -5146,11 +5239,37 @@ var DrawerHeader = function DrawerHeader(_ref) {
     );
 };
 
+Drawer.propTypes = {
+    alignment: _propTypes2.default.string,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
+    closeBtn: _propTypes2.default.func,
+    footer: _propTypes2.default.func,
+    icon_class: _propTypes2.default.string,
+    icon_link: _propTypes2.default.string
+};
+
 ToggleDrawer.propTypes = {
     alignment: _propTypes2.default.string,
-    children: _propTypes2.default.array,
-    closeBtn: _propTypes2.default.func,
-    footer: _propTypes2.default.func
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
+    footer: _propTypes2.default.func,
+    icon_class: _propTypes2.default.string,
+    icon_link: _propTypes2.default.string
+};
+
+DrawerHeader.propTypes = {
+    alignment: _propTypes2.default.string,
+    closeBtn: _propTypes2.default.func
+};
+
+DrawerItems.propTypes = {
+    items: _propTypes2.default.array,
+    text: _propTypes2.default.string
+};
+
+DrawerItem.propTypes = {
+    href: _propTypes2.default.string,
+    icon: _propTypes2.default.string,
+    text: _propTypes2.default.string
 };
 
 module.exports = {
@@ -5178,7 +5297,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -5319,7 +5438,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -5414,7 +5533,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -5563,6 +5682,9 @@ var PortfolioDrawer = function (_React$Component) {
 PortfolioDrawer.propTypes = {
     alignment: _propTypes2.default.string,
     children: _propTypes2.default.object,
+    onClick: _propTypes2.default.func,
+    portfolios: _propTypes2.default.array,
+    server_time: _propTypes2.default.object,
     subtitle: _propTypes2.default.number
 };
 
@@ -5577,7 +5699,7 @@ module.exports = PortfolioDrawer;
 
 
 var Client = __webpack_require__(24);
-var getLanguage = __webpack_require__(14).get;
+var getLanguage = __webpack_require__(15).get;
 var isStorageSupported = __webpack_require__(5).isStorageSupported;
 var getAppId = __webpack_require__(34).getAppId;
 
@@ -5629,6 +5751,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Tooltip = function Tooltip(_ref) {
@@ -5641,6 +5767,13 @@ var Tooltip = function Tooltip(_ref) {
         { className: 'tooltip', 'data-tooltip': message, 'data-tooltip-pos': alignment },
         is_icon ? _react2.default.createElement('i', { className: 'question-mark' }) : children
     );
+};
+
+Tooltip.propTypes = {
+    alignment: _propTypes2.default.string,
+    children: _propTypes2.default.string,
+    is_icon: _propTypes2.default.bool,
+    message: _propTypes2.default.string
 };
 
 exports.default = Tooltip;
@@ -5663,7 +5796,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -5820,8 +5953,11 @@ var Footer = function (_React$Component2) {
 }(_react2.default.Component);
 
 Footer.propTypes = {
+    items: _propTypes2.default.array
+};
+
+TogglePortfolioDrawer.propTypes = {
     is_portfolio_drawer_on: _propTypes2.default.bool,
-    items: _propTypes2.default.array,
     togglePortfolioDrawer: _propTypes2.default.func
 };
 
@@ -5855,7 +5991,7 @@ var _reactPerfectScrollbar = __webpack_require__(262);
 
 var _reactPerfectScrollbar2 = _interopRequireDefault(_reactPerfectScrollbar);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -6342,6 +6478,10 @@ var _classnames = __webpack_require__(92);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _dao = __webpack_require__(91);
 
 var _dao2 = _interopRequireDefault(_dao);
@@ -6767,8 +6907,25 @@ var Statement = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 Statement.defaultProps = {
-    chunk_size: 50, // display with chunks
-    batch_size: 200 // request with batches
+    batch_size: 200, // request with batches
+    chunk_size: 50 // display with chunks
+};
+
+StatementCard.propTypes = {
+    action: _propTypes2.default.bool,
+    amount: _propTypes2.default.number,
+    balance: _propTypes2.default.number,
+    className: _propTypes2.default.string,
+    date: _propTypes2.default.string,
+    desc: _propTypes2.default.bool,
+    payout: _propTypes2.default.number,
+    refid: _propTypes2.default.number
+};
+
+Statement.propTypes = {
+    batch_size: _propTypes2.default.number,
+    chunk_size: _propTypes2.default.number,
+    server_time: _propTypes2.default.object
 };
 
 exports.default = (0, _connect.connect)(function (_ref2) {
@@ -7120,6 +7277,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _dropdown = __webpack_require__(116);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
@@ -7213,6 +7374,16 @@ var Amount = function Amount(_ref) {
     );
 };
 
+Amount.propTypes = {
+    amount: _propTypes2.default.number,
+    basis: _propTypes2.default.string,
+    currencies_list: _propTypes2.default.object,
+    currency: _propTypes2.default.string,
+    is_minimized: _propTypes2.default.bool,
+    is_nativepicker: _propTypes2.default.bool,
+    onChange: _propTypes2.default.func
+};
+
 exports.default = (0, _connect.connect)(function (_ref2) {
     var trade = _ref2.trade;
     return {
@@ -7239,6 +7410,10 @@ Object.defineProperty(exports, "__esModule", {
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _fieldset = __webpack_require__(101);
 
@@ -7309,6 +7484,13 @@ var Barrier = function Barrier(_ref) {
     );
 };
 
+Barrier.propTypes = {
+    barrier_1: _propTypes2.default.bool,
+    barrier_2: _propTypes2.default.bool,
+    is_minimized: _propTypes2.default.bool,
+    onChange: _propTypes2.default.func
+};
+
 exports.default = (0, _connect.connect)(function (_ref2) {
     var trade = _ref2.trade;
     return {
@@ -7336,6 +7518,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _contracts_popup = __webpack_require__(396);
 
 var _contracts_popup2 = _interopRequireDefault(_contracts_popup);
@@ -7358,6 +7544,12 @@ var Contract = function Contract(_ref) {
         value: contract_type,
         onChange: onChange
     }, other));
+};
+
+Contract.propTypes = {
+    contract_type: _propTypes2.default.string,
+    contract_types_list: _propTypes2.default.object,
+    onChange: _propTypes2.default.func
 };
 
 exports.default = (0, _connect.connect)(function (_ref2) {
@@ -7388,6 +7580,10 @@ var _moment2 = _interopRequireDefault(_moment);
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _date_picker = __webpack_require__(211);
 
@@ -7515,6 +7711,19 @@ var Duration = function Duration(_ref) {
     );
 };
 
+Duration.propTypes = {
+    duration: _propTypes2.default.number,
+    duration_unit: _propTypes2.default.string,
+    duration_units_list: _propTypes2.default.array,
+    expiry_date: _propTypes2.default.string,
+    expiry_time: _propTypes2.default.string,
+    expiry_type: _propTypes2.default.string,
+    is_minimized: _propTypes2.default.bool,
+    is_nativepicker: _propTypes2.default.bool,
+    onChange: _propTypes2.default.func,
+    server_time: _propTypes2.default.object
+};
+
 exports.default = (0, _connect.connect)(function (_ref2) {
     var trade = _ref2.trade;
     return {
@@ -7546,6 +7755,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _fullscreen_dialog = __webpack_require__(215);
 
@@ -7736,6 +7949,15 @@ var Contracts = function Contracts(_ref) {
     });
 };
 
+ContractsPopUp.propTypes = {
+    className: _propTypes2.default.string,
+    is_mobile_widget: _propTypes2.default.bool,
+    list: _propTypes2.default.object,
+    name: _propTypes2.default.string,
+    onChange: _propTypes2.default.func,
+    value: _propTypes2.default.string
+};
+
 exports.default = ContractsPopUp;
 
 /***/ }),
@@ -7755,6 +7977,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _fullscreen_dialog = __webpack_require__(215);
 
@@ -7837,6 +8063,10 @@ var MobileWidget = function (_React$PureComponent) {
     return MobileWidget;
 }(_react2.default.PureComponent);
 
+MobileWidget.propTypes = {
+    children: _propTypes2.default.array
+};
+
 exports.default = MobileWidget;
 
 /***/ }),
@@ -7854,6 +8084,10 @@ Object.defineProperty(exports, "__esModule", {
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _dropdown = __webpack_require__(116);
 
@@ -7909,6 +8143,13 @@ var LastDigit = function LastDigit(_ref) {
     );
 };
 
+LastDigit.propTypes = {
+    is_minimized: _propTypes2.default.number,
+    is_nativepicker: _propTypes2.default.bool,
+    last_digit: _propTypes2.default.number,
+    onChange: _propTypes2.default.func
+};
+
 exports.default = (0, _connect.connect)(function (_ref2) {
     var trade = _ref2.trade;
     return {
@@ -7932,6 +8173,10 @@ Object.defineProperty(exports, "__esModule", {
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _button = __webpack_require__(210);
 
@@ -7960,6 +8205,10 @@ var Purchase = function Purchase(_ref) {
     );
 };
 
+Purchase.propTypes = {
+    trade_types: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object])
+};
+
 exports.default = (0, _connect.connect)(function (_ref2) {
     var trade = _ref2.trade;
     return {
@@ -7982,6 +8231,10 @@ Object.defineProperty(exports, "__esModule", {
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _dropdown = __webpack_require__(116);
 
@@ -8050,6 +8303,16 @@ var StartDate = function StartDate(_ref) {
     );
 };
 
+StartDate.propTypes = {
+    is_minimized: _propTypes2.default.bool,
+    is_nativepicker: _propTypes2.default.bool,
+    onChange: _propTypes2.default.func,
+    server_time: _propTypes2.default.object,
+    start_date: _propTypes2.default.string,
+    start_dates_list: _propTypes2.default.array,
+    start_time: _propTypes2.default.string
+};
+
 exports.default = (0, _connect.connect)(function (_ref2) {
     var trade = _ref2.trade;
     return {
@@ -8077,6 +8340,10 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _connect = __webpack_require__(33);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -8101,6 +8368,12 @@ var _Symbol = function _Symbol(_ref) {
             ';'
         )
     );
+};
+
+_Symbol.propTypes = {
+    onChange: _propTypes2.default.func,
+    symbol: _propTypes2.default.string,
+    symbols_list: _propTypes2.default.object
 };
 
 exports.default = (0, _connect.connect)(function (_ref2) {
@@ -8131,6 +8404,10 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _connect = __webpack_require__(33);
 
@@ -8165,6 +8442,11 @@ var Test = function Test(_ref) {
     );
 };
 
+Test.propTypes = {
+    entries: _propTypes2.default.array,
+    json: _propTypes2.default.string
+};
+
 exports.default = (0, _connect.connect)(function (_ref4) {
     var trade = _ref4.trade;
     return {
@@ -8190,6 +8472,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _amount = __webpack_require__(392);
 
@@ -8334,6 +8620,14 @@ var TradeApp = function (_React$Component) {
 
     return TradeApp;
 }(_react2.default.Component);
+
+TradeApp.propTypes = {
+    form_components: _propTypes2.default.array,
+    is_portfolio_drawer_on: _propTypes2.default.bool,
+    portfolios: _propTypes2.default.array,
+    server_time: _propTypes2.default.object,
+    togglePortfolioDrawer: _propTypes2.default.func
+};
 
 exports.default = (0, _connect.connect)(function (_ref3) {
     var trade = _ref3.trade,
@@ -9316,7 +9610,7 @@ module.exports = {
 "use strict";
 
 
-var getLanguage = __webpack_require__(14).get;
+var getLanguage = __webpack_require__(15).get;
 var localize = __webpack_require__(2).localize;
 var State = __webpack_require__(5).State;
 var getPropertyValue = __webpack_require__(1).getPropertyValue;
@@ -9446,7 +9740,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var ClientBase = __webpack_require__(24);
 var SocketCache = __webpack_require__(45);
-var getLanguage = __webpack_require__(14).get;
+var getLanguage = __webpack_require__(15).get;
 var State = __webpack_require__(5).State;
 var cloneObject = __webpack_require__(1).cloneObject;
 var getPropertyValue = __webpack_require__(1).getPropertyValue;
@@ -9793,7 +10087,7 @@ var Login = __webpack_require__(38);
 var BinarySocket = __webpack_require__(53);
 var getElementById = __webpack_require__(3).getElementById;
 var isVisible = __webpack_require__(3).isVisible;
-var getLanguage = __webpack_require__(14).get;
+var getLanguage = __webpack_require__(15).get;
 var State = __webpack_require__(5).State;
 var getAppId = __webpack_require__(34).getAppId;
 
@@ -9971,8 +10265,8 @@ module.exports = GTM;
 "use strict";
 
 
-var urlForLanguage = __webpack_require__(14).urlFor;
-var urlLang = __webpack_require__(14).urlLang;
+var urlForLanguage = __webpack_require__(15).urlFor;
+var urlLang = __webpack_require__(15).urlLang;
 var createElement = __webpack_require__(1).createElement;
 var isEmptyObject = __webpack_require__(1).isEmptyObject;
 __webpack_require__(269);
