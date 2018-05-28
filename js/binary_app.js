@@ -6912,14 +6912,14 @@ Statement.defaultProps = {
 };
 
 StatementCard.propTypes = {
-    action: _propTypes2.default.bool,
-    amount: _propTypes2.default.number,
-    balance: _propTypes2.default.number,
+    action: _propTypes2.default.string,
+    amount: _propTypes2.default.string,
+    balance: _propTypes2.default.string,
     className: _propTypes2.default.string,
     date: _propTypes2.default.string,
-    desc: _propTypes2.default.bool,
-    payout: _propTypes2.default.number,
-    refid: _propTypes2.default.number
+    desc: _propTypes2.default.string,
+    payout: _propTypes2.default.string,
+    refid: _propTypes2.default.string
 };
 
 Statement.propTypes = {
