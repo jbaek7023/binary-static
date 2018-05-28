@@ -1030,7 +1030,7 @@ Dropdown.propTypes = {
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
     type: _propTypes2.default.string,
-    value: _propTypes2.default.string
+    value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string])
 
 };
 
@@ -1038,7 +1038,7 @@ NativeSelect.propTypes = {
     list: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.array]),
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
-    value: _propTypes2.default.string
+    value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string])
 };
 
 exports.default = Dropdown;
@@ -1501,7 +1501,7 @@ InputField.propTypes = {
     prefix: _propTypes2.default.string,
     required: _propTypes2.default.bool,
     type: _propTypes2.default.string,
-    value: _propTypes2.default.number
+    value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string])
 };
 
 exports.default = InputField;
@@ -2479,8 +2479,8 @@ Calendar.propTypes = {
     id: _propTypes2.default.number,
     initial_value: _propTypes2.default.string,
     is_nativepicker: _propTypes2.default.bool,
-    maxDate: _propTypes2.default.string,
-    minDate: _propTypes2.default.string,
+    maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
     mode: _propTypes2.default.string,
     placeholder: _propTypes2.default.string,
     showTodayBtn: _propTypes2.default.bool,
@@ -2492,8 +2492,8 @@ DatePicker.propTypes = {
     id: _propTypes2.default.number,
     initial_value: _propTypes2.default.string,
     is_nativepicker: _propTypes2.default.bool,
-    maxDate: _propTypes2.default.string,
-    minDate: _propTypes2.default.string,
+    maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
     mode: _propTypes2.default.string,
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
@@ -2978,7 +2978,7 @@ TimePicker.propTypes = {
     onChange: _propTypes2.default.func,
     padding: _propTypes2.default.string,
     placeholder: _propTypes2.default.string,
-    value: _propTypes2.default.object
+    value: _propTypes2.default.string
 };
 
 TimePickerDropdown.propTypes = {
@@ -2986,7 +2986,7 @@ TimePickerDropdown.propTypes = {
     onChange: _propTypes2.default.func,
     preClass: _propTypes2.default.string,
     toggle: _propTypes2.default.func,
-    value: _propTypes2.default.object,
+    value: _propTypes2.default.string,
     value_split: _propTypes2.default.bool
 };
 
@@ -7375,7 +7375,7 @@ var Amount = function Amount(_ref) {
 };
 
 Amount.propTypes = {
-    amount: _propTypes2.default.number,
+    amount: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     basis: _propTypes2.default.string,
     currencies_list: _propTypes2.default.object,
     currency: _propTypes2.default.string,
@@ -7485,8 +7485,8 @@ var Barrier = function Barrier(_ref) {
 };
 
 Barrier.propTypes = {
-    barrier_1: _propTypes2.default.bool,
-    barrier_2: _propTypes2.default.bool,
+    barrier_1: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+    barrier_2: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     is_minimized: _propTypes2.default.bool,
     onChange: _propTypes2.default.func
 };
@@ -7712,7 +7712,7 @@ var Duration = function Duration(_ref) {
 };
 
 Duration.propTypes = {
-    duration: _propTypes2.default.number,
+    duration: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     duration_unit: _propTypes2.default.string,
     duration_units_list: _propTypes2.default.array,
     expiry_date: _propTypes2.default.string,
@@ -8308,7 +8308,7 @@ StartDate.propTypes = {
     is_nativepicker: _propTypes2.default.bool,
     onChange: _propTypes2.default.func,
     server_time: _propTypes2.default.object,
-    start_date: _propTypes2.default.string,
+    start_date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     start_dates_list: _propTypes2.default.array,
     start_time: _propTypes2.default.string
 };
