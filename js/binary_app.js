@@ -365,7 +365,7 @@ var Fieldset = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 Fieldset.propTypes = {
-    children: _propTypes2.default.array,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
     header: _propTypes2.default.string,
     icon: _propTypes2.default.string,
     time: _propTypes2.default.object,
@@ -8144,7 +8144,7 @@ var LastDigit = function LastDigit(_ref) {
 };
 
 LastDigit.propTypes = {
-    is_minimized: _propTypes2.default.number,
+    is_minimized: _propTypes2.default.bool,
     is_nativepicker: _propTypes2.default.bool,
     last_digit: _propTypes2.default.number,
     onChange: _propTypes2.default.func
