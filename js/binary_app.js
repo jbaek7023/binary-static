@@ -1092,7 +1092,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var routes = [{ path: '/', component: _trade_app2.default, exact: true }, { path: '/statement', component: _statement2.default, is_authenticated: true }, { path: '/account', component: _lost_password2.default, is_authenticated: false }];
+var routes = [{ path: '/statement', component: _statement2.default, is_authenticated: true }, { path: '/account', component: _lost_password2.default, is_authenticated: false }, { path: '/', component: _trade_app2.default, exact: true }];
 
 var RouteWithSubRoutes = function RouteWithSubRoutes(route) {
     return _react2.default.createElement(_reactRouterDom.Route, {
@@ -1828,8 +1828,8 @@ Drawer.propTypes = {
     hideDrawers: _propTypes2.default.func,
     icon_class: _propTypes2.default.string,
     icon_link: _propTypes2.default.string,
-    is_main_drawer_on: _propTypes2.default.func,
-    is_portfolio_drawer_on: _propTypes2.default.func
+    is_main_drawer_on: _propTypes2.default.bool,
+    is_portfolio_drawer_on: _propTypes2.default.bool
 };
 
 var drawer_component = (0, _connect.connect)(function (_ref2) {
@@ -1964,6 +1964,9 @@ var DrawerItem = function (_PureComponent) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DrawerItem.__proto__ || Object.getPrototypeOf(DrawerItem)).call.apply(_ref, [this].concat(args))), _this), _this.drawerItemClicked = function () {
             _this.props.hideDrawers();
+            if (_this.props.collapseItems) {
+                _this.props.collapseItems();
+            }
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -1999,6 +2002,7 @@ var DrawerItem = function (_PureComponent) {
 }(_react.PureComponent);
 
 DrawerItem.propTypes = {
+    collapseItems: _propTypes2.default.func,
     href: _propTypes2.default.string,
     icon: _propTypes2.default.string,
     text: _propTypes2.default.string,
@@ -5607,6 +5611,8 @@ var DrawerItems = function (_PureComponent) {
     _createClass(DrawerItems, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var is_collapsed = this.state.is_collapsed;
             var _props = this.props,
                 text = _props.text,
@@ -5644,7 +5650,7 @@ var DrawerItems = function (_PureComponent) {
                         'div',
                         { className: 'items-group' },
                         items.map(function (item, idx) {
-                            return _react2.default.createElement(_drawer_item.DrawerItem, _extends({ key: idx }, item));
+                            return _react2.default.createElement(_drawer_item.DrawerItem, _extends({ key: idx }, item, { collapseItems: _this2.collapseItems }));
                         })
                     )
                 )
