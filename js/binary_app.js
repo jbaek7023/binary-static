@@ -421,136 +421,120 @@ var ContractType = function () {
                     return contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 && (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
                     ;
                 });
-                if (!type) return; // ignore unsupported contract types
 
-                if (!Exceptions.isExcluded(type)) {
-                    if (!available_contract_types[type]) {
-                        // extend contract_categories to include what is needed to create the contract list
-                        var sub_cats = available_categories[Object.keys(available_categories).find(function (key) {
-                            return available_categories[key].indexOf(type) !== -1;
-                        })];
-                        sub_cats[sub_cats.indexOf(type)] = { value: type, text: (0, _localize.localize)(contract_types[type].title) };
+                if (!type || Exceptions.isExcluded(type)) return; // ignore unsupported/excepted contract types
 
-                        // populate available contract types
-                        available_contract_types[type] = (0, _utility.cloneObject)(contract_types[type]);
-                        available_contract_types[type].config = {};
-                    }
-
-                    /*
-                    add to this config if a value you are looking for does not exist yet
-                    accordingly create a function to retrieve the value
-                    config: {
-                        has_spot: 1,
-                        durations: {
-                            min_max: {
-                                spot: {
-                                    tick: {
-                                        min: 5, // value in ticks, as cannot convert to seconds
-                                        max: 10,
-                                    },
-                                    intraday: {
-                                        min: 18000, // all values converted to seconds
-                                        max: 86400,
-                                    },
-                                    daily: {
-                                        min: 86400,
-                                        max: 432000,
-                                    },
+                /*
+                add to this config if a value you are looking for does not exist yet
+                accordingly create a function to retrieve the value
+                config: {
+                    has_spot: 1,
+                    durations: {
+                        min_max: {
+                            spot: {
+                                tick: {
+                                    min: 5, // value in ticks, as cannot convert to seconds
+                                    max: 10,
                                 },
-                                forward: {
-                                    intraday: {
-                                        min: 18000,
-                                        max: 86400,
-                                    },
+                                intraday: {
+                                    min: 18000, // all values converted to seconds
+                                    max: 86400,
+                                },
+                                daily: {
+                                    min: 86400,
+                                    max: 432000,
                                 },
                             },
-                            units_display: {
-                                spot: [
-                                    { text: 'ticks', value: 't' },
-                                    { text: 'seconds', value: 's' },
-                                    { text: 'minutes', value: 'm' },
-                                    { text: 'hours', value: 'h' },
-                                    { text: 'days', value: 'd' },
-                                ],
-                                forward: [
-                                    { text: 'days', value: 'd' },
-                                ],
+                            forward: {
+                                intraday: {
+                                    min: 18000,
+                                    max: 86400,
+                                },
                             },
                         },
-                        forward_starting_dates: [
-                            { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
-                            { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
-                            { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
-                        ],
-                        trade_types: {
-                            'CALL': 'Higher',
-                            'PUT': 'Lower',
+                        units_display: {
+                            spot: [
+                                { text: 'ticks',   value: 't' },
+                                { text: 'seconds', value: 's' },
+                                { text: 'minutes', value: 'm' },
+                                { text: 'hours',   value: 'h' },
+                                { text: 'days',    value: 'd' },
+                            ],
+                            forward: [
+                                { text: 'days',    value: 'd' },
+                            ],
                         },
-                        barriers: {
-                            intraday: {
-                                high_barrier: '+2.12',
-                                low_barrier : '-1.12',
-                            },
-                            daily: {
-                                high_barrier: 1111,
-                                low_barrier : 1093,
-                            }
+                    },
+                    forward_starting_dates: [
+                        { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
+                        { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
+                        { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
+                    ],
+                    trade_types: {
+                        'CALL': 'Higher',
+                        'PUT' : 'Lower',
+                    },
+                    barriers: {
+                        intraday: {
+                            high_barrier: '+2.12',
+                            low_barrier : '-1.12',
+                        },
+                        daily: {
+                            high_barrier: 1111,
+                            low_barrier : 1093,
                         }
-                    }
-                    */
-
-                    if (contract.start_type === 'spot') {
-                        available_contract_types[type].config.has_spot = 1;
-                    }
-
-                    if (contract.min_contract_duration && contract.max_contract_duration) {
-                        available_contract_types[type].config.durations = (0, _duration.buildDurationConfig)(available_contract_types[type].config.durations, contract);
-                    }
-
-                    if (contract.forward_starting_options) {
-                        var forward_starting_options = [];
-
-                        // TODO: handle multiple sessions (right now will create duplicated items in the list)
-                        contract.forward_starting_options.forEach(function (option) {
-                            forward_starting_options.push({
-                                text: _moment2.default.unix(option.open).format('ddd - DD MMM, YYYY'),
-                                value: option.open,
-                                end: option.close
-                            });
-                        });
-
-                        available_contract_types[type].config.forward_starting_dates = forward_starting_options;
-                    }
-
-                    if (contract.contract_display && contract.contract_type) {
-                        var trade_types = available_contract_types[type].config.trade_types || {};
-
-                        trade_types[contract.contract_type] = contract.contract_display;
-
-                        available_contract_types[type].config.trade_types = trade_types;
-                    }
-
-                    if (contract.barriers) {
-                        if (!available_contract_types[type].config.barriers) {
-                            available_contract_types[type].config.barriers = {};
-                        }
-                        if (!available_contract_types[type].config.barriers[contract.expiry_type]) {
-                            available_contract_types[type].config.barriers[contract.expiry_type] = {};
-                        }
-                        var obj_barrier = {};
-                        if (contract.barrier) {
-                            obj_barrier.barrier = contract.barrier;
-                        } else {
-                            if (contract.low_barrier) {
-                                obj_barrier.low_barrier = contract.low_barrier;
-                            }
-                            if (contract.high_barrier) {
-                                obj_barrier.high_barrier = contract.high_barrier;
-                            }
-                        }
-                        available_contract_types[type].config.barriers[contract.expiry_type] = obj_barrier;
                     }
                 }
+                */
+
+                if (!available_contract_types[type]) {
+                    // extend contract_categories to include what is needed to create the contract list
+                    var sub_cats = available_categories[Object.keys(available_categories).find(function (key) {
+                        return available_categories[key].indexOf(type) !== -1;
+                    })];
+                    sub_cats[sub_cats.indexOf(type)] = { value: type, text: (0, _localize.localize)(contract_types[type].title) };
+
+                    // populate available contract types
+                    available_contract_types[type] = (0, _utility.cloneObject)(contract_types[type]);
+                }
+                var config = available_contract_types[type].config || {};
+
+                // ----- has_spot -----
+                if (contract.start_type === 'spot') {
+                    config.has_spot = 1;
+                }
+
+                // ----- durations -----
+                if (contract.min_contract_duration && contract.max_contract_duration) {
+                    config.durations = (0, _duration.buildDurationConfig)(config.durations, contract);
+                }
+
+                // ----- forward_starting_dates -----
+                if (contract.forward_starting_options) {
+                    config.forward_starting_dates = contract.forward_starting_options.map(function (option) {
+                        return {
+                            text: _moment2.default.unix(option.open).format('ddd - DD MMM, YYYY'),
+                            value: option.open,
+                            end: option.close
+                        };
+                    });
+                }
+
+                // ----- trade_types -----
+                if (contract.contract_display && contract.contract_type) {
+                    config.trade_types = Object.assign(config.trade_types || {}, _defineProperty({}, contract.contract_type, contract.contract_display));
+                }
+
+                // ----- barriers -----
+                if (contract.barriers) {
+                    var obj_barrier = {};
+                    ['barrier', 'low_barrier', 'high_barrier'].forEach(function (field) {
+                        if (field in contract) obj_barrier[field] = contract[field];
+                    });
+                    config.barriers = Object.assign(config.barriers || {}, _defineProperty({}, contract.expiry_type, obj_barrier));
+                }
+
+                available_contract_types[type].config = config;
             });
 
             // cleanup categories
@@ -736,33 +720,6 @@ module.exports = {
     shouldForceReload: shouldForceReload,
     checkNewRelease: checkNewRelease
 };
-
-/***/ }),
-
-/***/ 11:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var CurrencyBase = __webpack_require__(52);
-var localize = __webpack_require__(2).localize;
-
-var getCurrencyList = function getCurrencyList(currencies) {
-    var $currencies = $('<select/>');
-    var $fiat_currencies = $('<optgroup/>', { label: localize('Fiat') });
-    var $cryptocurrencies = $('<optgroup/>', { label: localize('Crypto') });
-
-    currencies.forEach(function (currency) {
-        (CurrencyBase.isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies).append($('<option/>', { value: currency, text: currency }));
-    });
-
-    return $currencies.append($fiat_currencies.children().length ? $fiat_currencies : '').append($cryptocurrencies.children().length ? $cryptocurrencies : '');
-};
-
-module.exports = Object.assign({
-    getCurrencyList: getCurrencyList
-}, CurrencyBase);
 
 /***/ }),
 
@@ -1054,7 +1011,7 @@ exports.default = Dropdown;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.BinaryLink = exports.BinaryRoutes = undefined;
+exports.BinaryLink = exports.isRouteVisible = exports.BinaryRoutes = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -1115,30 +1072,43 @@ var BinaryRoutes = exports.BinaryRoutes = function BinaryRoutes() {
     });
 };
 
+var normalizePath = function normalizePath(path) {
+    return (/^\//.test(path) ? path : '/' + (path || '')
+    );
+}; // Default to '/'
+
+var getRouteInfo = function getRouteInfo(path) {
+    return routes.find(function (r) {
+        return r.path === normalizePath(path);
+    });
+};
+
+var isRouteVisible = exports.isRouteVisible = function isRouteVisible(path) {
+    var route = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : getRouteInfo(path);
+    return !(route && route.is_authenticated && !_client_base2.default.isLoggedIn());
+};
+
 var BinaryLink = function BinaryLink(_ref) {
     var to = _ref.to,
         children = _ref.children,
         props = _objectWithoutProperties(_ref, ['to', 'children']);
 
-    var path = /^\//.test(to) ? to : '/' + (to || ''); // Default to '/'
-    var route = routes.find(function (r) {
-        return r.path === path;
-    });
-    if (to && route) {
-        return _react2.default.createElement(
-            _reactRouterDom.NavLink,
-            _extends({ to: path, activeClassName: 'active', exact: route.exact }, props),
-            children
-        );
-    } else if (!to) {
-        return _react2.default.createElement(
-            'a',
-            _extends({ href: 'javascript:;' }, props),
-            children
-        );
+    var path = normalizePath(to);
+    var route = getRouteInfo(path);
+
+    if (!route) {
+        throw new Error('Route not found: ' + to);
     }
-    // else
-    throw new Error('Route not found: ' + to);
+
+    return to ? _react2.default.createElement(
+        _reactRouterDom.NavLink,
+        _extends({ to: path, activeClassName: 'active', exact: route.exact }, props),
+        children
+    ) : _react2.default.createElement(
+        'a',
+        _extends({ href: 'javascript:;' }, props),
+        children
+    );
 };
 
 exports.BinaryLink = BinaryLink;
@@ -3614,9 +3584,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 // add files containing actions here.
 
 
-var _mobx = __webpack_require__(85);
-
-var _mobxUtils = __webpack_require__(649);
+var _mobx = __webpack_require__(69);
 
 var _utility = __webpack_require__(1);
 
@@ -3646,8 +3614,6 @@ var Test = _interopRequireWildcard(_test);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-(0, _mobx.useStrict)(false); // TODO: fix issues to enable useStrict
-
 var reaction_disposers = [];
 
 var defaultExports = _extends({}, ContractType, Currency, Duration, _Symbol, StartDate, Test);
@@ -3657,7 +3623,7 @@ var initActions = exports.initActions = function initActions(store) {
         var method = defaultExports[methodName];
 
         if (/.*async$/i.test(methodName)) {
-            defaultExports[methodName] = (0, _mobxUtils.asyncAction)(methodName + '.wrapper', /*#__PURE__*/regeneratorRuntime.mark(function _callee(payload) {
+            defaultExports[methodName] = (0, _mobx.flow)( /*#__PURE__*/regeneratorRuntime.mark(function _callee(payload) {
                 var snapshot, new_state;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
@@ -3665,7 +3631,7 @@ var initActions = exports.initActions = function initActions(store) {
                             case 0:
                                 snapshot = (0, _utility.cloneObject)(store);
                                 _context.next = 3;
-                                return (0, _mobxUtils.asyncAction)(methodName, method)(snapshot, payload);
+                                return (0, _mobx.flow)(method)(snapshot, payload);
 
                             case 3:
                                 new_state = _context.sent;
@@ -4297,7 +4263,7 @@ exports.connect = exports.MobxProvider = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _mobx = __webpack_require__(85);
+var _mobx = __webpack_require__(69);
 
 var _mobxReact = __webpack_require__(648);
 
@@ -4448,6 +4414,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _mobx = __webpack_require__(69);
+
 var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
@@ -4493,6 +4461,8 @@ var _client_base2 = _interopRequireDefault(_client_base);
 var _localize = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _mobx.configure)({ enforceActions: true });
 
 var stores = {
     client: new _client_store2.default(),
@@ -4869,6 +4839,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _mobx = __webpack_require__(69);
+
 var _dao = __webpack_require__(92);
 
 var _dao2 = _interopRequireDefault(_dao);
@@ -4979,12 +4951,25 @@ var BinarySocketGeneral = function () {
         }
     };
 
-    var setBalance = function setBalance(balance) {
-        _socket_base2.default.wait('website_status').then(function () {
-            _client_base2.default.set('balance', balance);
-            client_store.balance = balance;
-        });
-    };
+    var setBalance = (0, _mobx.flow)( /*#__PURE__*/regeneratorRuntime.mark(function _callee(balance) {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+                switch (_context.prev = _context.next) {
+                    case 0:
+                        _context.next = 2;
+                        return _socket_base2.default.wait('website_status');
+
+                    case 2:
+                        _client_base2.default.set('balance', balance);
+                        client_store.balance = balance;
+
+                    case 4:
+                    case 'end':
+                        return _context.stop();
+                }
+            }
+        }, _callee, this);
+    }));
 
     var handleError = function handleError(response) {
         var msg_type = response.msg_type;
@@ -5172,6 +5157,8 @@ var AccountSwitcher = function (_React$PureComponent) {
         key: 'render',
         value: function render() {
             var _this2 = this;
+
+            if (!_client_base2.default.isLoggedIn()) return false;
 
             var account_list_collapsed = {
                 visibility: '' + (this.state.is_collapsed ? 'visible' : 'hidden')
@@ -6497,6 +6484,10 @@ var _account_balance = __webpack_require__(387);
 
 var _menu_drawer = __webpack_require__(390);
 
+var _client_base = __webpack_require__(24);
+
+var _client_base2 = _interopRequireDefault(_client_base);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6506,12 +6497,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var DrawerFooter = function DrawerFooter() {
-    return (// TODO: update the UI
-        _react2.default.createElement(
-            'a',
-            { href: 'javascript:;', onClick: _common.requestLogout },
-            (0, _localize.localize)('Log out')
-        )
+    return _client_base2.default.isLoggedIn() && // TODO: update the UI
+    _react2.default.createElement(
+        'a',
+        { href: 'javascript:;', onClick: _common.requestLogout },
+        (0, _localize.localize)('Log out')
     );
 };
 
@@ -6786,10 +6776,11 @@ var SubscriptionManager = function () {
     /**
      * To forget a subscription which submitted for a specific callback function
      *
-     * @param {String}   msg_type      msg_type to forget
-     * @param {Function} fncCallback   the same function passed to subscribe()
+     * @param  {String}   msg_type      msg_type to forget
+     * @param  {Function} fncCallback   the same function passed to subscribe()
      *     (this is the way to distinguish between different subscribers of the same stream at the same time)
-     * @param {Object}   match_values  optional, to only forget subscriptions having request that "contains" provided values
+     * @param  {Object}   match_values  optional, to only forget subscriptions having request that "contains" provided values
+     * @return {Promise}  the promise object of all possible forget requests
      */
     var forget = function forget(msg_type, fncCallback, match_values) {
         if (typeof fncCallback !== 'function') {
@@ -6822,7 +6813,8 @@ var SubscriptionManager = function () {
     /**
      * To forget all active subscriptions of a list of msg_types
      *
-     * @param {String} msg_types  list of msg_types to forget
+     * @param  {String}  msg_types  list of msg_types to forget
+     * @return {Promise} the promise object of all possible forget_all requests
      */
     var forgetAll = function forgetAll() {
         for (var _len = arguments.length, msg_types = Array(_len), _key = 0; _key < _len; _key++) {
@@ -7853,9 +7845,9 @@ var _client_base = __webpack_require__(24);
 
 var _client_base2 = _interopRequireDefault(_client_base);
 
-var _localize = __webpack_require__(2);
+var _currency_base = __webpack_require__(52);
 
-var _currency = __webpack_require__(11);
+var _localize = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7888,7 +7880,7 @@ var Amount = function Amount(_ref) {
                 null,
                 _react2.default.createElement('span', { className: 'symbols ' + (currency || '').toLowerCase() })
             ),
-            (0, _currency.addComma)(amount, 2)
+            (0, _currency_base.addComma)(amount, 2)
         );
     }
     return _react2.default.createElement(
@@ -9208,7 +9200,7 @@ exports.default = undefined;
 
 var _desc, _value, _class, _descriptor;
 
-var _mobx = __webpack_require__(85);
+var _mobx = __webpack_require__(69);
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -9283,7 +9275,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _dec, _dec2, _dec3, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, _descriptor20, _descriptor21, _descriptor22, _descriptor23, _descriptor24, _descriptor25, _descriptor26, _descriptor27, _descriptor28;
 
-var _mobx = __webpack_require__(85);
+var _mobx = __webpack_require__(69);
 
 var _moment = __webpack_require__(8);
 
@@ -9664,7 +9656,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _dec, _dec2, _dec3, _desc, _value, _class, _descriptor, _descriptor2;
 
-var _mobx = __webpack_require__(85);
+var _mobx = __webpack_require__(69);
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
