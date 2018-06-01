@@ -39,12 +39,8 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-<<<<<<< HEAD
         console.log('About to assign')
         this[name] = isNaN(value) ? value : Number(value);
-=======
-        this[name] = Number(value);
->>>>>>> parent of 50ba3e9a91... fixed minimal error on 'onChange' mobx method
     }
     //
     // // Change strictly to String.
