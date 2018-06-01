@@ -573,10 +573,6 @@ class DatePicker extends React.PureComponent {
     getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
 
     render() {
-        console.log('in date picker');
-        console.log(this.props.maxDate);
-        console.log('in this obj?');
-        console.log(moment(this.props.maxDate).format(this.props.dateFormat));
         const value = this.getPickerValue();
         if (this.props.is_nativepicker) {
             return (

@@ -33,7 +33,7 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = Number(value);
+        this[name] = isNaN(value) ? value: Number(value);
     }
 
     // Underlying
