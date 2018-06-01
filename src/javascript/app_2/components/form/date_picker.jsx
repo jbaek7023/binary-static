@@ -374,6 +374,10 @@ class Calendar extends React.Component {
     }
 
     render() {
+        console.log(this.props.maxDate);
+        console.log('converts to object?');
+        console.log(moment(this.props.maxDate).format(this.props.dateFormat));
+        // console.log(this.props.maxDate.utc().add(120, 'y').format('YYYY-MM-DD'));
         const view = this.state.active_view;
 
         const is_date_view   = (view === 'date');
@@ -573,6 +577,10 @@ class DatePicker extends React.PureComponent {
     getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
 
     render() {
+        console.log('in date picker');
+        console.log(this.props.maxDate);
+        console.log('in this obj?');
+        console.log(moment(this.props.maxDate).format(this.props.dateFormat));
         const value = this.getPickerValue();
         if (this.props.is_nativepicker) {
             return (
@@ -659,10 +667,7 @@ Calendar.propTypes = {
     id              : PropTypes.number,
     initial_value   : PropTypes.string,
     is_nativepicker : PropTypes.bool,
-    maxDate         : PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.string,
-    ]),
+    maxDate         : PropTypes.object,
     minDate: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,

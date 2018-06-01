@@ -59,9 +59,6 @@ export const BinaryLink = ({ to, children, ...props }) => {
 };
 
 BinaryLink.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
-    to: PropTypes.string,
+    children: PropTypes.object,
+    to      : PropTypes.string,
 };

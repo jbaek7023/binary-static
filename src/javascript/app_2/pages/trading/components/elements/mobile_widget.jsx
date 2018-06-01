@@ -28,13 +28,15 @@ class MobileWidget extends React.PureComponent {
         const minimized_param_values = React.Children.map(this.props.children, child =>
             React.cloneElement(child, {
                 is_minimized: true,
-            }));
+            })
+        );
 
         const param_pickers = React.Children.map(this.props.children, child =>
             React.cloneElement(child, {
                 is_nativepicker: true,
-            }));
-
+            })
+        );
+        
         return (
             <React.Fragment>
                 <div className='mobile-widget' onClick={this.handleWidgetClick}>

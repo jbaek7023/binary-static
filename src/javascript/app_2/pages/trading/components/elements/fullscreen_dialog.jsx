@@ -38,6 +38,9 @@ class FullscreenDialog extends React.PureComponent {
 
     render() {
         const { title, visible, children } = this.props;
+        console.log('Received props.children');
+        console.log(children);
+        console.log('------------------------');
 
         return (
             <div
@@ -58,7 +61,9 @@ class FullscreenDialog extends React.PureComponent {
                 <div className='fullscreen-dialog__header-shadow-cover' />
                 <div className='fullscreen-dialog__header-shadow' />
                 <div className='fullscreen-dialog__content'>
-                    {children}
+                    <div className='contracts-modal-list'>
+                        {children}
+                    </div>
                 </div>
             </div>
         );
@@ -66,13 +71,10 @@ class FullscreenDialog extends React.PureComponent {
 }
 
 FullscreenDialog.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
-    onClose: PropTypes.func,
-    title  : PropTypes.string,
-    visible: PropTypes.bool,
+    children: PropTypes.array,
+    onClose : PropTypes.func,
+    title   : PropTypes.string,
+    visible : PropTypes.bool,
 };
 
 export default FullscreenDialog;
