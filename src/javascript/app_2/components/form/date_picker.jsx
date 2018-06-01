@@ -577,20 +577,6 @@ class DatePicker extends React.PureComponent {
     getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
 
     render() {
-<<<<<<< HEAD
-        const { maxDate, minDate } = this.props;
-        console.log('value?');
-        // value = this.getPickerValue();
-        // console.log(value);
-        console.log(this.state.selected_date)
-        console.log('-----');
-=======
-        console.log('in date picker');
-        console.log(this.props.maxDate);
-        console.log('in this obj?');
-        console.log(moment(this.props.maxDate).format(this.props.dateFormat));
-        const value = this.getPickerValue();
->>>>>>> parent of 50ba3e9a91... fixed minimal error on 'onChange' mobx method
         if (this.props.is_nativepicker) {
             return (
                 <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
