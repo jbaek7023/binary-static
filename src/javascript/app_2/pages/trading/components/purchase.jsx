@@ -6,25 +6,26 @@ import { localize } from '../../../../_common/localize';
 
 const Purchase = ({
     trade_types,
-}) =>  (
-    <fieldset>
-        {Object.keys(trade_types).map((type, idx) => (
-            <Button
-                key={idx}
-                id={`purchase_${type}`}
-                className='primary green'
-                has_effect
-                text={`${localize('Purchase')} ${trade_types[type]}`}
-            />
-        ))}
-    </fieldset>
-);
+}) =>  {
+    console.log('hello world');
+    console.log(trade_types);
+    return (
+        <fieldset>
+            {Object.keys(trade_types).map((type, idx) => (
+                <Button
+                    key={idx}
+                    id={`purchase_${type}`}
+                    className='primary green'
+                    has_effect
+                    text={`${localize('Purchase')} ${trade_types[type]}`}
+                />
+            ))}
+        </fieldset>
+    );
+}
 
 Purchase.propTypes = {
-    trade_types: PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
+    trade_types: PropTypes.object,
 };
 
 export default connect(

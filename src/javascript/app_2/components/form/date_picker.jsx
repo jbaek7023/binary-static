@@ -374,10 +374,6 @@ class Calendar extends React.Component {
     }
 
     render() {
-        console.log(this.props.maxDate);
-        console.log('converts to object?');
-        console.log(moment(this.props.maxDate).format(this.props.dateFormat));
-        // console.log(this.props.maxDate.utc().add(120, 'y').format('YYYY-MM-DD'));
         const view = this.state.active_view;
 
         const is_date_view   = (view === 'date');
