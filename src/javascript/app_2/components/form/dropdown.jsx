@@ -41,6 +41,9 @@ class Dropdown extends React.PureComponent {
 
     handleSelect(item) {
         if (item.value !== this.props.value) {
+            console.log('----')
+            console.log(this.props.name);
+            console.log(item.value);
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
         this.handleVisibility();

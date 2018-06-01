@@ -30,9 +30,16 @@ export default class TradeStore {
 
     @action.bound handleChange(e) {
         const { name, value } = e.target;
+        console.log(name);
+        console.log(value);
+        console.log('type-------')
+        console.log(name);
+        console.log(value);
+
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
+        console.log('About to assign')
         this[name] = isNaN(value) ? value : Number(value);
     }
     //
@@ -60,7 +67,7 @@ export default class TradeStore {
     // Amount
     @observable basis           = 'stake';
     @observable currency        = Client.get('currency');
-    @observable currencies_list = {};
+    @observable currencies_list = [];
     @observable amount          = 5;
 
     // Duration

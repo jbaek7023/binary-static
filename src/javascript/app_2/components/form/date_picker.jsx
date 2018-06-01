@@ -573,7 +573,12 @@ class DatePicker extends React.PureComponent {
     getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
 
     render() {
-        const value = this.getPickerValue();
+        const { maxDate, minDate } = this.props;
+        console.log('value?');
+        // value = this.getPickerValue();
+        // console.log(value);
+        console.log(this.state.selected_date)
+        console.log('-----');
         if (this.props.is_nativepicker) {
             return (
                 <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
@@ -602,6 +607,7 @@ class DatePicker extends React.PureComponent {
                 </div>
             );
         }
+
         return (
             <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
                 <div
