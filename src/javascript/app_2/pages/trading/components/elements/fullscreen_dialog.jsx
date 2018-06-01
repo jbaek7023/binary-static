@@ -38,7 +38,10 @@ class FullscreenDialog extends React.PureComponent {
 
     render() {
         const { title, visible, children } = this.props;
-        
+        console.log('Received props.children');
+        console.log(children);
+        console.log('------------------------');
+
         return (
             <div
                 className={`fullscreen-dialog ${visible ? 'fullscreen-dialog--open' : ''}`}

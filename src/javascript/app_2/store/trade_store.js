@@ -63,7 +63,7 @@ export default class TradeStore {
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
-    @observable trade_types          = {};
+    @observable trade_types          = [];
     @observable contract_start_type  = '';
     @observable contract_expiry_type = '';
     @observable form_components      = [];
