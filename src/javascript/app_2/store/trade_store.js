@@ -33,8 +33,17 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = isNaN(value) ? value: Number(value);
+        this[name] = isNaN(value) ? value : Number(value);
     }
+    //
+    // // Change strictly to String.
+    // @action.bound handleChangeToString(e) {
+    //     const { name, value } = e.target;
+    //     if (!(name in this)) {
+    //         throw new Error(`Invalid Argument: ${name}`);
+    //     }
+    //     this[name] = String(value);
+    // }
 
     // Underlying
     @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
@@ -68,7 +77,7 @@ export default class TradeStore {
 
     // Start Time
     @observable start_dates_list = [];
-    @observable start_date       = 'now';
+    @observable start_date       = 999;
     @observable start_time       = '12:30 am';
 
     // Last Digit

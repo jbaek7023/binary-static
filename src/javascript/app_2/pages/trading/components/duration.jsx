@@ -115,10 +115,7 @@ const Duration = ({
 };
 
 Duration.propTypes = {
-    duration: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    duration           : PropTypes.number,
     duration_unit      : PropTypes.string,
     duration_units_list: PropTypes.array,
     expiry_date        : PropTypes.string,

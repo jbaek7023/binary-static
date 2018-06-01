@@ -242,7 +242,7 @@ const ContractType = (() => {
         const start_dates_list = [];
 
         if (config.has_spot) {
-            start_dates_list.push({ text: localize('Now'), value: 'now' });
+            start_dates_list.push({ text: localize('Now'), value: 999 });
         }
         if (config.forward_starting_dates) {
             start_dates_list.push(...config.forward_starting_dates);
