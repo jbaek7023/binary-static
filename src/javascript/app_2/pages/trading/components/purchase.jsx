@@ -7,8 +7,6 @@ import { localize } from '../../../../_common/localize';
 const Purchase = ({
     trade_types,
 }) =>  {
-    console.log('hello world');
-    console.log(trade_types);
     return (
         <fieldset>
             {Object.keys(trade_types).map((type, idx) => (

@@ -33,7 +33,7 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = value;
+        this[name] = Number(value);
     }
 
     // Underlying
