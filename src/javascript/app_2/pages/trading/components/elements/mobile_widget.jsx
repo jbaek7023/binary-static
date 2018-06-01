@@ -36,7 +36,7 @@ class MobileWidget extends React.PureComponent {
                 is_nativepicker: true,
             })
         );
-        
+
         return (
             <React.Fragment>
                 <div className='mobile-widget' onClick={this.handleWidgetClick}>
