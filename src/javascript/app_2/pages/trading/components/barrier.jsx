@@ -11,8 +11,6 @@ const Barrier = ({
     onChange,
     is_minimized,
 }) =>  {
-    console.log('you go!')
-    console.log(barrier_1);
     if (is_minimized) {
         if (!barrier_2) {
             return (
@@ -62,14 +60,8 @@ const Barrier = ({
 };
 
 Barrier.propTypes = {
-    barrier_1: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    barrier_2: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    barrier_1   : PropTypes.number,
+    barrier_2   : PropTypes.number,
     is_minimized: PropTypes.bool,
     onChange    : PropTypes.func,
 };
