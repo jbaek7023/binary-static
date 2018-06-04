@@ -74,7 +74,7 @@ const Amount = ({
 
 // To Do: change amount's prop type from string to number.
 Amount.propTypes = {
-    amount         : PropTypes.string,
+    amount         : PropTypes.number,
     basis          : PropTypes.string,
     currencies_list: PropTypes.object,
     currency       : PropTypes.string,

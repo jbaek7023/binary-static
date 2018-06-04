@@ -23,10 +23,7 @@ const Purchase = ({
 }
 
 Purchase.propTypes = {
-    trade_types: PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
+    trade_types: PropTypes.object,
 };
 
 export default connect(

@@ -175,6 +175,8 @@ const NativeSelect = ({
     </div>
 );
 
+// ToDo: Refactor Drop-down.
+// It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
 Dropdown.propTypes = {
     className      : PropTypes.string,
     is_nativepicker: PropTypes.bool,
@@ -192,6 +194,7 @@ Dropdown.propTypes = {
 
 };
 
+// ToDo: Refactor NativeSelect
 NativeSelect.propTypes = {
     list: PropTypes.oneOfType([
         PropTypes.object,
