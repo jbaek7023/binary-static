@@ -13,6 +13,7 @@ const basis_list = [
     { text: localize('Stake'),  value: 'stake' },
 ];
 
+// To Do: Refactor Amount.jsx
 const Amount = ({
     basis,
     currency,
@@ -71,11 +72,9 @@ const Amount = ({
     );
 };
 
+// To Do: change amount's prop type from string to number.
 Amount.propTypes = {
-    amount: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    amount         : PropTypes.string,
     basis          : PropTypes.string,
     currencies_list: PropTypes.object,
     currency       : PropTypes.string,

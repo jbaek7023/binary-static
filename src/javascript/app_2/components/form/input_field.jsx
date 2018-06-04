@@ -43,6 +43,7 @@ InputField.propTypes = {
     prefix         : PropTypes.string,
     required       : PropTypes.bool,
     type           : PropTypes.string,
+    // To do: restrict the prop types
     value          : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
