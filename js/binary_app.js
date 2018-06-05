@@ -9036,12 +9036,12 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 }), _descriptor19 = _applyDecoratedDescriptor(_class.prototype, 'barrier_1', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return '+0';
+        return '';
     }
 }), _descriptor20 = _applyDecoratedDescriptor(_class.prototype, 'barrier_2', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return '-0';
+        return '';
     }
 }), _descriptor21 = _applyDecoratedDescriptor(_class.prototype, 'start_dates_list', [_mobx.observable], {
     enumerable: true,
