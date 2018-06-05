@@ -609,7 +609,8 @@ var ContractType = function () {
     };
 
     var getStartType = function getStartType(start_date) {
-        var contract_start_type = start_date === Number(-191) ? 'spot' : 'forward';
+        // Number(0) refers to 'now'
+        var contract_start_type = start_date === Number(0) ? 'spot' : 'forward';
 
         return { contract_start_type: contract_start_type };
     };
@@ -619,7 +620,8 @@ var ContractType = function () {
         var start_dates_list = [];
 
         if (config.has_spot) {
-            start_dates_list.push({ text: (0, _localize.localize)('Now'), value: Number(-191) });
+            // Number(0) refers to 'now'
+            start_dates_list.push({ text: (0, _localize.localize)('Now'), value: Number(0) });
         }
         if (config.forward_starting_dates) {
             start_dates_list.push.apply(start_dates_list, _toConsumableArray(config.forward_starting_dates));
@@ -641,8 +643,8 @@ var ContractType = function () {
         var barrier_1 = barriers.barrier || barriers.high_barrier || '';
         var barrier_2 = barriers.low_barrier || '';
         return {
-            barrier_1: Number(barrier_1),
-            barrier_2: Number(barrier_2)
+            barrier_1: barrier_1.toString(),
+            barrier_2: barrier_2.toString()
         };
     };
 
@@ -7472,13 +7474,13 @@ var Barrier = function Barrier(_ref) {
             tooltip: (0, _localize.localize)('Text for Barriers goes here.')
         },
         _react2.default.createElement(_input_field2.default, {
-            type: 'number',
+            type: 'string',
             name: 'barrier_1',
             value: barrier_1,
             onChange: onChange
         }),
         !!barrier_2 && _react2.default.createElement(_input_field2.default, {
-            type: 'number',
+            type: 'string',
             name: 'barrier_2',
             value: barrier_2,
             onChange: onChange,
@@ -7488,8 +7490,8 @@ var Barrier = function Barrier(_ref) {
 };
 
 Barrier.propTypes = {
-    barrier_1: _propTypes2.default.number,
-    barrier_2: _propTypes2.default.number,
+    barrier_1: _propTypes2.default.string,
+    barrier_2: _propTypes2.default.string,
     is_minimized: _propTypes2.default.bool,
     onChange: _propTypes2.default.func
 };
@@ -7629,7 +7631,6 @@ var Duration = function Duration(_ref) {
         duration_units_list = _ref.duration_units_list,
         server_time = _ref.server_time,
         onChange = _ref.onChange,
-        onStringChange = _ref.onStringChange,
         is_nativepicker = _ref.is_nativepicker,
         is_minimized = _ref.is_minimized;
 
@@ -7653,9 +7654,9 @@ var Duration = function Duration(_ref) {
 
     function onDurationChange(fieldItem) {
         if (fieldItem === 'expiry_date') {
-            return onStringChange(fieldItem);
+            return onChange(fieldItem);
         }
-        return typeof duration === 'number' ? onChange(fieldItem) : onStringChange(fieldItem);
+        return typeof duration === 'number' ? onChange(fieldItem) : onChange(fieldItem);
     }
 
     return _react2.default.createElement(
@@ -7734,7 +7735,6 @@ Duration.propTypes = {
     is_minimized: _propTypes2.default.bool,
     is_nativepicker: _propTypes2.default.bool,
     onChange: _propTypes2.default.func,
-    onStringChange: _propTypes2.default.func,
     server_time: _propTypes2.default.object
 };
 
@@ -7748,7 +7748,6 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         duration_unit: trade.duration_unit,
         duration_units_list: trade.duration_units_list,
         server_time: trade.server_time,
-        onStringChange: trade.handleChangeToString,
         onChange: trade.handleChange
     };
 })(Duration);
@@ -8274,12 +8273,13 @@ var StartDate = function StartDate(_ref) {
         is_nativepicker = _ref.is_nativepicker,
         is_minimized = _ref.is_minimized;
 
+    // Number(0) refers to 'now'
     if (is_minimized) {
         return _react2.default.createElement(
             'div',
             { className: 'fieldset-minimized start-date' },
             _react2.default.createElement('span', { className: 'icon start-time' }),
-            start_date === Number(-191) ? (0, _localize.localize)('Now') : (start_dates_list.find(function (o) {
+            start_date === Number(0) ? (0, _localize.localize)('Now') : (start_dates_list.find(function (o) {
                 return o.value === +start_date;
             }) || {}).text + '\n' + start_time
         );
@@ -8300,7 +8300,7 @@ var StartDate = function StartDate(_ref) {
             type: 'date',
             is_nativepicker: is_nativepicker
         }),
-        start_date !== Number(-191) && _react2.default.createElement(
+        start_date !== Number(0) && _react2.default.createElement(
             _react2.default.Fragment,
             null,
             _react2.default.createElement(_time_picker2.default, {
@@ -8740,7 +8740,7 @@ exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _dec, _dec2, _dec3, _dec4, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, _descriptor20, _descriptor21, _descriptor22, _descriptor23, _descriptor24, _descriptor25, _descriptor26, _descriptor27, _descriptor28;
+var _dec, _dec2, _dec3, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, _descriptor20, _descriptor21, _descriptor22, _descriptor23, _descriptor24, _descriptor25, _descriptor26, _descriptor27, _descriptor28;
 
 var _mobx = __webpack_require__(68);
 
@@ -8807,7 +8807,7 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
     return desc;
 }
 
-var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 = _mobx.action.bound, _dec4 = _mobx.action.bound, (_class = function () {
+var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 = _mobx.action.bound, (_class = function () {
     function TradeStore() {
         _classCallCheck(this, TradeStore);
 
@@ -8900,28 +8900,14 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
         value: function handleChange(e) {
             var _e$target = e.target,
                 name = _e$target.name,
-                value = _e$target.value;
+                value = _e$target.value,
+                type = _e$target.type;
 
             if (!(name in this)) {
                 throw new Error('Invalid Argument: ' + name);
             }
-            this[name] = isNaN(value) ? value : Number(value);
-        }
-    }, {
-        key: 'handleChangeToString',
-        value: function handleChangeToString(e) {
-            // To-Do: combine handleChange(e) and handleChangeToString method later
-            // What this function is for:
-            // Some fields require to handle changes for 0 as a String.
-            var _e$target2 = e.target,
-                name = _e$target2.name,
-                value = _e$target2.value;
-
-            if (!(name in this)) {
-                throw new Error('Invalid Argument: ' + name);
-            }
-            // force to handle the change for 'value' as a String.
-            this[name] = value.toString();
+            this[name] = type === 'number' ? +value : value;
+            // this[name] = isNaN(value) ? value: Number(value);
         }
 
         // Underlying
@@ -8940,6 +8926,7 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 
 
         // Start Time
+        // Number(0) refers to 'now'
 
 
         // Last Digit
@@ -8956,7 +8943,7 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
     }]);
 
     return TradeStore;
-}(), (_applyDecoratedDescriptor(_class.prototype, 'init', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'init'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'dispose', [_dec2], Object.getOwnPropertyDescriptor(_class.prototype, 'dispose'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'handleChange', [_dec3], Object.getOwnPropertyDescriptor(_class.prototype, 'handleChange'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'handleChangeToString', [_dec4], Object.getOwnPropertyDescriptor(_class.prototype, 'handleChangeToString'), _class.prototype), _descriptor = _applyDecoratedDescriptor(_class.prototype, 'symbols_list', [_mobx.observable], {
+}(), (_applyDecoratedDescriptor(_class.prototype, 'init', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'init'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'dispose', [_dec2], Object.getOwnPropertyDescriptor(_class.prototype, 'dispose'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'handleChange', [_dec3], Object.getOwnPropertyDescriptor(_class.prototype, 'handleChange'), _class.prototype), _descriptor = _applyDecoratedDescriptor(_class.prototype, 'symbols_list', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
         return { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
@@ -9049,12 +9036,12 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 }), _descriptor19 = _applyDecoratedDescriptor(_class.prototype, 'barrier_1', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return 0;
+        return '+0';
     }
 }), _descriptor20 = _applyDecoratedDescriptor(_class.prototype, 'barrier_2', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return 0;
+        return '-0';
     }
 }), _descriptor21 = _applyDecoratedDescriptor(_class.prototype, 'start_dates_list', [_mobx.observable], {
     enumerable: true,
@@ -9064,7 +9051,7 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 }), _descriptor22 = _applyDecoratedDescriptor(_class.prototype, 'start_date', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return Number(-191);
+        return Number(0);
     }
 }), _descriptor23 = _applyDecoratedDescriptor(_class.prototype, 'start_time', [_mobx.observable], {
     enumerable: true,
