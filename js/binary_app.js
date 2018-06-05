@@ -337,12 +337,6 @@ var Fieldset = function (_React$PureComponent) {
     return Fieldset;
 }(_react2.default.PureComponent);
 
-// ToDo:
-// - Refactor Last Digit to keep the children as array type.
-//   Currently last_digit.jsx returns object (React-Element) as 'children'
-//   props type.
-
-
 Fieldset.propTypes = {
     children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
     header: _propTypes2.default.string,
@@ -609,8 +603,7 @@ var ContractType = function () {
     };
 
     var getStartType = function getStartType(start_date) {
-        // Number(0) refers to 'now'
-        var contract_start_type = start_date === Number(0) ? 'spot' : 'forward';
+        var contract_start_type = start_date === 'now' ? 'spot' : 'forward';
 
         return { contract_start_type: contract_start_type };
     };
@@ -620,8 +613,7 @@ var ContractType = function () {
         var start_dates_list = [];
 
         if (config.has_spot) {
-            // Number(0) refers to 'now'
-            start_dates_list.push({ text: (0, _localize.localize)('Now'), value: Number(0) });
+            start_dates_list.push({ text: (0, _localize.localize)('Now'), value: 'now' });
         }
         if (config.forward_starting_dates) {
             start_dates_list.push.apply(start_dates_list, _toConsumableArray(config.forward_starting_dates));
@@ -988,8 +980,6 @@ var NativeSelect = function NativeSelect(_ref2) {
     );
 };
 
-// ToDo: Refactor Drop-down.
-// It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
 Dropdown.propTypes = {
     className: _propTypes2.default.string,
     is_nativepicker: _propTypes2.default.bool,
@@ -1001,7 +991,6 @@ Dropdown.propTypes = {
 
 };
 
-// ToDo: Refactor NativeSelect
 NativeSelect.propTypes = {
     list: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.array]),
     name: _propTypes2.default.string,
@@ -1120,7 +1109,7 @@ var BinaryLink = function BinaryLink(_ref) {
 
 exports.BinaryLink = BinaryLink;
 BinaryLink.propTypes = {
-    children: _propTypes2.default.object,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
     to: _propTypes2.default.string
 };
 
@@ -1468,11 +1457,6 @@ var InputField = function (_React$PureComponent) {
     return InputField;
 }(_react2.default.PureComponent);
 
-// ToDo: Refactor input_field
-// supports more than two different types of 'value' as a prop.
-// Quick Solution - Pass two different props to input field.
-
-
 InputField.propTypes = {
     className: _propTypes2.default.string,
     helper: _propTypes2.default.bool,
@@ -1670,8 +1654,6 @@ exports.default = Button;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _class, _temp, _initialiseProps;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
@@ -1945,6 +1927,7 @@ var Calendar = function (_React$Component) {
                 minDate = _props2.minDate;
 
             var default_date = (0, _moment2.default)(startDate || minDate).format(this.props.dateFormat);
+
             this.setState({
                 date: default_date,
                 selected_date: ''
@@ -2268,7 +2251,7 @@ var getDayDifference = function getDayDifference(date) {
     return !date || diff < 0 ? '' : diff + 1;
 };
 
-var DatePicker = (_temp = _class = function (_React$PureComponent) {
+var DatePicker = function (_React$PureComponent) {
     _inherits(DatePicker, _React$PureComponent);
 
     function DatePicker(props) {
@@ -2276,7 +2259,18 @@ var DatePicker = (_temp = _class = function (_React$PureComponent) {
 
         var _this7 = _possibleConstructorReturn(this, (DatePicker.__proto__ || Object.getPrototypeOf(DatePicker)).call(this, props));
 
-        _initialiseProps.call(_this7);
+        _this7.changeCallback = function () {
+            _this7.props.onChange({ target: { name: _this7.props.name, value: _this7.getPickerValue() } });
+        };
+
+        _this7.clearDateInput = function () {
+            _this7.setState({ selected_date: '' }, _this7.changeCallback);
+            _this7.calendar.resetCalendar();
+        };
+
+        _this7.getPickerValue = function () {
+            return _this7.props.mode === 'duration' ? getDayDifference(_this7.state.selected_date) : _this7.state.selected_date;
+        };
 
         _this7.handleClickOutside = _this7.handleClickOutside.bind(_this7);
         _this7.handleVisibility = _this7.handleVisibility.bind(_this7);
@@ -2441,34 +2435,13 @@ var DatePicker = (_temp = _class = function (_React$PureComponent) {
     }]);
 
     return DatePicker;
-}(_react2.default.PureComponent), _initialiseProps = function _initialiseProps() {
-    var _this9 = this;
-
-    this.changeCallback = function () {
-        _this9.props.onChange({ target: { name: _this9.props.name, value: _this9.getPickerValue() } });
-    };
-
-    this.clearDateInput = function () {
-        _this9.setState({ selected_date: '' }, _this9.changeCallback);
-        _this9.calendar.resetCalendar();
-    };
-
-    this.getPickerValue = function () {
-        var mode = _this9.props.mode;
-        var selected_date = _this9.state.selected_date;
-
-        return mode === 'duration' ? getDayDifference(selected_date) : selected_date;
-    };
-}, _temp);
-
+}(_react2.default.PureComponent);
 
 DatePicker.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     mode: 'date'
 };
 
-// ToDo: Refactor Calendar and trade_store.
-// Need major refactorization in helper function.
 Calendar.propTypes = {
     dateFormat: _propTypes2.default.string,
     footer: _propTypes2.default.string,
@@ -2477,22 +2450,20 @@ Calendar.propTypes = {
     initial_value: _propTypes2.default.string,
     is_nativepicker: _propTypes2.default.bool,
     maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
-    minDate: _propTypes2.default.object,
+    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
     mode: _propTypes2.default.string,
     placeholder: _propTypes2.default.string,
     showTodayBtn: _propTypes2.default.bool,
     startDate: _propTypes2.default.string
 };
 
-// ToDo: Refactor DatePicker and trade_store.
-// Need major refactorization in helper function.
 DatePicker.propTypes = {
     dateFormat: _propTypes2.default.string,
     id: _propTypes2.default.number,
     initial_value: _propTypes2.default.string,
     is_nativepicker: _propTypes2.default.bool,
     maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
-    minDate: _propTypes2.default.object,
+    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
     mode: _propTypes2.default.string,
     name: _propTypes2.default.string,
     onChange: _propTypes2.default.func,
@@ -2842,7 +2813,6 @@ var TimePicker = function (_PureComponent2) {
         };
 
         _this4.handleChange = function (arg) {
-
             // To handle nativepicker;
             var value = (typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) === 'object' ? _this4.convertTo12h(arg.target.value) : arg;
 
@@ -3310,11 +3280,7 @@ var FullscreenDialog = function (_React$PureComponent) {
                 _react2.default.createElement(
                     'div',
                     { className: 'fullscreen-dialog__content' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'contracts-modal-list' },
-                        children
-                    )
+                    children
                 )
             );
         }
@@ -3324,7 +3290,7 @@ var FullscreenDialog = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 FullscreenDialog.propTypes = {
-    children: _propTypes2.default.array,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
     onClose: _propTypes2.default.func,
     title: _propTypes2.default.string,
     visible: _propTypes2.default.bool
@@ -5245,7 +5211,7 @@ var DrawerHeader = function DrawerHeader(_ref2) {
 
 Drawer.propTypes = {
     alignment: _propTypes2.default.string,
-    children: _propTypes2.default.array,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
     closeBtn: _propTypes2.default.func,
     footer: _propTypes2.default.func,
     icon_class: _propTypes2.default.string,
@@ -5254,7 +5220,7 @@ Drawer.propTypes = {
 
 ToggleDrawer.propTypes = {
     alignment: _propTypes2.default.string,
-    children: _propTypes2.default.array,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
     footer: _propTypes2.default.func,
     icon_class: _propTypes2.default.string,
     icon_link: _propTypes2.default.string
@@ -7380,7 +7346,7 @@ var Amount = function Amount(_ref) {
 };
 
 Amount.propTypes = {
-    amount: _propTypes2.default.number,
+    amount: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     basis: _propTypes2.default.string,
     currencies_list: _propTypes2.default.object,
     currency: _propTypes2.default.string,
@@ -7474,13 +7440,13 @@ var Barrier = function Barrier(_ref) {
             tooltip: (0, _localize.localize)('Text for Barriers goes here.')
         },
         _react2.default.createElement(_input_field2.default, {
-            type: 'string',
+            type: 'number',
             name: 'barrier_1',
             value: barrier_1,
             onChange: onChange
         }),
         !!barrier_2 && _react2.default.createElement(_input_field2.default, {
-            type: 'string',
+            type: 'number',
             name: 'barrier_2',
             value: barrier_2,
             onChange: onChange,
@@ -7490,8 +7456,8 @@ var Barrier = function Barrier(_ref) {
 };
 
 Barrier.propTypes = {
-    barrier_1: _propTypes2.default.string,
-    barrier_2: _propTypes2.default.string,
+    barrier_1: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+    barrier_2: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     is_minimized: _propTypes2.default.bool,
     onChange: _propTypes2.default.func
 };
@@ -7651,14 +7617,6 @@ var Duration = function Duration(_ref) {
             expiry_type === 'duration' ? duration + ' ' + duration_unit_text : (0, _moment2.default)(expiry_date).format('ddd - DD MMM, YYYY') + '\n' + expiry_time
         );
     }
-
-    function onDurationChange(fieldItem) {
-        if (fieldItem === 'expiry_date') {
-            return onChange(fieldItem);
-        }
-        return typeof duration === 'number' ? onChange(fieldItem) : onChange(fieldItem);
-    }
-
     return _react2.default.createElement(
         _fieldset2.default,
         {
@@ -7671,7 +7629,7 @@ var Duration = function Duration(_ref) {
             list: expiry_list,
             value: expiry_type,
             name: 'expiry_type',
-            onChange: onDurationChange,
+            onChange: onChange,
             is_nativepicker: is_nativepicker
         }),
         expiry_type === 'duration' ? _react2.default.createElement(
@@ -7685,21 +7643,21 @@ var Duration = function Duration(_ref) {
                     minDate: min_date_duration,
                     maxDate: max_date_duration,
                     mode: 'duration',
-                    onChange: onDurationChange,
+                    onChange: onChange,
                     is_nativepicker: is_nativepicker,
                     footer: (0, _localize.localize)('The minimum duration is 1 day')
                 }) : _react2.default.createElement(_input_field2.default, {
                     type: 'number',
                     name: 'duration',
                     value: duration,
-                    onChange: onDurationChange,
+                    onChange: onChange,
                     is_nativepicker: is_nativepicker
                 }),
                 _react2.default.createElement(_dropdown2.default, {
                     list: duration_units_list,
                     value: duration_unit,
                     name: 'duration_unit',
-                    onChange: onDurationChange,
+                    onChange: onChange,
                     is_nativepicker: is_nativepicker
                 })
             )
@@ -7710,11 +7668,11 @@ var Duration = function Duration(_ref) {
                 name: 'expiry_date',
                 showTodayBtn: true,
                 minDate: min_date_expiry,
-                onChange: onDurationChange,
+                onChange: onChange,
                 is_nativepicker: is_nativepicker
             }),
             _react2.default.createElement(_time_picker2.default, {
-                onChange: onDurationChange,
+                onChange: onChange,
                 name: 'expiry_time',
                 value: expiry_time,
                 placeholder: '12:00 pm',
@@ -7724,12 +7682,11 @@ var Duration = function Duration(_ref) {
     );
 };
 
-// ToDo: Refactor Duration.jsx and date_picker.jsx
 Duration.propTypes = {
     duration: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     duration_unit: _propTypes2.default.string,
     duration_units_list: _propTypes2.default.array,
-    expiry_date: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    expiry_date: _propTypes2.default.string,
     expiry_time: _propTypes2.default.string,
     expiry_type: _propTypes2.default.string,
     is_minimized: _propTypes2.default.bool,
@@ -7880,7 +7837,11 @@ var ContractsPopUp = function (_React$PureComponent) {
                     visible: this.state.is_list_visible,
                     onClose: this.handleVisibility
                 },
-                this.renderList()
+                _react2.default.createElement(
+                    'div',
+                    { className: 'contracts-modal-list' },
+                    this.renderList()
+                )
             );
         }
     }, {
@@ -8216,7 +8177,7 @@ var Purchase = function Purchase(_ref) {
 };
 
 Purchase.propTypes = {
-    trade_types: _propTypes2.default.object
+    trade_types: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object])
 };
 
 exports.default = (0, _connect.connect)(function (_ref2) {
@@ -8273,13 +8234,12 @@ var StartDate = function StartDate(_ref) {
         is_nativepicker = _ref.is_nativepicker,
         is_minimized = _ref.is_minimized;
 
-    // Number(0) refers to 'now'
     if (is_minimized) {
         return _react2.default.createElement(
             'div',
             { className: 'fieldset-minimized start-date' },
             _react2.default.createElement('span', { className: 'icon start-time' }),
-            start_date === Number(0) ? (0, _localize.localize)('Now') : (start_dates_list.find(function (o) {
+            start_date === 'now' ? (0, _localize.localize)('Now') : (start_dates_list.find(function (o) {
                 return o.value === +start_date;
             }) || {}).text + '\n' + start_time
         );
@@ -8300,7 +8260,7 @@ var StartDate = function StartDate(_ref) {
             type: 'date',
             is_nativepicker: is_nativepicker
         }),
-        start_date !== Number(0) && _react2.default.createElement(
+        start_date !== 'now' && _react2.default.createElement(
             _react2.default.Fragment,
             null,
             _react2.default.createElement(_time_picker2.default, {
@@ -8319,7 +8279,7 @@ StartDate.propTypes = {
     is_nativepicker: _propTypes2.default.bool,
     onChange: _propTypes2.default.func,
     server_time: _propTypes2.default.object,
-    start_date: _propTypes2.default.number,
+    start_date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     start_dates_list: _propTypes2.default.array,
     start_time: _propTypes2.default.string
 };
@@ -8900,14 +8860,12 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
         value: function handleChange(e) {
             var _e$target = e.target,
                 name = _e$target.name,
-                value = _e$target.value,
-                type = _e$target.type;
+                value = _e$target.value;
 
             if (!(name in this)) {
                 throw new Error('Invalid Argument: ' + name);
             }
-            this[name] = type === 'number' ? +value : value;
-            // this[name] = isNaN(value) ? value: Number(value);
+            this[name] = value;
         }
 
         // Underlying
@@ -8926,7 +8884,6 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 
 
         // Start Time
-        // Number(0) refers to 'now'
 
 
         // Last Digit
@@ -8966,7 +8923,7 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'trade_types', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return {};
+        return [];
     }
 }), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, 'contract_start_type', [_mobx.observable], {
     enumerable: true,
@@ -9026,7 +8983,7 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 }), _descriptor17 = _applyDecoratedDescriptor(_class.prototype, 'expiry_date', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return '';
+        return null;
     }
 }), _descriptor18 = _applyDecoratedDescriptor(_class.prototype, 'expiry_time', [_mobx.observable], {
     enumerable: true,
@@ -9036,12 +8993,12 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 }), _descriptor19 = _applyDecoratedDescriptor(_class.prototype, 'barrier_1', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return '';
+        return 0;
     }
 }), _descriptor20 = _applyDecoratedDescriptor(_class.prototype, 'barrier_2', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return '';
+        return 0;
     }
 }), _descriptor21 = _applyDecoratedDescriptor(_class.prototype, 'start_dates_list', [_mobx.observable], {
     enumerable: true,
@@ -9051,7 +9008,7 @@ var TradeStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec3 =
 }), _descriptor22 = _applyDecoratedDescriptor(_class.prototype, 'start_date', [_mobx.observable], {
     enumerable: true,
     initializer: function initializer() {
-        return Number(0);
+        return 'now';
     }
 }), _descriptor23 = _applyDecoratedDescriptor(_class.prototype, 'start_time', [_mobx.observable], {
     enumerable: true,
