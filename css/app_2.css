@@ -20,6 +20,15 @@ body, input {
     .btn span {
       font-size: 16px; } }
 
+.sidebar-container .contracts-popup-container.desktop-only span, .sidebar-container .contracts-popup-container.desktop-only span.contract-title {
+  font-size: 11px; }
+  @media screen and (min-width: 320px) {
+    .sidebar-container .contracts-popup-container.desktop-only span, .sidebar-container .contracts-popup-container.desktop-only span.contract-title {
+      font-size: calc(0.0892857143vw + 10.7142857143px); } }
+  @media screen and (min-width: 1440px) {
+    .sidebar-container .contracts-popup-container.desktop-only span, .sidebar-container .contracts-popup-container.desktop-only span.contract-title {
+      font-size: 12px; } }
+
 /* Multiple properties with same values */
 h1, h2, h3, h4, h5 {
   padding-top: 0rem;
@@ -401,22 +410,42 @@ span.tooltip {
   /* trade-app layout */
   #trade_container {
     position: relative;
-    margin: 0 15px;
-    padding-top: 14px;
+    padding: 14px 15px 0;
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
-    grid-template-rows: repeat(2, [row] auto);
-    grid-gap: 20px; }
+    grid-template-rows: 1fr;
+    grid-gap: 4px;
+    overflow: hidden;
+    min-height: calc(100vh - 110px); }
     #trade_container .chart-container {
-      padding: 10px;
       position: relative; }
+      #trade_container .chart-container cq-context {
+        top: 0;
+        left: 0; }
+        #trade_container .chart-container cq-context div.ciq-chart {
+          height: calc(100% - 50px); }
+          #trade_container .chart-container cq-context div.ciq-chart div.chartContainer {
+            background: transparent;
+            min-height: 100%; }
+          #trade_container .chart-container cq-context div.ciq-chart div.cq-chart-controls {
+            -webkit-box-shadow: none;
+                    box-shadow: none; }
+      #trade_container .chart-container div.debug-text {
+        display: none; }
     #trade_container .sidebar-container {
       position: relative; }
+    #trade_container .offset-container {
+      display: none; }
     #trade_container > * {
       grid-column: col-start / span 12; }
+    @media (max-width: 768px) {
+      #trade_container {
+        grid-template-rows: 1fr auto auto; } }
     @media (min-width: 769px) {
       #trade_container .chart-container {
-        grid-column: col-start 1 / span 9; }
+        grid-column: col-start 1 / span 9;
+        padding: 10px;
+        margin-left: -15px; }
         #trade_container .chart-container fieldset {
           display: inline-grid;
           width: 25%;
@@ -441,6 +470,7 @@ span.tooltip {
           grid-template-columns: 1fr 1.5fr; } }
     @media (min-width: 1025px) {
       #trade_container .offset-container {
+        display: unset;
         position: absolute;
         height: 100vh;
         width: 100%;
@@ -781,7 +811,7 @@ hr {
       .drawer-container .drawer-bg .drawer .drawer-items-container {
         overflow: hidden;
         height: 100%;
-        max-height: calc(100% - 156px);
+        max-height: calc(100% - 140px);
         z-index: 1;
         position: relative; }
       .drawer-container .drawer-bg .drawer.left {
@@ -981,7 +1011,7 @@ hr {
       .acc-switcher-container .acc-switcher-header .acc-switcher-active-login:before {
         content: '\25EF';
         font-size: 3rem;
-        top: 0;
+        top: -8px;
         position: absolute; }
       .acc-switcher-container .acc-switcher-header .acc-switcher-active-login:after {
         content: '\0025BE';
@@ -1017,7 +1047,7 @@ hr {
       -webkit-transform: scale(1, 1);
               transform: scale(1, 1);
       height: 100%;
-      max-height: calc(100% - 156px); }
+      max-height: calc(100% - 140px); }
     .acc-switcher-container .acc-switcher-list .acc-switcher-account {
       cursor: pointer;
       padding: 4px 16px;
@@ -1948,10 +1978,15 @@ div.datepicker-container {
     border-radius: 4px; }
 
 div.contracts-popup-container {
-  position: absolute;
+  position: relative;
   margin: 8px 0;
-  top: 0;
-  left: 30%; }
+  z-index: 2;
+  cursor: pointer;
+  background: #fff;
+  border: solid 1px #f2f2f2;
+  border-radius: 4px; }
+  div.contracts-popup-container.mobile-only {
+    border: solid 1px #2a3052; }
   div.contracts-popup-container .contracts-popup-display {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -1962,15 +1997,7 @@ div.contracts-popup-container {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    min-width: 200px;
-    max-width: 200px;
-    width: 100%;
-    background: #fff;
-    height: 30px;
-    cursor: pointer;
-    border: solid 1px #f2f2f2;
-    border-radius: 4px;
-    padding: 10px 8px; }
+    padding: 2px 8px; }
     div.contracts-popup-container .contracts-popup-display span {
       font-size: 1rem;
       text-transform: capitalize;
@@ -1987,8 +2014,10 @@ div.contracts-popup-container {
   div.contracts-popup-container:active, div.contracts-popup-container:focus, div.contracts-popup-container.show {
     outline: 0;
     border-radius: 4px; }
+  div.contracts-popup-container.show.mobile-only {
+    z-index: 99; }
   div.contracts-popup-container.show > div.contracts-popup-list {
-    top: 100%;
+    right: 0;
     max-height: 100%;
     opacity: 1;
     pointer-events: auto; }
@@ -2021,8 +2050,7 @@ div.contracts-popup-container {
     div.contracts-popup-container .list-item.disabled {
       pointer-events: none; }
       div.contracts-popup-container .list-item.disabled .contract-title {
-        color: #dedede;
-        /* stylelint-disable-line color-no-hex */ }
+        color: #e9e9ed; }
     div.contracts-popup-container .list-item.selected {
       background-color: #2a3052; }
       div.contracts-popup-container .list-item.selected .contract-title {
@@ -2035,8 +2063,7 @@ div.contracts-popup-container {
       font-size: 0.875rem;
       /* stylelint-disable-line number-max-precision */ }
   div.contracts-popup-container .contracts-popup-list {
-    left: 0;
-    top: 50%;
+    right: -50%;
     width: 100%;
     pointer-events: none;
     position: absolute;
@@ -2047,16 +2074,47 @@ div.contracts-popup-container {
     z-index: 999; }
     div.contracts-popup-container .contracts-popup-list .list-container {
       position: absolute;
-      width: 200%;
-      min-width: 500px;
+      width: 560px;
+      right: calc(100% + 10px);
+      top: -36px;
       display: grid;
+      grid-auto-columns: 1fr;
       z-index: 2;
-      background: #fff;
-      border: solid 1px #f2f2f2; }
-      div.contracts-popup-container .contracts-popup-list .list-container .list-item:nth-child(odd) {
-        grid-column: 1; }
-      div.contracts-popup-container .contracts-popup-list .list-container .list-item:nth-child(even) {
-        grid-column: 2; }
+      background: #f2f2f2;
+      border: solid 1px #e9e9ed;
+      border-radius: 4px; }
+      div.contracts-popup-container .contracts-popup-list .list-container .list-group {
+        padding: 1rem; }
+        div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-label span {
+          font-size: 0.8rem;
+          padding-left: 10px; }
+        div.contracts-popup-container .contracts-popup-list .list-container .list-group:nth-child(odd) {
+          grid-column: 1;
+          padding: 1rem 0.5rem 1rem 1rem; }
+        div.contracts-popup-container .contracts-popup-list .list-container .list-group:nth-child(even) {
+          grid-column: 2;
+          padding: 1rem 1rem 1rem 0.5rem; }
+        div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-items .list-item {
+          border: 1px solid #e9e9ed;
+          background-color: #fff; }
+          div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-items .list-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom: none; }
+          div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-items .list-item:last-child {
+            border-top: none;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px; }
+          div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-items .list-item:only-child {
+            border-radius: 4px;
+            border: 1px solid #e9e9ed; }
+          div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-items .list-item:first-child:nth-last-child(2) {
+            border-bottom: 1px solid #e9e9ed; }
+          div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-items .list-item.selected {
+            background: #2a3052;
+            color: #fff; }
+          div.contracts-popup-container .contracts-popup-list .list-container .list-group .list-items .list-item:hover:not(.selected) {
+            background: #e9e9ed; }
   div.contracts-popup-container .contracts-modal-list .list-item {
     padding: 16px; }
   div.contracts-popup-container .select-arrow {
@@ -2736,8 +2794,7 @@ a {
 .binary-app {
   overflow: hidden; }
   .binary-app .notice-msg {
-    background: unset;
-    border: 1px solid #f2f2f2; }
+    background: unset; }
   .binary-app .icon:before {
     content: '';
     display: block;
@@ -2829,3 +2886,7 @@ a {
         right: 5px;
         font-size: 0.5625rem;
         /* stylelint-disable-line number-max-precision */ }
+  .binary-app fieldset.trade-types {
+    border: 0;
+    padding: 0;
+    margin-bottom: 0; }
