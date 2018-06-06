@@ -1650,7 +1650,7 @@ Object.keys(_drawer_item).forEach(function (key) {
   });
 });
 
-var _drawer_items = __webpack_require__(382);
+var _drawer_items = __webpack_require__(383);
 
 Object.keys(_drawer_items).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -1674,7 +1674,7 @@ Object.keys(_drawer).forEach(function (key) {
   });
 });
 
-var _toggle_drawer = __webpack_require__(383);
+var _toggle_drawer = __webpack_require__(384);
 
 Object.keys(_toggle_drawer).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -1776,7 +1776,7 @@ var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _arrowhead = __webpack_require__(379);
+var _arrowhead = __webpack_require__(380);
 
 var _arrowhead2 = _interopRequireDefault(_arrowhead);
 
@@ -3752,11 +3752,11 @@ var _ui_store = __webpack_require__(419);
 
 var _ui_store2 = _interopRequireDefault(_ui_store);
 
-var _footer = __webpack_require__(389);
+var _footer = __webpack_require__(390);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _header = __webpack_require__(390);
+var _header = __webpack_require__(391);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -4451,6 +4451,95 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.AccountBalance = undefined;
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _client_base = __webpack_require__(23);
+
+var _client_base2 = _interopRequireDefault(_client_base);
+
+var _currency_base = __webpack_require__(45);
+
+var _connect = __webpack_require__(26);
+
+var _button = __webpack_require__(217);
+
+var _button2 = _interopRequireDefault(_button);
+
+var _localize = __webpack_require__(2);
+
+var _login = __webpack_require__(38);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AccountBalance = exports.AccountBalance = (0, _connect.connect)(function (_ref) {
+    var client = _ref.client;
+    return {
+        balance: client.balance
+    };
+})(function (_ref2) {
+    var balance = _ref2.balance;
+
+    var loginid = _client_base2.default.get('loginid');
+    var currency = _client_base2.default.get('currency');
+    var upgrade_info = _client_base2.default.getBasicUpgradeInfo();
+    var can_upgrade = upgrade_info.can_upgrade || upgrade_info.can_open_multi;
+
+    return _react2.default.createElement(
+        'div',
+        { className: 'acc-balance-container' },
+        _client_base2.default.isLoggedIn() ? _react2.default.createElement(
+            _react2.default.Fragment,
+            null,
+            _react2.default.createElement(
+                'div',
+                { className: 'acc-balance' },
+                _react2.default.createElement(
+                    'p',
+                    { className: 'acc-balance-accountid' },
+                    loginid
+                ),
+                typeof balance !== 'undefined' && _react2.default.createElement(
+                    'p',
+                    { className: 'acc-balance-amount' },
+                    _react2.default.createElement(
+                        'i',
+                        null,
+                        _react2.default.createElement('span', { className: 'symbols ' + (currency || '').toLowerCase() })
+                    ),
+                    (0, _currency_base.formatMoney)(currency, balance, true)
+                )
+            ),
+            can_upgrade && _react2.default.createElement(_button2.default, {
+                id: 'acc-balance-btn',
+                className: 'primary orange',
+                has_effect: true,
+                text: (0, _localize.localize)('Upgrade')
+                // onClick={onClickUpgrade} TODO
+            })
+        ) : _react2.default.createElement(_button2.default, {
+            className: 'primary green',
+            has_effect: true,
+            text: (0, _localize.localize)('Login'),
+            handleClick: _login.redirectToLogin
+        })
+    );
+});
+
+/***/ }),
+
+/***/ 379:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -4636,43 +4725,6 @@ exports.default = AccountSwitcher;
 
 /***/ }),
 
-/***/ 379:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(7);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(10);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Arrowhead = function Arrowhead(_ref) {
-    var className = _ref.className;
-    return _react2.default.createElement(
-        'svg',
-        { className: className, width: '16', height: '16', xmlns: 'http://www.w3.org/2000/svg' },
-        _react2.default.createElement('path', { className: 'arrow-path', d: 'M13.164 5.13a.5.5 0 1 1 .672.74l-5.5 5a.5.5 0 0 1-.672 0l-5.5-5a.5.5 0 0 1 .672-.74L8 9.824l5.164-4.694z', fill: '#D2D3DA', fillRule: 'nonzero' })
-    );
-};
-
-Arrowhead.propTypes = {
-    className: _propTypes2.default.string
-};
-
-exports.default = Arrowhead;
-
-/***/ }),
-
 /***/ 38:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4728,6 +4780,43 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(10);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Arrowhead = function Arrowhead(_ref) {
+    var className = _ref.className;
+    return _react2.default.createElement(
+        'svg',
+        { className: className, width: '16', height: '16', xmlns: 'http://www.w3.org/2000/svg' },
+        _react2.default.createElement('path', { className: 'arrow-path', d: 'M13.164 5.13a.5.5 0 1 1 .672.74l-5.5 5a.5.5 0 0 1-.672 0l-5.5-5a.5.5 0 0 1 .672-.74L8 9.824l5.164-4.694z', fill: '#D2D3DA', fillRule: 'nonzero' })
+    );
+};
+
+Arrowhead.propTypes = {
+    className: _propTypes2.default.string
+};
+
+exports.default = Arrowhead;
+
+/***/ }),
+
+/***/ 381:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = __webpack_require__(7);
@@ -4761,7 +4850,7 @@ exports.default = CardList;
 
 /***/ }),
 
-/***/ 381:
+/***/ 382:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4931,7 +5020,7 @@ exports.default = DataTable;
 
 /***/ }),
 
-/***/ 382:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5051,7 +5140,7 @@ exports.DrawerItems = DrawerItems;
 
 /***/ }),
 
-/***/ 383:
+/***/ 384:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5183,7 +5272,7 @@ exports.ToggleDrawer = drawer_component;
 
 /***/ }),
 
-/***/ 384:
+/***/ 385:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5324,7 +5413,73 @@ exports.default = LanguageSwitcher;
 
 /***/ }),
 
-/***/ 385:
+/***/ 386:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.MenuDrawer = undefined;
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactPerfectScrollbar = __webpack_require__(267);
+
+var _reactPerfectScrollbar2 = _interopRequireDefault(_reactPerfectScrollbar);
+
+var _localize = __webpack_require__(2);
+
+var _index = __webpack_require__(216);
+
+var _language_switcher = __webpack_require__(385);
+
+var _language_switcher2 = _interopRequireDefault(_language_switcher);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var MenuDrawer = exports.MenuDrawer = function MenuDrawer() {
+    return _react2.default.createElement(
+        'div',
+        { className: 'drawer-items-container' },
+        _react2.default.createElement(
+            _reactPerfectScrollbar2.default,
+            null,
+            _react2.default.createElement(
+                'div',
+                { className: 'list-items-container' },
+                _react2.default.createElement(_index.DrawerItems, {
+                    text: (0, _localize.localize)('Account Settings'),
+                    items: [{ text: (0, _localize.localize)('Personal Detail') }, { text: (0, _localize.localize)('Account Authentication') }, { text: (0, _localize.localize)('Financial Assessment') }, { text: (0, _localize.localize)('Professional Trader') }]
+                }),
+                _react2.default.createElement(_index.DrawerItems, {
+                    text: (0, _localize.localize)('Security Settings'),
+                    items: [{ text: (0, _localize.localize)('Self Exclusion') }, { text: (0, _localize.localize)('Trading Limits') }, { text: (0, _localize.localize)('Authorised Applications') }, { text: (0, _localize.localize)('API Token') }]
+                }),
+                _react2.default.createElement(_index.DrawerItems, {
+                    text: (0, _localize.localize)('Trading History'),
+                    items: [{ text: (0, _localize.localize)('Portfolio') }, { text: (0, _localize.localize)('Profit Table') }, { text: (0, _localize.localize)('Statement'), link_to: '/statement' }]
+                }),
+                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Cashier') }),
+                _react2.default.createElement('hr', null),
+                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Forgot Password') }),
+                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Manage Password') }),
+                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Useful Resources') }),
+                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Login History') }),
+                _react2.default.createElement('hr', null),
+                _react2.default.createElement(_language_switcher2.default, null)
+            )
+        )
+    );
+};
+
+/***/ }),
+
+/***/ 387:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5419,7 +5574,7 @@ exports.default = Popover;
 
 /***/ }),
 
-/***/ 386:
+/***/ 388:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5592,7 +5747,7 @@ exports.default = PortfolioDrawer;
 
 /***/ }),
 
-/***/ 387:
+/***/ 389:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5635,96 +5790,7 @@ exports.default = Tooltip;
 
 /***/ }),
 
-/***/ 388:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.AccountBalance = undefined;
-
-var _react = __webpack_require__(7);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _client_base = __webpack_require__(23);
-
-var _client_base2 = _interopRequireDefault(_client_base);
-
-var _currency_base = __webpack_require__(45);
-
-var _connect = __webpack_require__(26);
-
-var _button = __webpack_require__(217);
-
-var _button2 = _interopRequireDefault(_button);
-
-var _localize = __webpack_require__(2);
-
-var _login = __webpack_require__(38);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var AccountBalance = exports.AccountBalance = (0, _connect.connect)(function (_ref) {
-    var client = _ref.client;
-    return {
-        balance: client.balance
-    };
-})(function (_ref2) {
-    var balance = _ref2.balance;
-
-    var loginid = _client_base2.default.get('loginid');
-    var currency = _client_base2.default.get('currency');
-    var upgrade_info = _client_base2.default.getBasicUpgradeInfo();
-    var can_upgrade = upgrade_info.can_upgrade || upgrade_info.can_open_multi;
-
-    return _react2.default.createElement(
-        'div',
-        { className: 'acc-balance-container' },
-        _client_base2.default.isLoggedIn() ? _react2.default.createElement(
-            _react2.default.Fragment,
-            null,
-            _react2.default.createElement(
-                'div',
-                { className: 'acc-balance' },
-                _react2.default.createElement(
-                    'p',
-                    { className: 'acc-balance-accountid' },
-                    loginid
-                ),
-                typeof balance !== 'undefined' && _react2.default.createElement(
-                    'p',
-                    { className: 'acc-balance-amount' },
-                    _react2.default.createElement(
-                        'i',
-                        null,
-                        _react2.default.createElement('span', { className: 'symbols ' + (currency || '').toLowerCase() })
-                    ),
-                    (0, _currency_base.formatMoney)(currency, balance, true)
-                )
-            ),
-            can_upgrade && _react2.default.createElement(_button2.default, {
-                id: 'acc-balance-btn',
-                className: 'primary orange',
-                has_effect: true,
-                text: (0, _localize.localize)('Upgrade')
-                // onClick={onClickUpgrade} TODO
-            })
-        ) : _react2.default.createElement(_button2.default, {
-            className: 'primary green',
-            has_effect: true,
-            text: (0, _localize.localize)('Login'),
-            handleClick: _login.redirectToLogin
-        })
-    );
-});
-
-/***/ }),
-
-/***/ 389:
+/***/ 390:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5744,7 +5810,7 @@ var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _popover = __webpack_require__(385);
+var _popover = __webpack_require__(387);
 
 var _popover2 = _interopRequireDefault(_popover);
 
@@ -5932,7 +5998,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 390:
+/***/ 391:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5952,7 +6018,7 @@ var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _account_switcher = __webpack_require__(378);
+var _account_switcher = __webpack_require__(379);
 
 var _account_switcher2 = _interopRequireDefault(_account_switcher);
 
@@ -5968,9 +6034,9 @@ var _url = __webpack_require__(9);
 
 var _url2 = _interopRequireDefault(_url);
 
-var _account_balance = __webpack_require__(388);
+var _account_balance = __webpack_require__(378);
 
-var _menu_drawer = __webpack_require__(391);
+var _menu_drawer = __webpack_require__(386);
 
 var _client_base = __webpack_require__(23);
 
@@ -6077,72 +6143,6 @@ Header.propTypes = {
 };
 
 exports.default = Header;
-
-/***/ }),
-
-/***/ 391:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.MenuDrawer = undefined;
-
-var _react = __webpack_require__(7);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactPerfectScrollbar = __webpack_require__(267);
-
-var _reactPerfectScrollbar2 = _interopRequireDefault(_reactPerfectScrollbar);
-
-var _localize = __webpack_require__(2);
-
-var _index = __webpack_require__(216);
-
-var _language_switcher = __webpack_require__(384);
-
-var _language_switcher2 = _interopRequireDefault(_language_switcher);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var MenuDrawer = exports.MenuDrawer = function MenuDrawer() {
-    return _react2.default.createElement(
-        'div',
-        { className: 'drawer-items-container' },
-        _react2.default.createElement(
-            _reactPerfectScrollbar2.default,
-            null,
-            _react2.default.createElement(
-                'div',
-                { className: 'list-items-container' },
-                _react2.default.createElement(_index.DrawerItems, {
-                    text: (0, _localize.localize)('Account Settings'),
-                    items: [{ text: (0, _localize.localize)('Personal Detail') }, { text: (0, _localize.localize)('Account Authentication') }, { text: (0, _localize.localize)('Financial Assessment') }, { text: (0, _localize.localize)('Professional Trader') }]
-                }),
-                _react2.default.createElement(_index.DrawerItems, {
-                    text: (0, _localize.localize)('Security Settings'),
-                    items: [{ text: (0, _localize.localize)('Self Exclusion') }, { text: (0, _localize.localize)('Trading Limits') }, { text: (0, _localize.localize)('Authorised Applications') }, { text: (0, _localize.localize)('API Token') }]
-                }),
-                _react2.default.createElement(_index.DrawerItems, {
-                    text: (0, _localize.localize)('Trading History'),
-                    items: [{ text: (0, _localize.localize)('Portfolio') }, { text: (0, _localize.localize)('Profit Table') }, { text: (0, _localize.localize)('Statement'), link_to: '/statement' }]
-                }),
-                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Cashier') }),
-                _react2.default.createElement('hr', null),
-                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Forgot Password') }),
-                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Manage Password') }),
-                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Useful Resources') }),
-                _react2.default.createElement(_index.DrawerItem, { text: (0, _localize.localize)('Login History') }),
-                _react2.default.createElement('hr', null),
-                _react2.default.createElement(_language_switcher2.default, null)
-            )
-        )
-    );
-};
 
 /***/ }),
 
@@ -6434,11 +6434,11 @@ var _localize = __webpack_require__(2);
 
 var _string_util = __webpack_require__(18);
 
-var _card_list = __webpack_require__(380);
+var _card_list = __webpack_require__(381);
 
 var _card_list2 = _interopRequireDefault(_card_list);
 
-var _data_table = __webpack_require__(381);
+var _data_table = __webpack_require__(382);
 
 var _data_table2 = _interopRequireDefault(_data_table);
 
@@ -8756,7 +8756,7 @@ var _smartcharts = __webpack_require__(377);
 
 var _smartcharts2 = _interopRequireDefault(_smartcharts);
 
-var _portfolio_drawer = __webpack_require__(386);
+var _portfolio_drawer = __webpack_require__(388);
 
 var _portfolio_drawer2 = _interopRequireDefault(_portfolio_drawer);
 
@@ -10881,7 +10881,7 @@ var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _tooltip = __webpack_require__(387);
+var _tooltip = __webpack_require__(389);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
