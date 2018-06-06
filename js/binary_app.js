@@ -1432,12 +1432,11 @@ Drawer.propTypes = {
 };
 
 var drawer_component = (0, _connect.connect)(function (_ref2) {
-    var _ref2$ui = _ref2.ui,
-        is_main_drawer_on = _ref2$ui.is_main_drawer_on,
-        is_portfolio_drawer_on = _ref2$ui.is_portfolio_drawer_on,
-        hideDrawers = _ref2$ui.hideDrawers;
+    var ui = _ref2.ui;
     return {
-        is_main_drawer_on: is_main_drawer_on, is_portfolio_drawer_on: is_portfolio_drawer_on, hideDrawers: hideDrawers
+        is_main_drawer_on: ui.is_main_drawer_on,
+        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
+        hideDrawers: ui.hideDrawers
     };
 })(Drawer);
 
@@ -5002,7 +5001,7 @@ var DrawerItems = function (_PureComponent) {
 
 
             var list_is_collapsed = {
-                visibility: '' + (is_collapsed ? 'visible' : 'hidden')
+                visibility: is_collapsed ? 'visible' : 'hidden'
             };
             var parent_item_class = (0, _classnames2.default)('parent-item', {
                 'show': is_collapsed
@@ -5141,7 +5140,7 @@ var ToggleDrawer = function (_PureComponent) {
                 _react2.default.createElement(
                     'div',
                     { className: toggle_class, onClick: this.showDrawer },
-                    icon_link ? _react2.default.createElement('img', { src: icon_link }) : _react2.default.createElement('img', { src: _url2.default.urlForStatic('images/trading_app/header/menu.svg') })
+                    _react2.default.createElement('img', { src: icon_link || _url2.default.urlForStatic('images/trading_app/header/menu.svg') })
                 ),
                 _react2.default.createElement(
                     _drawer.Drawer,
@@ -5857,8 +5856,15 @@ var ToggleFullScreen = function (_React$PureComponent) {
     return ToggleFullScreen;
 }(_react2.default.PureComponent);
 
-var Footer = function (_React$PureComponent2) {
-    _inherits(Footer, _React$PureComponent2);
+// Better to keep this class as a Component.
+// Because new 'server_time' props will be passed every second,
+// so it will force to render the PureComponent anyway.
+// PureComponent uses shallow-copy before it renders,
+// therefore this with PureComponent gives you slower performance than Component
+
+
+var Footer = function (_React$Component) {
+    _inherits(Footer, _React$Component);
 
     function Footer() {
         _classCallCheck(this, Footer);
@@ -5902,7 +5908,7 @@ var Footer = function (_React$PureComponent2) {
     }]);
 
     return Footer;
-}(_react2.default.PureComponent);
+}(_react2.default.Component);
 
 Footer.propTypes = {
     items: _propTypes2.default.array,
