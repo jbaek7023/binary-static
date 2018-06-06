@@ -1606,9 +1606,9 @@ DrawerItem.propTypes = {
 };
 
 var drawer_item_component = (0, _connect.connect)(function (_ref2) {
-    var hideDrawers = _ref2.ui.hideDrawers;
+    var ui = _ref2.ui;
     return {
-        hideDrawers: hideDrawers
+        hideDrawers: ui.hideDrawers
     };
 })(DrawerItem);
 
@@ -5259,12 +5259,11 @@ ToggleDrawer.propTypes = {
 };
 
 var drawer_component = (0, _connect.connect)(function (_ref2) {
-    var _ref2$ui = _ref2.ui,
-        showMainDrawer = _ref2$ui.showMainDrawer,
-        showPortfolioDrawer = _ref2$ui.showPortfolioDrawer,
-        hideDrawers = _ref2$ui.hideDrawers;
+    var ui = _ref2.ui;
     return {
-        showMainDrawer: showMainDrawer, showPortfolioDrawer: showPortfolioDrawer, hideDrawers: hideDrawers
+        showMainDrawer: ui.showMainDrawer,
+        showPortfolioDrawer: ui.showPortfolioDrawer,
+        hideDrawers: ui.hideDrawers
     };
 })(ToggleDrawer);
 
