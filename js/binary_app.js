@@ -1733,7 +1733,7 @@ Object.keys(_drawer).forEach(function (key) {
   });
 });
 
-var _toggle_drawer = __webpack_require__(384);
+var _toggle_drawer = __webpack_require__(383);
 
 Object.keys(_toggle_drawer).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -5065,6 +5065,374 @@ exports.DrawerItems = DrawerItems;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.ToggleDrawer = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = __webpack_require__(62);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _propTypes = __webpack_require__(10);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _drawer = __webpack_require__(214);
+
+var _url = __webpack_require__(9);
+
+var _url2 = _interopRequireDefault(_url);
+
+var _connect = __webpack_require__(26);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ToggleDrawer = function (_PureComponent) {
+    _inherits(ToggleDrawer, _PureComponent);
+
+    function ToggleDrawer() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, ToggleDrawer);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ToggleDrawer.__proto__ || Object.getPrototypeOf(ToggleDrawer)).call.apply(_ref, [this].concat(args))), _this), _this.showDrawer = function () {
+            var alignment = _this.props.alignment;
+
+            if (alignment && alignment === 'left') {
+                _this.props.showMainDrawer();
+            } else if (alignment && alignment === 'right') {
+                _this.props.showPortfolioDrawer();
+            }
+        }, _this.closeDrawer = function () {
+            _this.props.hideDrawers();
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(ToggleDrawer, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                icon_class = _props.icon_class,
+                icon_link = _props.icon_link,
+                alignment = _props.alignment,
+                footer = _props.footer,
+                children = _props.children;
+
+
+            var toggle_class = (0, _classnames2.default)('navbar-icons', icon_class, {
+                'menu-toggle': !icon_class
+            });
+
+            return _react2.default.createElement(
+                _react2.default.Fragment,
+                null,
+                _react2.default.createElement(
+                    'div',
+                    { className: toggle_class, onClick: this.showDrawer },
+                    icon_link ? _react2.default.createElement('img', { src: icon_link }) : _react2.default.createElement('img', { src: _url2.default.urlForStatic('images/trading_app/header/menu.svg') })
+                ),
+                _react2.default.createElement(
+                    _drawer.Drawer,
+                    {
+                        alignment: alignment,
+                        closeBtn: this.closeDrawer,
+                        footer: footer
+                    },
+                    children
+                )
+            );
+        }
+    }]);
+
+    return ToggleDrawer;
+}(_react.PureComponent);
+
+ToggleDrawer.propTypes = {
+    alignment: _propTypes2.default.string,
+    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
+    footer: _propTypes2.default.func,
+    hideDrawers: _propTypes2.default.func,
+    icon_class: _propTypes2.default.string,
+    icon_link: _propTypes2.default.string,
+    showMainDrawer: _propTypes2.default.func,
+    showPortfolioDrawer: _propTypes2.default.func
+};
+
+var drawer_component = (0, _connect.connect)(function (_ref2) {
+    var _ref2$ui = _ref2.ui,
+        showMainDrawer = _ref2$ui.showMainDrawer,
+        showPortfolioDrawer = _ref2$ui.showPortfolioDrawer,
+        hideDrawers = _ref2$ui.hideDrawers;
+    return {
+        showMainDrawer: showMainDrawer, showPortfolioDrawer: showPortfolioDrawer, hideDrawers: hideDrawers
+    };
+})(ToggleDrawer);
+
+exports.ToggleDrawer = drawer_component;
+
+/***/ }),
+
+/***/ 384:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(10);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _localize = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LanguageSwitcher = function (_React$PureComponent) {
+    _inherits(LanguageSwitcher, _React$PureComponent);
+
+    function LanguageSwitcher(props) {
+        _classCallCheck(this, LanguageSwitcher);
+
+        var _this = _possibleConstructorReturn(this, (LanguageSwitcher.__proto__ || Object.getPrototypeOf(LanguageSwitcher)).call(this, props));
+
+        _this.toggleLanguageList = function () {
+            _this.setState({
+                is_collapsed: !_this.state.is_collapsed
+            });
+        };
+
+        _this.switchLanguage = function (lang) {
+            _this.setState({
+                active_language: lang
+            });
+        };
+
+        _this.state = {
+            is_collapsed: false,
+            active_language: _this.props.languages[0]
+        };
+        return _this;
+    }
+
+    _createClass(LanguageSwitcher, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var language_list_collapsed = {
+                // visibility needed in style props as workaround for briefly flashing hidden elements in css
+                display: this.state.is_collapsed ? 'inline-block' : 'none'
+            };
+
+            var isLanguageActive = function isLanguageActive(lang) {
+                return lang.id === _this2.state.active_language.id;
+            };
+
+            return _react2.default.createElement(
+                _react2.default.Fragment,
+                null,
+                _react2.default.createElement(
+                    'div',
+                    { className: 'drawer-item', onClick: this.toggleLanguageList },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'parent-item ' + (this.state.active_language.id || '') },
+                        (0, _localize.localize)('Language'),
+                        ' : ',
+                        this.state.active_language.name
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    {
+                        className: 'lang-switcher-list',
+                        style: language_list_collapsed
+                    },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'lang-switcher-list-header', onClick: this.toggleLanguageList },
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'lang-switcher-list-desc' },
+                            (0, _localize.localize)('Choose your language')
+                        )
+                    ),
+                    this.props.languages.map(function (language, idx) {
+                        return _react2.default.createElement(
+                            _react2.default.Fragment,
+                            { key: idx },
+                            _react2.default.createElement(
+                                'div',
+                                {
+                                    className: 'lang-switcher-language ' + (isLanguageActive(language) ? 'active' : ''),
+                                    onClick: _this2.switchLanguage.bind(null, language)
+                                },
+                                _react2.default.createElement(
+                                    'p',
+                                    { className: 'lang-switcher-name' },
+                                    language.name
+                                )
+                            )
+                        );
+                    })
+                )
+            );
+        }
+    }]);
+
+    return LanguageSwitcher;
+}(_react2.default.PureComponent);
+
+// TODO: Remove defaultProps
+
+
+LanguageSwitcher.defaultProps = {
+    languages: [{ id: 'EN', name: 'English' }, { id: 'DE', name: 'Deutsch' }, { id: 'FR', name: 'Français' }, { id: 'ID', name: 'Indonesia' }, { id: 'IT', name: 'Italiano' }, { id: 'JA', name: '日本語' }, { id: 'PL', name: 'Polish' }, { id: 'PT', name: 'Português' }, { id: 'RU', name: 'Русский' }, { id: 'TH', name: 'Thai' }, { id: 'VI', name: 'Tiếng Việt' }, { id: 'ZH_CN', name: '简体中文' }, { id: 'ZH_TW', name: '繁體中文' }]
+};
+
+LanguageSwitcher.propTypes = {
+    languages: _propTypes2.default.array
+};
+
+exports.default = LanguageSwitcher;
+
+/***/ }),
+
+/***/ 385:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(10);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _localize = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Popover = function (_React$PureComponent) {
+    _inherits(Popover, _React$PureComponent);
+
+    function Popover(props) {
+        _classCallCheck(this, Popover);
+
+        var _this = _possibleConstructorReturn(this, (Popover.__proto__ || Object.getPrototypeOf(Popover)).call(this, props));
+
+        _this.state = {
+            is_open: false
+        };
+        return _this;
+    }
+
+    _createClass(Popover, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var popover = _react2.default.createElement(
+                'div',
+                { className: 'popover ' + (this.state.is_open ? 'open' : '') + ' ' + (this.props.alignment ? this.props.alignment : '') },
+                this.props.title && _react2.default.createElement(
+                    'div',
+                    { className: 'popover-title' },
+                    (0, _localize.localize)(this.props.title)
+                ),
+                this.props.subtitle && _react2.default.createElement(
+                    'div',
+                    { className: 'popover-subtitle' },
+                    (0, _localize.localize)(this.props.subtitle)
+                )
+            );
+
+            return _react2.default.createElement(
+                _react2.default.Fragment,
+                null,
+                _react2.default.Children.map(this.props.children, function (child) {
+                    return _react2.default.cloneElement(child, {
+                        onMouseEnter: function onMouseEnter() {
+                            return _this2.setState({ is_open: true });
+                        },
+                        onMouseLeave: function onMouseLeave() {
+                            return _this2.setState({ is_open: false });
+                        }
+                    }, popover);
+                })
+            );
+        }
+    }]);
+
+    return Popover;
+}(_react2.default.PureComponent);
+
+Popover.propTypes = {
+    alignment: _propTypes2.default.string,
+    children: _propTypes2.default.object,
+    subtitle: _propTypes2.default.string,
+    title: _propTypes2.default.string
+};
+
+exports.default = Popover;
+
+/***/ }),
+
+/***/ 386:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -5226,374 +5594,6 @@ PortfolioDrawer.propTypes = {
 };
 
 exports.default = PortfolioDrawer;
-
-/***/ }),
-
-/***/ 384:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.ToggleDrawer = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(7);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classnames = __webpack_require__(62);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _propTypes = __webpack_require__(10);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _drawer = __webpack_require__(214);
-
-var _url = __webpack_require__(9);
-
-var _url2 = _interopRequireDefault(_url);
-
-var _connect = __webpack_require__(26);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ToggleDrawer = function (_PureComponent) {
-    _inherits(ToggleDrawer, _PureComponent);
-
-    function ToggleDrawer() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
-        _classCallCheck(this, ToggleDrawer);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ToggleDrawer.__proto__ || Object.getPrototypeOf(ToggleDrawer)).call.apply(_ref, [this].concat(args))), _this), _this.showDrawer = function () {
-            var alignment = _this.props.alignment;
-
-            if (alignment && alignment === 'left') {
-                _this.props.showMainDrawer();
-            } else if (alignment && alignment === 'right') {
-                _this.props.showPortfolioDrawer();
-            }
-        }, _this.closeDrawer = function () {
-            _this.props.hideDrawers();
-        }, _temp), _possibleConstructorReturn(_this, _ret);
-    }
-
-    _createClass(ToggleDrawer, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                icon_class = _props.icon_class,
-                icon_link = _props.icon_link,
-                alignment = _props.alignment,
-                footer = _props.footer,
-                children = _props.children;
-
-
-            var toggle_class = (0, _classnames2.default)('navbar-icons', icon_class, {
-                'menu-toggle': !icon_class
-            });
-
-            return _react2.default.createElement(
-                _react2.default.Fragment,
-                null,
-                _react2.default.createElement(
-                    'div',
-                    { className: toggle_class, onClick: this.showDrawer },
-                    icon_link ? _react2.default.createElement('img', { src: icon_link }) : _react2.default.createElement('img', { src: _url2.default.urlForStatic('images/trading_app/header/menu.svg') })
-                ),
-                _react2.default.createElement(
-                    _drawer.Drawer,
-                    {
-                        alignment: alignment,
-                        closeBtn: this.closeDrawer,
-                        footer: footer
-                    },
-                    children
-                )
-            );
-        }
-    }]);
-
-    return ToggleDrawer;
-}(_react.PureComponent);
-
-ToggleDrawer.propTypes = {
-    alignment: _propTypes2.default.string,
-    children: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object]),
-    footer: _propTypes2.default.func,
-    hideDrawers: _propTypes2.default.func,
-    icon_class: _propTypes2.default.string,
-    icon_link: _propTypes2.default.string,
-    showMainDrawer: _propTypes2.default.func,
-    showPortfolioDrawer: _propTypes2.default.func
-};
-
-var drawer_component = (0, _connect.connect)(function (_ref2) {
-    var _ref2$ui = _ref2.ui,
-        showMainDrawer = _ref2$ui.showMainDrawer,
-        showPortfolioDrawer = _ref2$ui.showPortfolioDrawer,
-        hideDrawers = _ref2$ui.hideDrawers;
-    return {
-        showMainDrawer: showMainDrawer, showPortfolioDrawer: showPortfolioDrawer, hideDrawers: hideDrawers
-    };
-})(ToggleDrawer);
-
-exports.ToggleDrawer = drawer_component;
-
-/***/ }),
-
-/***/ 385:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(7);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(10);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _localize = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var LanguageSwitcher = function (_React$PureComponent) {
-    _inherits(LanguageSwitcher, _React$PureComponent);
-
-    function LanguageSwitcher(props) {
-        _classCallCheck(this, LanguageSwitcher);
-
-        var _this = _possibleConstructorReturn(this, (LanguageSwitcher.__proto__ || Object.getPrototypeOf(LanguageSwitcher)).call(this, props));
-
-        _this.toggleLanguageList = function () {
-            _this.setState({
-                is_collapsed: !_this.state.is_collapsed
-            });
-        };
-
-        _this.switchLanguage = function (lang) {
-            _this.setState({
-                active_language: lang
-            });
-        };
-
-        _this.state = {
-            is_collapsed: false,
-            active_language: _this.props.languages[0]
-        };
-        return _this;
-    }
-
-    _createClass(LanguageSwitcher, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var language_list_collapsed = {
-                // visibility needed in style props as workaround for briefly flashing hidden elements in css
-                display: this.state.is_collapsed ? 'inline-block' : 'none'
-            };
-
-            var isLanguageActive = function isLanguageActive(lang) {
-                return lang.id === _this2.state.active_language.id;
-            };
-
-            return _react2.default.createElement(
-                _react2.default.Fragment,
-                null,
-                _react2.default.createElement(
-                    'div',
-                    { className: 'drawer-item', onClick: this.toggleLanguageList },
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'parent-item ' + (this.state.active_language.id || '') },
-                        (0, _localize.localize)('Language'),
-                        ' : ',
-                        this.state.active_language.name
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    {
-                        className: 'lang-switcher-list',
-                        style: language_list_collapsed
-                    },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'lang-switcher-list-header', onClick: this.toggleLanguageList },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'lang-switcher-list-desc' },
-                            (0, _localize.localize)('Choose your language')
-                        )
-                    ),
-                    this.props.languages.map(function (language, idx) {
-                        return _react2.default.createElement(
-                            _react2.default.Fragment,
-                            { key: idx },
-                            _react2.default.createElement(
-                                'div',
-                                {
-                                    className: 'lang-switcher-language ' + (isLanguageActive(language) ? 'active' : ''),
-                                    onClick: _this2.switchLanguage.bind(null, language)
-                                },
-                                _react2.default.createElement(
-                                    'p',
-                                    { className: 'lang-switcher-name' },
-                                    language.name
-                                )
-                            )
-                        );
-                    })
-                )
-            );
-        }
-    }]);
-
-    return LanguageSwitcher;
-}(_react2.default.PureComponent);
-
-// TODO: Remove defaultProps
-
-
-LanguageSwitcher.defaultProps = {
-    languages: [{ id: 'EN', name: 'English' }, { id: 'DE', name: 'Deutsch' }, { id: 'FR', name: 'Français' }, { id: 'ID', name: 'Indonesia' }, { id: 'IT', name: 'Italiano' }, { id: 'JA', name: '日本語' }, { id: 'PL', name: 'Polish' }, { id: 'PT', name: 'Português' }, { id: 'RU', name: 'Русский' }, { id: 'TH', name: 'Thai' }, { id: 'VI', name: 'Tiếng Việt' }, { id: 'ZH_CN', name: '简体中文' }, { id: 'ZH_TW', name: '繁體中文' }]
-};
-
-LanguageSwitcher.propTypes = {
-    languages: _propTypes2.default.array
-};
-
-exports.default = LanguageSwitcher;
-
-/***/ }),
-
-/***/ 386:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(7);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(10);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _localize = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Popover = function (_React$PureComponent) {
-    _inherits(Popover, _React$PureComponent);
-
-    function Popover(props) {
-        _classCallCheck(this, Popover);
-
-        var _this = _possibleConstructorReturn(this, (Popover.__proto__ || Object.getPrototypeOf(Popover)).call(this, props));
-
-        _this.state = {
-            is_open: false
-        };
-        return _this;
-    }
-
-    _createClass(Popover, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var popover = _react2.default.createElement(
-                'div',
-                { className: 'popover ' + (this.state.is_open ? 'open' : '') + ' ' + (this.props.alignment ? this.props.alignment : '') },
-                this.props.title && _react2.default.createElement(
-                    'div',
-                    { className: 'popover-title' },
-                    (0, _localize.localize)(this.props.title)
-                ),
-                this.props.subtitle && _react2.default.createElement(
-                    'div',
-                    { className: 'popover-subtitle' },
-                    (0, _localize.localize)(this.props.subtitle)
-                )
-            );
-
-            return _react2.default.createElement(
-                _react2.default.Fragment,
-                null,
-                _react2.default.Children.map(this.props.children, function (child) {
-                    return _react2.default.cloneElement(child, {
-                        onMouseEnter: function onMouseEnter() {
-                            return _this2.setState({ is_open: true });
-                        },
-                        onMouseLeave: function onMouseLeave() {
-                            return _this2.setState({ is_open: false });
-                        }
-                    }, popover);
-                })
-            );
-        }
-    }]);
-
-    return Popover;
-}(_react2.default.PureComponent);
-
-Popover.propTypes = {
-    alignment: _propTypes2.default.string,
-    children: _propTypes2.default.object,
-    subtitle: _propTypes2.default.string,
-    title: _propTypes2.default.string
-};
-
-exports.default = Popover;
 
 /***/ }),
 
@@ -5845,7 +5845,7 @@ var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _popover = __webpack_require__(386);
+var _popover = __webpack_require__(385);
 
 var _popover2 = _interopRequireDefault(_popover);
 
@@ -6197,7 +6197,7 @@ var _localize = __webpack_require__(2);
 
 var _index = __webpack_require__(217);
 
-var _language_switcher = __webpack_require__(385);
+var _language_switcher = __webpack_require__(384);
 
 var _language_switcher2 = _interopRequireDefault(_language_switcher);
 
@@ -8955,7 +8955,7 @@ var _smartcharts = __webpack_require__(377);
 
 var _smartcharts2 = _interopRequireDefault(_smartcharts);
 
-var _portfolio_drawer = __webpack_require__(383);
+var _portfolio_drawer = __webpack_require__(386);
 
 var _portfolio_drawer2 = _interopRequireDefault(_portfolio_drawer);
 
