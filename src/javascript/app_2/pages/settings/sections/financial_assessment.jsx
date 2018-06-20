@@ -4,6 +4,7 @@ import Section from '../components/section.jsx';
 import { FormSubmitButton } from '../components/form/form_submit_button.jsx';
 import { FormFieldSetList } from '../components/form/form_fieldset_list.jsx';
 import Loading from '../../../../../templates/_common/components/loading.jsx';
+import { SettingsHelpContainer } from '../components/form/settings_help_container.jsx';
 import { connect } from '../../../store/connect';
 
 class FinancialAssessment extends PureComponent {
