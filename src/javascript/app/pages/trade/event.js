@@ -372,15 +372,9 @@ const TradingEvents = (() => {
         const high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
             Defaults.set('barrier_high', e.target.value);
-            const high_barrier_value = sessionStorage.getItem('barrier_high');
-            const low_barrier_value = sessionStorage.getItem('barrier_low');
-            if (high_barrier_value > low_barrier_value) {
-                Price.processPriceRequest();
-            } else {
-                // Show error here.
-                // Change in error side.
-            }
+            Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
+
         }));
         high_barrier_element.addEventListener('keypress', (ev) => {
             onlyNumericOnKeypress(ev, [43, 45, 46]);

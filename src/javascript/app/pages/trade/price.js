@@ -349,12 +349,27 @@ const Price = (() => {
                     if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
                         response.echo_req.passthrough.form_id === form_id) {
                         commonTrading.hideOverlayContainer();
-                        Price.display(response, Contract.contractType()[Contract.form()]);
+                        const high_barrier_value = sessionStorage.getItem('barrier_high');
+                        const low_barrier_value = sessionStorage.getItem('barrier_low');
+                        if (high_barrier_value > low_barrier_value) {
+                            Price.display(response, Contract.contractType()[Contract.form()]);
+                        } else {
+                            Price.display(
+                                {
+                                    echo_req: {
+                                        contract_type: 'EXPIRYRANGE',
+                                    },
+                                    error: {
+                                        message: 'High barrier must be higher than low barrier.',
+                                    },
+                                }, Contract.contractType()[Contract.form()]);
+                        }
                         commonTrading.hidePriceOverlay();
                     }
                 } });
             });
         });
+        // console.log('High barrier must be higher than low barrier.');
     };
 
     return {
