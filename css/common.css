@@ -253,8 +253,11 @@ label {
 .input {
   width: 45%; }
 
-*, .no-margin, .errorfield {
+*, .errorfield {
   margin: 0; }
+
+.no-margin {
+  margin: 0 !important; }
 
 .errorfield {
   margin-top: 8px;
@@ -702,6 +705,12 @@ label + input {
   margin-bottom: 0.2em;
   color: #c03; }
 
+.chart-payout-range {
+  margin-left: 10px; }
+  .chart-payout-range:before {
+    content: url("../images/pages/trade/chart_payout_range.svg");
+    display: inline-block; }
+
 .lightbox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -748,7 +757,18 @@ label + input {
   max-width: 90px; }
 
 #footer #footer-regulatory #lga_icon_footer {
-  max-width: 140px; }
+  max-width: 70px; }
+
+#footer #footer-regulatory #gamstop_icon_footer {
+  max-width: 120px; }
+
+@media screen and (max-width: 480px) {
+  #footer #footer-regulatory #iom_icon_footer {
+    max-width: 110px; }
+  #footer #footer-regulatory #lga_icon_footer {
+    max-width: 80px; }
+  #footer #footer-regulatory #gamstop_icon_footer {
+    max-width: 130px; } }
 
 #footer #footer-regulatory #ratelimit-error-message, #footer #footer-regulatory #site-status-message {
   position: fixed;
@@ -759,6 +779,28 @@ label + input {
 
 #footer #footer-regulatory #site-status-message {
   z-index: 9999; }
+
+#footer .lga-gamstop-icon-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  #footer .lga-gamstop-icon-container div, #footer .lga-gamstop-icon-container a {
+    width: 100%; }
+
+#footer #social-icons {
+  padding-right: 10px !important; }
+  #footer #social-icons img {
+    max-height: 35px; }
 
 #footer #footer-last .gambling, #footer #footer-last .gambling a {
   text-align: justify;
@@ -923,6 +965,9 @@ body #topbar .upgrademessage a, .landing_page-content .upgrademessage a {
 
 #header .container {
   max-width: 1200px; }
+
+#header .binary-type-logo-old {
+  background-image: url("../images/pages/binary-type-logo-old.svg"); }
 
 /* mobile menu overrides */
 html .mm-menu.mm-right {
@@ -1354,6 +1399,8 @@ body.ZH_TW .google-play-badge {
     background-position-x: 0; } }
 
 @media screen and (max-width: 768px) {
+  .center-text-p {
+    text-align: center; }
   #sell_popup_container {
     padding: 0;
     width: 100%;

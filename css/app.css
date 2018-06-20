@@ -177,6 +177,8 @@ a.previous-wrapper {
         min-height: 600px; }
   #mb-trading-wrapper #mb_trading {
     font-size: 0.8695652174rem; }
+    #mb-trading-wrapper #mb_trading #notifications_wrapper {
+      margin-left: 0; }
     #mb-trading-wrapper #mb_trading #panel {
       margin-left: 10px; }
       #mb-trading-wrapper #mb_trading #panel .selection_wrapper.less-margin-top .trade_form > div {
@@ -568,6 +570,8 @@ a.previous-wrapper {
     #mb-trading-wrapper #mb_trading #spot.up {
       color: #c03; }
     @media screen and (max-width: 768px) {
+      #mb-trading-wrapper #mb_trading #notifications_wrapper {
+        margin-left: -10px; }
       #mb-trading-wrapper #mb_trading .gr-12-p {
         padding-bottom: 10px; }
       #mb-trading-wrapper #mb_trading #panel {
@@ -866,9 +870,8 @@ a.previous-wrapper {
           background: url("../images/pages/metatrader/dashboard/tick.svg");
           border: none; }
     #mt_account_management .fst-container #fst_action .type-group p {
-      width: 140px;
-      margin-left: auto;
-      margin-right: auto; }
+      max-width: 140px;
+      margin: 0 auto; }
     #mt_account_management .fst-container #fst_action #new_account_msg ul.bullet {
       margin-top: 0;
       margin-bottom: 0; }
@@ -964,15 +967,19 @@ a.previous-wrapper {
 #trading-times td.asset, #asset-index td.asset {
   font-weight: 700; }
 
-#asset-index th {
-  width: 16%; }
-  #asset-index th:nth-child(2):nth-last-child(1) {
-    width: 24%; }
-  #asset-index th:nth-child(2):nth-last-child(2), #asset-index th:nth-child(3):nth-last-child(1) {
-    width: 18%; }
+#trading-times .ui-tabs-anchor:focus, #asset-index .ui-tabs-anchor:focus {
+  outline: none; }
 
-#asset-index .asset {
-  width: 18%; }
+#asset_index_wrapper {
+  max-width: 1200px; }
+  #asset_index_wrapper #asset-index.has-tabs.ui-tabs .ui-tabs-panel {
+    padding: 0; }
+  #asset_index_wrapper #asset-index th {
+    width: calc(100% / 7); }
+    #asset_index_wrapper #asset-index th:nth-child(2):nth-last-child(1) {
+      width: 24%; }
+    #asset_index_wrapper #asset-index th:nth-child(2):nth-last-child(2), #asset_index_wrapper #asset-index th:nth-child(3):nth-last-child(1) {
+      width: 18%; }
 
 .popup_bet_desc {
   padding: 5px 0;
@@ -1396,6 +1403,22 @@ a.previous-wrapper {
     #trading_socket_container .contract_heading.LBHIGHLOW {
       background: url("../images/pages/trade/high_low_icon.svg") no-repeat center top;
       background-size: 50%; }
+    #trading_socket_container .contract_heading.RESETCALL {
+      background: url("../images/pages/trade/reset_call.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.RESETPUT {
+      background: url("../images/pages/trade/reset_put.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.CALLSPREAD {
+      background: url("../images/pages/trade/call_spread.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.PUTSPREAD {
+      background: url("../images/pages/trade/put_spread.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.TICKHIGH {
+      background: url("../images/pages/trade/high_tick.svg") no-repeat center top; }
+    #trading_socket_container .contract_heading.TICKLOW {
+      background: url("../images/pages/trade/low_tick.svg") no-repeat center top; }
   #trading_socket_container #contract_prices_container {
     position: relative;
     margin-left: 1em; }
@@ -1483,6 +1506,8 @@ a.previous-wrapper {
       -webkit-box-direction: normal !important;
           -ms-flex-direction: row !important;
               flex-direction: row !important; }
+      #trading_socket_container #contract_prices_container #contract_purchase_profit_list.winning-tick-row, #trading_socket_container #contract_prices_container #contract_purchase_spots .row.winning-tick-row {
+        font-weight: bold; }
     #trading_socket_container #contract_prices_container #contract_purchase_profit_list {
       margin: 10px 0; }
       #trading_socket_container #contract_prices_container #contract_purchase_profit_list > div {
@@ -2398,7 +2423,10 @@ a.previous-wrapper {
         position: absolute;
         left: 0;
         border-bottom: 1px solid #dedede;
-        background: #fff; } }
+        background: #fff;
+        pointer-events: auto; }
+        .contracts .contracts_dropdown .mobile_close.disabled {
+          pointer-events: none; } }
     .contracts .contracts_dropdown .mobile_close span {
       display: inline-block; }
     .contracts .contracts_dropdown .mobile_close .close {
