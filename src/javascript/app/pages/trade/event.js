@@ -147,7 +147,6 @@ const TradingEvents = (() => {
          * bind event to change in duration units, populate duration and request price
          */
         getElementById('duration_units').addEventListener('change', (e) => {
-            console.log('duration units!');
             Defaults.remove('barrier', 'barrier_high', 'barrier_low');
             Process.onDurationUnitChange(e.target.value);
             Price.processPriceRequest();
