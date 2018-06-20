@@ -34,7 +34,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		5: 0
+/******/ 		4: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -91,7 +91,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"highstock","1":"vendor","2":"binary","3":"binary_app","4":"webtrader-charts"}[chunkId]||chunkId) + "_" + {"0":"249ec7ed634d9ede49b8","1":"0331546d84fc11aabe02","2":"902ea9c6e05b1236cfeb","3":"77fc7513bd0daf154813","4":"e6277a0b497f82ca3fc0"}[chunkId] + ".min.js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"highstock","1":"vendor","2":"binary","3":"webtrader-charts"}[chunkId]||chunkId) + "_" + {"0":"4be5173e2fbee37bf876","1":"4e9f41bddef5aa8f9234","2":"aeace357847b0e399a58","3":"506b8f57e8e32b3dd45c"}[chunkId] + ".min.js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
