@@ -147,6 +147,7 @@ const TradingEvents = (() => {
          * bind event to change in duration units, populate duration and request price
          */
         getElementById('duration_units').addEventListener('change', (e) => {
+            console.log('duration units!');
             Defaults.remove('barrier', 'barrier_high', 'barrier_low');
             Process.onDurationUnitChange(e.target.value);
             Price.processPriceRequest();
@@ -371,7 +372,14 @@ const TradingEvents = (() => {
         const high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
             Defaults.set('barrier_high', e.target.value);
-            Price.processPriceRequest();
+            const high_barrier_value = sessionStorage.getItem('barrier_high');
+            const low_barrier_value = sessionStorage.getItem('barrier_low');
+            if (high_barrier_value > low_barrier_value) {
+                Price.processPriceRequest();
+            } else {
+                // Show error here.
+                // Change in error side.
+            }
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
         high_barrier_element.addEventListener('keypress', (ev) => {
