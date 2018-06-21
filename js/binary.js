@@ -9433,9 +9433,9 @@ var Barriers = function () {
                         }
                     }
                     elm.value = elm.textContent = value;
+                    Barriers.validateBarrier();
                     Defaults.set('barrier', elm.value);
                     Defaults.remove('barrier_high', 'barrier_low');
-                    Barriers.validateBarrier();
                     showHideRelativeTip(barrier.barrier, [tooltip, span]);
                     return;
                 } else if (barrier.count === 2) {
@@ -9503,11 +9503,11 @@ var Barriers = function () {
                     high_elm.value = high_elm.textContent = value_high;
                     low_elm.value = low_elm.textContent = value_low;
 
-                    Defaults.set('barrier_high', high_elm.value);
-                    Defaults.set('barrier_low', low_elm.value);
                     Defaults.remove('barrier');
                     showHideRelativeTip(barrier.barrier, [high_tooltip, high_span, low_tooltip, low_span]);
-                    Barriers.validateBarrier();
+                    Barriers.validateBarrier(true);
+                    Defaults.set('barrier_high', high_elm.value);
+                    Defaults.set('barrier_low', low_elm.value);
                     return;
                 }
             }
@@ -9520,11 +9520,51 @@ var Barriers = function () {
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
+    var showError = function showError(barrier) {
+        if (!barrier.classList.contains('error-field')) {
+            barrier.classList.add('error-field');
+        }
+        var error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        if (error_node.classList.contains('invisible')) {
+            error_node.classList.remove('invisible');
+        }
+    };
+
+    var resolveError = function resolveError(barrier) {
+        if (barrier.classList.contains('error-field')) {
+            barrier.classList.remove('error-field');
+        }
+        var error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        if (!error_node.classList.contains('invisible')) {
+            error_node.classList.add('invisible');
+        }
+    };
+
+    /**
+    * Show an error on the target Barrier.
+    *
+    * @param {Object} barrier_1   the target barrier object for prompting error
+    * @param {Object} barrier_2   barrier object whose errors will be resolved
+    */
+    var showThisError = function showThisError(barrier_1, barrier_2) {
+        showError(barrier_1);
+        resolveError(barrier_2);
+    };
+
+    var resolveAllErrors = function resolveAllErrors(barrier_1, barrier_2) {
+        resolveError(barrier_1);
+        resolveError(barrier_2);
+    };
+
+    /**
+    * Validate Barriers
+    * @param {Boolean} first_time pass True to force to validate;
+    */
     var validateBarrier = function validateBarrier() {
+        var first_time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
         var barrier_element = getElementById('barrier');
         var empty = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
-        var barrier_high_error_element = getElementById('barrier_high_error');
-        var barrier_low_error_element = getElementById('barrier_low_error');
         var barrier_high_element = getElementById('barrier_high');
         var barrier_low_element = getElementById('barrier_low');
 
@@ -9534,16 +9574,22 @@ var Barriers = function () {
             barrier_element.classList.remove('error-field');
         }
 
-        if (+barrier_high_element.value > +barrier_low_element.value) {
-            barrier_high_element.classList.remove('error-field');
-            barrier_low_element.classList.remove('error-field');
-            barrier_high_error_element.classList.add('invisible');
-            barrier_low_error_element.classList.add('invisible');
-        } else {
-            barrier_high_element.classList.add('error-field');
-            barrier_low_element.classList.add('error-field');
-            barrier_high_error_element.classList.remove('invisible');
-            barrier_low_error_element.classList.remove('invisible');
+        var is_high_barrier_changed = +Defaults.get('barrier_high') !== +barrier_high_element.value;
+        var is_low_barrier_changed = +Defaults.get('barrier_low') !== +barrier_low_element.value;
+        var is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
+
+        if (first_time || is_high_barrier_changed) {
+            if (is_high_barrier_greater) {
+                resolveAllErrors(barrier_high_element, barrier_low_element);
+            } else {
+                showThisError(barrier_high_element, barrier_low_element);
+            }
+        } else if (is_low_barrier_changed) {
+            if (is_high_barrier_greater) {
+                resolveAllErrors(barrier_high_element, barrier_low_element);
+            } else {
+                showThisError(barrier_low_element, barrier_high_element);
+            }
         }
     };
 
@@ -25982,8 +26028,8 @@ var TradingEvents = function () {
          */
         var low_barrier_element = getElementById('barrier_low');
         low_barrier_element.addEventListener('input', CommonTrading.debounce(function (e) {
-            Defaults.set('barrier_low', e.target.value);
             Barriers.validateBarrier();
+            Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
@@ -25996,8 +26042,8 @@ var TradingEvents = function () {
          */
         var high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce(function (e) {
-            Defaults.set('barrier_high', e.target.value);
             Barriers.validateBarrier();
+            Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
