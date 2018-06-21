@@ -9524,17 +9524,17 @@ var Barriers = function () {
         if (!barrier.classList.contains('error-field')) {
             barrier.classList.add('error-field');
         }
-        var error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        var error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
         if (error_node.classList.contains('invisible')) {
             error_node.classList.remove('invisible');
         }
     };
 
-    var resolveError = function resolveError(barrier) {
+    var hideError = function hideError(barrier) {
         if (barrier.classList.contains('error-field')) {
             barrier.classList.remove('error-field');
         }
-        var error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        var error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
         if (!error_node.classList.contains('invisible')) {
             error_node.classList.add('invisible');
         }
@@ -9546,22 +9546,24 @@ var Barriers = function () {
     * @param {Object} barrier_1   the target barrier object for prompting error
     * @param {Object} barrier_2   barrier object whose errors will be resolved
     */
-    var showThisError = function showThisError(barrier_1, barrier_2) {
+    var showErrorOnTarget = function showErrorOnTarget(barrier_1, barrier_2) {
         showError(barrier_1);
-        resolveError(barrier_2);
+        hideError(barrier_2);
     };
 
     var resolveAllErrors = function resolveAllErrors(barrier_1, barrier_2) {
-        resolveError(barrier_1);
-        resolveError(barrier_2);
+        hideError(barrier_1);
+        hideError(barrier_2);
     };
 
     /**
     * Validate Barriers
-    * @param {Boolean} first_time pass True to force to validate;
+    * @param {Boolean} is_high_barrier_changed Whether we're validating this barrier.
+    *                                          And the default validation is on High barrier.
+    *
     */
     var validateBarrier = function validateBarrier() {
-        var first_time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+        var is_high_barrier_changed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
         var barrier_element = getElementById('barrier');
         var empty = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
@@ -9574,22 +9576,18 @@ var Barriers = function () {
             barrier_element.classList.remove('error-field');
         }
 
-        var is_high_barrier_changed = +Defaults.get('barrier_high') !== +barrier_high_element.value;
-        var is_low_barrier_changed = +Defaults.get('barrier_low') !== +barrier_low_element.value;
         var is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
 
-        if (first_time || is_high_barrier_changed) {
+        if (is_high_barrier_changed) {
             if (is_high_barrier_greater) {
                 resolveAllErrors(barrier_high_element, barrier_low_element);
             } else {
-                showThisError(barrier_high_element, barrier_low_element);
+                showErrorOnTarget(barrier_high_element, barrier_low_element);
             }
-        } else if (is_low_barrier_changed) {
-            if (is_high_barrier_greater) {
-                resolveAllErrors(barrier_high_element, barrier_low_element);
-            } else {
-                showThisError(barrier_low_element, barrier_high_element);
-            }
+        } else if (is_high_barrier_greater) {
+            resolveAllErrors(barrier_high_element, barrier_low_element);
+        } else {
+            showErrorOnTarget(barrier_low_element, barrier_high_element);
         }
     };
 
@@ -26028,7 +26026,7 @@ var TradingEvents = function () {
          */
         var low_barrier_element = getElementById('barrier_low');
         low_barrier_element.addEventListener('input', CommonTrading.debounce(function (e) {
-            Barriers.validateBarrier();
+            Barriers.validateBarrier(false);
             Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
@@ -26042,7 +26040,7 @@ var TradingEvents = function () {
          */
         var high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce(function (e) {
-            Barriers.validateBarrier();
+            Barriers.validateBarrier(true);
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
