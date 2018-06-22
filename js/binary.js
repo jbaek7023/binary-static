@@ -9527,8 +9527,6 @@ var Barriers = function () {
         var barrier_element = getElementById('barrier');
         var empty = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
         var barrier_high_element = getElementById('barrier_high');
-        var barrier_low_element = getElementById('barrier_low');
-        var error_node = getElementById('barrier_high_error');
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
@@ -9537,6 +9535,8 @@ var Barriers = function () {
         }
 
         if (isVisible(barrier_high_element)) {
+            var barrier_low_element = getElementById('barrier_low');
+            var error_node = getElementById('barrier_high_error');
             var is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
             barrier_high_element.classList[is_high_barrier_greater ? 'remove' : 'add']('error-field');
             error_node.classList[is_high_barrier_greater ? 'add' : 'remove']('invisible');
