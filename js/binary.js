@@ -9505,7 +9505,7 @@ var Barriers = function () {
 
                     Defaults.remove('barrier');
                     showHideRelativeTip(barrier.barrier, [high_tooltip, high_span, low_tooltip, low_span]);
-                    Barriers.validateBarrier(true);
+                    Barriers.validateBarrier();
                     Defaults.set('barrier_high', high_elm.value);
                     Defaults.set('barrier_low', low_elm.value);
                     return;
@@ -9520,55 +9520,15 @@ var Barriers = function () {
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
-    var showError = function showError(barrier) {
-        if (!barrier.classList.contains('error-field')) {
-            barrier.classList.add('error-field');
-        }
-        var error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
-        if (error_node.classList.contains('invisible')) {
-            error_node.classList.remove('invisible');
-        }
-    };
-
-    var hideError = function hideError(barrier) {
-        if (barrier.classList.contains('error-field')) {
-            barrier.classList.remove('error-field');
-        }
-        var error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
-        if (!error_node.classList.contains('invisible')) {
-            error_node.classList.add('invisible');
-        }
-    };
-
-    /**
-    * Show an error on the target Barrier.
-    *
-    * @param {Object} barrier_1   the target barrier object for prompting error
-    * @param {Object} barrier_2   barrier object whose errors will be resolved
-    */
-    var showErrorOnTarget = function showErrorOnTarget(barrier_1, barrier_2) {
-        showError(barrier_1);
-        hideError(barrier_2);
-    };
-
-    var resolveAllErrors = function resolveAllErrors(barrier_1, barrier_2) {
-        hideError(barrier_1);
-        hideError(barrier_2);
-    };
-
     /**
     * Validate Barriers
-    * @param {Boolean} is_high_barrier_changed Whether we're validating this barrier.
-    *                                          And the default validation is on High barrier.
-    *
     */
     var validateBarrier = function validateBarrier() {
-        var is_high_barrier_changed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
         var barrier_element = getElementById('barrier');
         var empty = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
         var barrier_high_element = getElementById('barrier_high');
         var barrier_low_element = getElementById('barrier_low');
+        var error_node = getElementById('barrier_high_error');
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
@@ -9576,18 +9536,10 @@ var Barriers = function () {
             barrier_element.classList.remove('error-field');
         }
 
-        var is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
-
-        if (is_high_barrier_changed) {
-            if (is_high_barrier_greater) {
-                resolveAllErrors(barrier_high_element, barrier_low_element);
-            } else {
-                showErrorOnTarget(barrier_high_element, barrier_low_element);
-            }
-        } else if (is_high_barrier_greater) {
-            resolveAllErrors(barrier_high_element, barrier_low_element);
-        } else {
-            showErrorOnTarget(barrier_low_element, barrier_high_element);
+        if (isVisible(barrier_high_element)) {
+            var is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
+            barrier_high_element.classList[is_high_barrier_greater ? 'remove' : 'add']('error-field');
+            error_node.classList[is_high_barrier_greater ? 'add' : 'remove']('invisible');
         }
     };
 
@@ -26026,7 +25978,7 @@ var TradingEvents = function () {
          */
         var low_barrier_element = getElementById('barrier_low');
         low_barrier_element.addEventListener('input', CommonTrading.debounce(function (e) {
-            Barriers.validateBarrier(false);
+            Barriers.validateBarrier();
             Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
@@ -26040,7 +25992,7 @@ var TradingEvents = function () {
          */
         var high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce(function (e) {
-            Barriers.validateBarrier(true);
+            Barriers.validateBarrier();
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
