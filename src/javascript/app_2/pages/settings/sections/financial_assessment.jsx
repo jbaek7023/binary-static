@@ -18,21 +18,21 @@ class FinancialAssessment extends PureComponent {
             <Section title={title} description={description}>
                 {
                     is_loading ?
-                            <Loading /> :
-                            <div className='settings__container'>
-                                <div className='settings__content_form__container'>
-                                    <FormFieldSetList data={data} onChange={onChange}/>
-                                    <div className='settings__content_form__submit_container'>
-                                        <FormSubmitButton value='UPDATE'/>
-                                    </div>
-                                </div>
-                                <div>
-                                    <SettingsHelpContainer>
-                                        <p className='settings__help_head_text'>Why do I need to fill this?</p>
-                                        <p className='settings__help_text'>The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.</p>
-                                    </SettingsHelpContainer>
+                        <Loading /> :
+                        <div className='settings__container'>
+                            <div className='settings__content_form__container'>
+                                <FormFieldSetList data={data} onChange={onChange}/>
+                                <div className='settings__content_form__submit_container'>
+                                    <FormSubmitButton value='UPDATE'/>
                                 </div>
                             </div>
+                            <div>
+                                <SettingsHelpContainer>
+                                    <p className='settings__help_head_text'>Why do I need to fill this?</p>
+                                    <p className='settings__help_text'>The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.</p>
+                                </SettingsHelpContainer>
+                            </div>
+                        </div>
                 }
             </Section>
         );
@@ -42,6 +42,7 @@ class FinancialAssessment extends PureComponent {
 FinancialAssessment.propTypes = {
     content               : PropTypes.string,
     data                  : PropTypes.object,
+    description           : PropTypes.string,
     getFinancialAssessment: PropTypes.func,
     is_loading            : PropTypes.bool,
     onChange              : PropTypes.func,
