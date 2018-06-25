@@ -1254,6 +1254,10 @@ body.IT h1, body.IT h2, body.IT h3, body.IT h4, body.IT h5, body.IT h6, body.DE 
 body.ES #trading_socket_container #contract_form_name_nav {
   font-size: 0.7561436673rem; }
 
+body.ES #header li.wordwrap a {
+  white-space: normal;
+  text-align: center; }
+
 body.RU #frm_verify_email button {
   font-size: 0.7561436673rem; }
 

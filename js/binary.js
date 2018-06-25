@@ -6546,6 +6546,8 @@ var ViewPopup = function () {
         if (is_ended) {
             contractEnded();
             if (!contract.tick_count) Highchart.showChart(contract, 'update');else TickDisplay.updateChart({ is_sold: true }, contract);
+            containerSetText('trade_details_live_remaining', '-');
+            Clock.setExternalTimer(); // stop timer
         } else {
             $container.find('#notice_ongoing').setVisibility(1);
         }
@@ -6590,8 +6592,9 @@ var ViewPopup = function () {
     };
 
     var contractEnded = function contractEnded() {
-        containerSetText('trade_details_current_title', localize(contract.status === 'sold' || contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
+        getElementById('trade_details_live_date').parentNode.setVisibility(0);
 
+        containerSetText('trade_details_current_title', localize(contract.status === 'sold' || contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
         containerSetText('trade_details_indicative_label', localize('Price'));
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
@@ -8390,11 +8393,13 @@ var Price = function () {
         processForgetProposals().then(function () {
             Object.keys(types || {}).forEach(function (type_of_contract) {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: function callback(response) {
-                        if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough && response.echo_req.passthrough.form_id === form_id) {
-                            commonTrading.hideOverlayContainer();
+                        if (response.error && response.error.code === 'AlreadySubscribed') {
+                            BinarySocket.send({ forget_all: 'proposal' });
+                        } else if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough && response.echo_req.passthrough.form_id === form_id) {
                             Price.display(response, Contract.contractType()[Contract.form()]);
-                            commonTrading.hidePriceOverlay();
                         }
+                        commonTrading.hideOverlayContainer();
+                        commonTrading.hidePriceOverlay();
                     } });
             });
         });
@@ -9687,14 +9692,14 @@ var Durations = function () {
                     case 's':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
-                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
+                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max);
                             if (max_to_min_base >= 3600) {
                                 duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                             }
                         }
                         break;
                     case 'm':
-                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max, true);
+                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
                             duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                         }
@@ -9734,7 +9739,7 @@ var Durations = function () {
         return durationPopulate();
     };
 
-    var makeDurationOption = function makeDurationOption(map_min, map_max, is_selected) {
+    var makeDurationOption = function makeDurationOption(map_min, map_max) {
         var option = createElement('option', { value: map_min.unit, 'data-minimum': map_min.value, text: map_min.text });
         if (map_max.value && map_max.unit) {
             var max = convertDurationUnit(map_max.value, map_max.unit, map_min.unit);
@@ -9742,7 +9747,7 @@ var Durations = function () {
                 option.setAttribute('data-maximum', max);
             }
         }
-        if (is_selected) {
+        if (map_min.unit === Defaults.get('duration_units')) {
             option.setAttribute('selected', 'selected');
         }
         return option;
@@ -10743,17 +10748,17 @@ var TickDisplay = function () {
         if (reset_spot_plotted || !chart) return;
 
         var is_resetcall = contract.contract_type === 'RESETCALL';
-        var entry_barrier = +contract.entry_spot;
-        var reset_barrier = +r_barrier || +barrier;
+        var entry_barrier = contract.entry_spot;
+        var reset_barrier = r_barrier || contract.barrier;
 
-        if (!entry_barrier || !reset_barrier) return;
+        if (!+entry_barrier || !+reset_barrier) return;
 
-        if (entry_barrier !== reset_barrier) {
+        if (+entry_barrier !== +reset_barrier) {
             removePlotLine('tick-barrier', 'y');
 
             chart.yAxis[0].addPlotLine({
                 id: 'tick-reset-barrier',
-                value: reset_barrier,
+                value: +reset_barrier,
                 label: { text: localize('Reset Barrier') + ' (' + addComma(reset_barrier) + ')', align: 'right', x: -60, y: is_resetcall ? 15 : -5 },
                 color: 'green',
                 width: 2,
@@ -10761,7 +10766,7 @@ var TickDisplay = function () {
             });
             chart.yAxis[0].addPlotLine({
                 id: 'tick-barrier',
-                value: entry_barrier,
+                value: +entry_barrier,
                 label: { text: localize('Barrier') + ' (' + addComma(entry_barrier) + ')', align: 'right', x: -60, y: is_resetcall ? -5 : 15 },
                 color: 'green',
                 width: 2,
@@ -13665,7 +13670,8 @@ var Purchase = function () {
                     updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
-                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize('Tick [_1] is the ' + (tick_config.is_tick_high ? 'highest' : 'lowest') + ' tick', [tick_config.winning_tick_number]));
+                    var is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
+                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize('Tick [_1] is ' + (is_won ? '' : 'not') + ' the ' + (tick_config.is_tick_high ? 'highest' : 'lowest') + ' tick', [tick_config.selected_tick_number]));
                 }
             }
         }
@@ -21376,9 +21382,7 @@ var createLanguageDropDown = function createLanguageDropDown(website_status) {
     });
     var $select_language = $languages.find(select_language_id);
     languages.forEach(function (language) {
-        if (!/es/i.test(language)) {
-            $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
-        }
+        $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
     });
 
     $select_language.find('.' + current_language + ':eq(1)').setVisibility(0);
@@ -30024,7 +30028,11 @@ var LostPassword = function () {
             $('#check_spam').setVisibility(1);
             $(form_id).html($('<div/>', { class: 'notice-msg', text: localize('Please check your email for the password reset link.') }));
         } else if (response.error) {
-            $('#form_error').setVisibility(1).text(localize(response.error.message));
+            var $form_error = $('#form_error');
+            $form_error.text(localize(response.error.message)).setVisibility(1);
+            $('#email').one('input', function () {
+                return $form_error.setVisibility(0);
+            }); // remove error message on input
         }
     };
 
@@ -30514,7 +30522,7 @@ var MetaTraderUI = function () {
             var type = acc_type.split('_').slice(1).join('_');
             var title = accounts_info[acc_type].short_title;
             $acc.find('.mt5_type_box').attr({ id: 'rbtn_' + type, 'data-acc-type': type }).find('img').attr('src', urlForStatic('/images/pages/metatrader/icons/acc_' + title.toLowerCase().replace(/\s/g, '_').replace('mam_', '') + '.svg'));
-            $acc.find('p').text(title);
+            $acc.find('p').text(localize(title));
             (/mam/.test(acc_type) ? $acc_template_mam : $acc_template_mt).append($acc);
         });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
