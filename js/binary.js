@@ -9873,7 +9873,6 @@ var Durations = function () {
         if (unit.value === 'd') {
             var tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-
             DatePicker.init({
                 selector: duration_amount_id,
                 type: 'diff',
@@ -9949,7 +9948,6 @@ var Durations = function () {
                     removeCustomDropDown($expiry_date);
                 }
                 var duration_unit = getSmallestDuration()[1];
-
                 DatePicker.init({
                     selector: '#expiry_date',
                     minDate: duration_unit === 'day' ? 1 : 0,
