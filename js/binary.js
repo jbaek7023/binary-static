@@ -9365,6 +9365,7 @@ module.exports = MBTick;
 "use strict";
 
 
+var moment = __webpack_require__(9);
 var countDecimalPlaces = __webpack_require__(47).countDecimalPlaces;
 var Contract = __webpack_require__(60);
 var Defaults = __webpack_require__(23);
@@ -9392,8 +9393,7 @@ var Barriers = function () {
         if (barriers && form_name && barriers[form_name] && !/risefall|reset/i.test(Defaults.get('formname'))) {
             var unit = getElementById('duration_units');
             var end_time = getElementById('expiry_date');
-            var is_daily = unit && isVisible(unit) && unit.value === 'd' || end_time && isVisible(end_time);
-
+            var is_daily = unit && isVisible(unit) && unit.value === 'd' || end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day');
             var barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
 
             if (barrier) {
