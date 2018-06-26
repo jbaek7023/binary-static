@@ -9785,10 +9785,10 @@ var Durations = function () {
             duration_value = _getSmallestDuration2[0],
             duration_unit = _getSmallestDuration2[1];
 
-        var smallest_end_time = current_moment.add(duration_value, duration_unit).add(5, 'minutes').utc();
+        var smallest_end_time = current_moment.add(duration_value, duration_unit);
         var default_end_time = Defaults.get('expiry_date');
 
-        var expiry_date = default_end_time && moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time;
+        var expiry_date = default_end_time && moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time.add(5, 'minutes').utc();
         var expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         var expiry_date_iso = toISOFormat(expiry_date);
 
