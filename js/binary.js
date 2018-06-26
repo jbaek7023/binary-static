@@ -9395,8 +9395,8 @@ var Barriers = function () {
             var unit = getElementById('duration_units');
             var end_time = getElementById('expiry_date');
             var is_daily = unit && isVisible(unit) && unit.value === 'd' || end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day');
-            var barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
 
+            var barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
             if (barrier) {
                 var current_tick = Tick.quote();
                 var decimal_places = countDecimalPlaces(current_tick);
