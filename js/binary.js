@@ -9767,8 +9767,13 @@ var Durations = function () {
     var displayEndTime = function displayEndTime() {
         var date_start = CommonFunctions.getElementById('date_start').value;
         var now = !date_start || date_start === 'now';
-        var current_moment = moment(now ? window.time : parseInt(date_start) * 1000).add(5, 'minutes').utc();
-        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment.add(1, 'days').utc();
+        var unit = CommonFunctions.getElementById('duration_units');
+        var smallest_unit = unit.options[0];
+        var smallest_unit_num = smallest_unit.dataset.minimum;
+        var smallest_unit_name = duration_map[smallest_unit.value];
+        var current_moment = moment(now ? window.time : parseInt(date_start) * 1000).add(smallest_unit_num, smallest_unit_name).add(5, 'minutes').utc();
+
+        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
         var expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         var expiry_date_iso = toISOFormat(expiry_date);
 
