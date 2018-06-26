@@ -6546,6 +6546,7 @@ var ViewPopup = function () {
         if (is_ended) {
             contractEnded();
             if (!contract.tick_count) Highchart.showChart(contract, 'update');else TickDisplay.updateChart({ is_sold: true }, contract);
+            containerSetText('trade_details_live_remaining', '-');
             Clock.setExternalTimer(); // stop timer
         } else {
             $container.find('#notice_ongoing').setVisibility(1);
@@ -9771,9 +9772,9 @@ var Durations = function () {
         var smallest_unit = unit.options[0];
         var smallest_unit_num = smallest_unit.dataset.minimum;
         var smallest_unit_name = duration_map[smallest_unit.value];
-        var current_moment = moment(now ? window.time : parseInt(date_start) * 1000).add(smallest_unit_num, smallest_unit_name).add(5, 'minutes').utc();
+        var current_moment = moment(now ? window.time : parseInt(date_start) * 1000);
 
-        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
+        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment.add(smallest_unit_num, smallest_unit_name).add(5, 'minutes').utc();
         var expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         var expiry_date_iso = toISOFormat(expiry_date);
 
@@ -24462,7 +24463,7 @@ var Highchart = function () {
 
     var initOnce = function initOnce() {
         chart = options = response_id = contract = request = min_point = max_point = '';
-        lines_drawn = [];
+        lines_drawn = new Set();
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming = is_response_id_set = is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
     };
@@ -24905,20 +24906,18 @@ var Highchart = function () {
     // calculate where to display the maximum value of the x-axis of the chart for line chart
     var getMaxHistory = function getMaxHistory(history_times) {
         var end = end_time;
-        if (sell_spot_time && (sell_time || sell_spot_time) < end_time) {
-            end = sell_spot_time;
+        if (sell_time && sell_time < end_time) {
+            end = sell_time;
         } else if (exit_tick_time) {
             end = exit_tick_time;
         }
 
         var history_times_length = history_times.length;
         if (is_settleable || is_sold) {
-            for (var i = history_times_length - 1; i >= 0; i--) {
-                if (parseInt(history_times[i]) === end) {
-                    max_point = parseInt(history_times[i === history_times_length - 1 ? i : i + 1]);
-                    break;
-                }
-            }
+            var i = history_times.findIndex(function (time) {
+                return +time > end;
+            });
+            max_point = i > 0 ? +history_times[i] : end_time;
         }
         setMaxForDelayedChart(history_times, history_times_length);
     };
@@ -24978,7 +24977,7 @@ var Highchart = function () {
     };
 
     var drawLineX = function drawLineX(properties) {
-        if (chart && properties.value && !new RegExp(properties.value).test(lines_drawn)) {
+        if (chart && properties.value && !lines_drawn.has(properties.value)) {
             addPlotLine({
                 value: properties.value * 1000,
                 label: properties.label || '',
@@ -24986,7 +24985,7 @@ var Highchart = function () {
                 dashStyle: properties.dash_style || '',
                 color: properties.color || ''
             }, 'x');
-            lines_drawn.push(properties.value);
+            lines_drawn.add(properties.value);
         }
     };
 
@@ -25013,7 +25012,7 @@ var Highchart = function () {
     };
 
     var setStopStreaming = function setStopStreaming() {
-        if (chart && (is_sold || is_settleable)) {
+        if (chart && (is_sold || is_settleable) && (isSoldBeforeExpiry() ? sell_time : end_time)) {
             var data = getPropertyValue(getPropertyValue(chart, ['series'])[0], ['options', 'data']);
             if (data && data.length > 0) {
                 var last_data = data[data.length - 1];
@@ -25025,10 +25024,6 @@ var Highchart = function () {
                 var last = parseInt(last_data.x || last_data[0]);
                 if (last > end_time * 1000 || last > (sell_time || sell_spot_time) * 1000) {
                     stop_streaming = true;
-                } else {
-                    // add a null point if the last tick is before end time to bring end time line into view
-                    var time = isSoldBeforeExpiry() ? sell_time || sell_spot_time : end_time;
-                    chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
                 }
             }
         }
