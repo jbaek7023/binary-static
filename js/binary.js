@@ -9768,7 +9768,7 @@ var Durations = function () {
         var date_start = CommonFunctions.getElementById('date_start').value;
         var now = !date_start || date_start === 'now';
         var current_moment = moment(now ? window.time : parseInt(date_start) * 1000).add(5, 'minutes').utc();
-        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
+        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment.add(1, 'days').utc();
         var expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         var expiry_date_iso = toISOFormat(expiry_date);
 
