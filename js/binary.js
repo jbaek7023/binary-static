@@ -9782,10 +9782,10 @@ var Durations = function () {
 
         var _getSmallestDuration = getSmallestDuration(),
             _getSmallestDuration2 = _slicedToArray(_getSmallestDuration, 2),
-            duration_value = _getSmallestDuration2[0],
-            duration_unit = _getSmallestDuration2[1];
+            smallest_duration_value = _getSmallestDuration2[0],
+            smallest_duration_unit = _getSmallestDuration2[1];
 
-        var smallest_end_time = current_moment.add(duration_value, duration_unit);
+        var smallest_end_time = current_moment.add(smallest_duration_value, smallest_duration_unit);
         var default_end_time = Defaults.get('expiry_date');
 
         var expiry_date = default_end_time && moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time.add(5, 'minutes').utc();
@@ -9947,10 +9947,10 @@ var Durations = function () {
                     expiryDateOnChange($expiry_date);
                     removeCustomDropDown($expiry_date);
                 }
-                var duration_unit = getSmallestDuration()[1];
+                var smallest_duration_unit = getSmallestDuration()[1];
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate: duration_unit === 'day' ? 1 : 0,
+                    minDate: smallest_duration_unit === 'day' ? 1 : 0,
                     maxDate: 365
                 });
             } else {
