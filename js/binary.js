@@ -9583,8 +9583,6 @@ module.exports = Barriers;
 "use strict";
 
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
 var Dropdown = __webpack_require__(25).selectDropdown;
 var moment = __webpack_require__(9);
 var Barriers = __webpack_require__(125);
@@ -9767,24 +9765,13 @@ var Durations = function () {
         return value * seconds[from_unit] / seconds[to_unit];
     };
 
-    var getSmallestDuration = function getSmallestDuration() {
-        var unit = CommonFunctions.getElementById('duration_units');
-        var smallest_unit = unit.options[0];
-        var smallest_unit_num = smallest_unit.dataset.minimum;
-        var smallest_unit_name = duration_map[smallest_unit.value];
-        return [smallest_unit_num, smallest_unit_name];
-    };
-
     var displayEndTime = function displayEndTime() {
         var date_start = CommonFunctions.getElementById('date_start').value;
         var now = !date_start || date_start === 'now';
         var current_moment = moment(now ? window.time : parseInt(date_start) * 1000);
-
-        var _getSmallestDuration = getSmallestDuration(),
-            _getSmallestDuration2 = _slicedToArray(_getSmallestDuration, 2),
-            smallest_duration_value = _getSmallestDuration2[0],
-            smallest_duration_unit = _getSmallestDuration2[1];
-
+        var smallest_unit = CommonFunctions.getElementById('duration_units').options[0];
+        var smallest_duration_value = smallest_unit.dataset.minimum;
+        var smallest_duration_unit = duration_map[smallest_unit.value];
         var smallest_end_time = current_moment.add(smallest_duration_value, smallest_duration_unit);
         var default_end_time = Defaults.get('expiry_date');
 
@@ -9947,10 +9934,11 @@ var Durations = function () {
                     expiryDateOnChange($expiry_date);
                     removeCustomDropDown($expiry_date);
                 }
-                var smallest_duration_unit = getSmallestDuration()[1];
+                var smallest_unit = CommonFunctions.getElementById('duration_units').options[0];
+                var smallest_unit_name = duration_map[smallest_unit.value];
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate: smallest_duration_unit === 'day' ? 1 : 0,
+                    minDate: smallest_unit_name === 'day' ? 1 : 0,
                     maxDate: 365
                 });
             } else {
